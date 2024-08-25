@@ -10,7 +10,7 @@ const Footer = () => {
             PRIC
           </div>
           <p className="mt-9 text-base leading-6 text-slate-100">
-            The world's most trusted <br /> telehealth company.
+            The worlds most trusted <br /> telehealth company.
           </p>
         </div>
         <nav className="flex-auto mt-3 max-md:max-w-full">

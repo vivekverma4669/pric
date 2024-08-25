@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="flex flex-col w-[50%]  max-md:w-full  ">
           <div className="flex relative flex-col mt-20  font-bold text-amber-200 max-md:mt-10 max-md:max-w-full">
             <h1 className="mr-2 text-5xl max-md:mr-2.5 max-md:max-w-full max-md:text-4xl">
-              <span className="font-light">We're</span>  determined{" "}
+              <span className="font-light">We&apos;re</span>  determined{" "}
               <span className="font-light">for</span>
               <br/>
               <span className="font-light">your</span> better life.

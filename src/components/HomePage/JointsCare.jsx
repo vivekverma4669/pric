@@ -23,7 +23,7 @@ const JointsCare = () => {
                 Joints Care with top professionals in Punjab and In Budget
               </h2>
               <p className="mt-7 leading-6">
-                We've built a healthcare system that puts your needs first.{" "}
+                We &apos; ve built a healthcare system that puts your needs first.{" "}
                 <br />
                 For us, there is nothing more important than the health of{" "}
                 <br />
