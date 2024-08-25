@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from '../../images/Hero.png'
+import hero from '../../images/hero.png';
 
 const Hero = () => {
   return (
@@ -36,5 +36,4 @@ const Hero = () => {
     </section>
   );
 };
-
 export default Hero;

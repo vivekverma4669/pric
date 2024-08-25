@@ -1,4 +1,6 @@
 import React from 'react';
+import grp3 from '../images/group3.png';
+import Image from 'next/image';
 
 const AboutUs = () => {
   return (
@@ -11,7 +13,10 @@ const AboutUs = () => {
           <div className="mt-20 max-md:mt-10 max-md:max-w-full">
             <div className="flex gap-5 max-md:flex-col">
               <div className="flex flex-col w-[15%] max-md:ml-0 max-md:w-full">
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2417b768c1e5e04e41769fd5def03513119155cd02edb22e019a09e526e27589?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1" alt="" className="object-contain shrink-0 aspect-[0.42] w-[94px] max-md:mt-10" />
+                <Image loading="lazy"
+                 src={grp3}
+                 alt=""
+                  className="object-contain shrink-0 aspect-[0.42] w-[94px] max-md:mt-10" /> 
               </div>
               <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col grow items-start mt-28 text-base font-bold text-orange-400 max-md:mt-10 max-md:max-w-full">
@@ -33,7 +38,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0501c334e1d7720fea8b4b54a74940e6a2fa72ee2b187cec7e4e64a4e54f1a59?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1" alt="Healthcare professionals" className="object-contain grow w-full aspect-[1.17] rounded-[348px] max-md:mt-10 max-md:max-w-full" />
+           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0501c334e1d7720fea8b4b54a74940e6a2fa72ee2b187cec7e4e64a4e54f1a59?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1" alt="Healthcare professionals" className="object-contain grow w-full aspect-[1.17] rounded-[348px] max-md:mt-10 max-md:max-w-full" /> 
         </div>
       </div>
     </section>

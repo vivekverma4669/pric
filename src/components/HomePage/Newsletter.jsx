@@ -1,4 +1,5 @@
 import Image from "next/image";
+import yt from '../../images/yt.png';
 
 const Newsletter = () => {
   return (
@@ -22,7 +23,7 @@ const Newsletter = () => {
             <input
               type="email"
               placeholder="Email"
-              className="grow px-4 py-5 font-light rounded-3xl border border-solid border-neutral-500 text-neutral-500 w-fit max-md:pr-5 max-md:max-w-full"
+              className="grow px-4 py-5 font-light rounded-3xl border border-solid border-neutral-500 text-neutral-500 w-fit max-md:pr-5 max-md:max-w-full max-h-[500px]"
             />
             <button className="px-12 py-6 font-bold text-center bg-orange-400 rounded-2xl border border-orange-400 border-solid text-slate-100 max-md:px-5">
               Subscribe
@@ -31,13 +32,13 @@ const Newsletter = () => {
         </div>
         <div className="flex gap-4 mt-1.5 ml-24 max-w-full text-base text-neutral-700 w-[151px]">
           <Image
-            src="/images/channel-icon.svg"
+            src={yt}
             alt="Channel icon"
             width={32}
             height={32}
             className="object-contain shrink-0 w-8 aspect-square"
           />
-          <div className="grow shrink my-auto w-[97px]">Channel Name</div>
+          <div className="grow shrink my-auto w-[150px]">Channel Name</div>
         </div>
       </div>
     </section>

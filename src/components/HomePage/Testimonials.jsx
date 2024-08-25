@@ -19,7 +19,7 @@ const testimonialData = [
 const Testimonials = () => {
   return (
     <div>
-    <h2 className="mt-44 text-8xl font-bold text-center text-orange-100 uppercase max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+    <h2 className="mt-44 text-8xl font-bold text-center text-orange-100 uppercase max-md:mt-10 max-md:max-w-full max-md:text-4xl w-1000wh">
     More than 100,000 Patients Cured
     </h2>
     <section className="flex flex-col items-start self-stretch px-20 pt-20 mt-12 w-full bg-amber-200 max-md:px-5 max-md:mt-10 max-md:max-w-full">

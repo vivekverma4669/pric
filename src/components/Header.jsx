@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 const Header = () => {
   return (
     <header className="flex relative flex-col justify-center items-center px-16 py-4 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full">

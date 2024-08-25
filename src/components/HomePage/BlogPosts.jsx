@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const BlogPostCard = ({ image, category, date, title }) => (
   <div className="flex flex-col grow pb-6 w-full text-orange-400 bg-white rounded-2xl shadow-[0px_8px_16px_rgba(0,0,0,0.15)] max-md:mt-8">

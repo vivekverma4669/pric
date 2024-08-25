@@ -4,6 +4,10 @@ import DoctorCard from './DoctorCard';
 import img1 from '../../images/anita.png.png';
 import img2 from '../../images/jane.png.png';
 import img3 from '../../images/leo-mario.png.png';
+import grp3 from '../../images/group3.png';
+import grp4 from '../../images/group4.png';
+import leftArrow from '../../images/left.png';
+import rightArrow from '../../images/right.png';
 
 const OurDoctors = () => {
   const doctors = [
@@ -12,21 +16,21 @@ const OurDoctors = () => {
       name: "Prashant Aggarwal",
       specialization: "MD DM (Immunology)",
       experience: "20+",
-      isActive: false
+      isActive: true
     },
     {
       image: img2,
       name: "Bharti Aggarwal",
       specialization: "MD Medicine PDCC",
       experience: "12",
-      isActive: false
+      isActive: true
     },
     {
       image: img3,
       name: "Leo Mario",
       specialization: "Physiotherapy, FitCare",
       experience: "25",
-      isActive: true
+      isActive: false
     }
   ];
 
@@ -37,7 +41,7 @@ const OurDoctors = () => {
       </h2>
       <div className="flex flex-wrap gap-5 justify-between items-start mt-16 w-full text-base font-bold max-w-[1769px] max-md:mt-10 max-md:max-w-full">
         <Image
-          src="/images/decoration-left.svg"
+          src={grp3}
           alt=""
           width={110}
           height={268}
@@ -45,7 +49,7 @@ const OurDoctors = () => {
         />
         <div className="flex gap-8 items-start self-end mt-28 max-md:mt-10 max-md:max-w-full">
           <Image
-            src="/images/arrow-left.svg"
+            src={leftArrow}
             alt=""
             width={29}
             height={28}
@@ -55,14 +59,14 @@ const OurDoctors = () => {
             <DoctorCard key={index} {...doctor} />
           ))}
           <Image
-            src="/images/arrow-right.svg"
+            src={rightArrow}
             alt=""
             width={29}
             height={28}
             className="object-contain shrink-0 my-auto"
           />
           <Image
-            src="/images/decoration-right.svg"
+            src={grp4}
             alt=""
             width={197}
             height={358}

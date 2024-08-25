@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import eyeCare from '../../images/eye-care.png'
 import grp4 from '../../images/group3.png'

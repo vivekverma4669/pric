@@ -10,12 +10,12 @@ const AppointmentForm = () => {
       </h2>
       <div className="flex gap-5 max-md:flex-col">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <img
+          {/* <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/4d016216460a69c8982bda39fc48045db473326e4f5ea89aa328a3e18d2c29a9?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1"
             alt="Doctor consulting with a patient"
             className="object-contain grow w-full aspect-[1.43] max-md:mt-8 max-md:max-w-full"
-          />
+          /> */}
         </div>
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <form className="flex flex-col w-full text-base font-light text-neutral-500 max-md:mt-8 max-md:max-w-full">
