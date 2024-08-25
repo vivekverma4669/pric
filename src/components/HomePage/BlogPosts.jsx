@@ -1,9 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import blog1 from '../../images/blog1.png'
+import blog2 from '../../images/blog2.png'
+import blog3 from '../../images/blog3.png'
+import blog4 from '../../images/blog4.png'
+import cIcon from '../../images/cIcon.png'
 
 const BlogPostCard = ({ image, category, date, title }) => (
   <div className="flex flex-col grow pb-6 w-full text-orange-400 bg-white rounded-2xl shadow-[0px_8px_16px_rgba(0,0,0,0.15)] max-md:mt-8">
-    <img
+    <Image
       loading="lazy"
       src={image}
       alt={title}
@@ -13,9 +18,9 @@ const BlogPostCard = ({ image, category, date, title }) => (
       <div className="flex gap-5 text-sm leading-normal">
         <div>{category}</div>
         <div className="flex gap-2">
-          <img
+          <Image
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/211e7c247343fea7d962b2ac5d75fb5dce3700ddbf64af5ee70306a4221bf836?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1"
+            src={cIcon}
             alt="Calendar icon"
             className="object-contain shrink-0 w-3 aspect-square"
           />
@@ -32,29 +37,25 @@ const BlogPostCard = ({ image, category, date, title }) => (
 
 const blogPosts = [
   {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/4140116609d530a9e80881989e76cc9cf9ddc92a263cfd73d1987070c6e12e36?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1",
+    image: blog1,
     category: "Health",
     date: "Nov 21, 2021",
     title: "COVID-19: The Most Up-to-Date Information",
   },
   {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/1bc56966d52b67aff0a4c80dcc3cc65ea02b34a6f363dbba7a4d4ddb3e751901?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1",
+    image: blog2,
     category: "Lifestyle",
     date: "Nov 25, 2021",
     title: "Importance of Accreditation for Laboratories",
   },
   {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/a17c0ceb2a075ae4dc1abb929142bc529a9e8b4f4559afd394e6f6ee5441ca18?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1",
+    image: blog3,
     category: "Health",
     date: "Nov 28, 2021",
     title: "The dangers of nicotine are addressed in depth",
   },
   {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/d01d4509c4ee8e0f2bf5826149333a98baee07b811ef19122b4fd4a62889c97f?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1",
+    image: blog4,
     category: "Health",
     date: "Nov 30, 2021",
     title: "Treatment of patients with diabetes during COVID-19",

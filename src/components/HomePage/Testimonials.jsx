@@ -1,18 +1,20 @@
 import React from 'react';
 import TestimonialCard from './TestimonialCard';
+import profile from '../../images/avatar.png';
+import Image from 'next/image';
 
 const testimonialData = [
   {
     content: "This medical and health care facility distinguishes itself from the competition by providing technologically advanced medical and health care. A mobile app and a website are available via which you can easily schedule appointments, get online consultations, and see physicians, who will assist you through the whole procedure. And all of the prescriptions, medications, and other services they offer are 100% genuine, medically verified, and proved.",
     name: "Edward Newgate",
     role: "UI Developer, COP",
-    avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/f9497b0a30a112283127b09769b59889a47e73d1df8c7cfc9cd815832ae853e8?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1"
+    avatarSrc: profile
   },
   {
     content: "This medical and health care facility distinguishes itself from the competition by providing technologically advanced medical and health care. A mobile app and a website are available via which you can easily schedule appointments, get online consultations, and see physicians, who will assist you through the whole procedure. And all of the prescriptions, medications, and other services they offer are 100% genuine, medically verified, and proved.",
     name: "Edward Newgate",
     role: "UI Developer, COP",
-    avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/f9497b0a30a112283127b09769b59889a47e73d1df8c7cfc9cd815832ae853e8?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1"
+    avatarSrc: profile
   },
 ];
 

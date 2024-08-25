@@ -1,7 +1,7 @@
 import React from 'react';
 import grp3 from '../images/group3.png';
 import Image from 'next/image';
-
+import health from '../images/health-care.png'
 const AboutUs = () => {
   return (
     <section id="about" className="mt-36 w-full max-w-[1690px] max-md:mt-10 max-md:max-w-full">
@@ -38,7 +38,11 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full">
-           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0501c334e1d7720fea8b4b54a74940e6a2fa72ee2b187cec7e4e64a4e54f1a59?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1" alt="Healthcare professionals" className="object-contain grow w-full aspect-[1.17] rounded-[348px] max-md:mt-10 max-md:max-w-full" /> 
+           <Image loading="lazy"
+            src={health}
+             alt="Healthcare professionals"
+              className="object-contain grow w-full aspect-[1.17] rounded-[348px] max-md:mt-10 max-md:max-w-full" 
+              /> 
         </div>
       </div>
     </section>
