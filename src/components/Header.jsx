@@ -3,11 +3,15 @@ const Header = () => {
   return (
     <header className="flex relative flex-col justify-center items-center px-16 py-4 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full">
       <nav className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1465px] max-md:max-w-full">
-        <div className="self-stretch my-auto text-xl">PRIC</div>
-        <ul className="flex gap-8 self-stretch my-auto text-base max-md:max-w-full">
+        <div className="self-stretch my-auto text-xl">
+        <Link href="/"> 
+        PRIC
+            </Link>
+        </div>
+        <ul className="flex gap-9 self-stretch my-auto text-base max-md:max-w-full">
           <li>
             <Link href="#about">
-          About Us
+          About
             </Link>
           </li>
           <li>
@@ -17,17 +21,17 @@ const Header = () => {
           </li>
           <li>
             <Link href="#membership">
-            Membership
+            Gallery
             </Link>
           </li>
           <li>
-            <Link href="#help">
-              Help
+            <Link href="#testimonials">
+              Testimonials
             </Link>
           </li>
           <li>
-            <Link href="#contact">
-            Contact
+            <Link href="appointment">
+             Book Appointment
             </Link>
           </li>
         </ul>
