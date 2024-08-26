@@ -22,14 +22,14 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-[61%] max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col ml-5 w-[61%] max-md:ml-0 max-md:w-full  max-xl:w-full ">
           <Image
             src={hero}
             alt="Doctor caring for a patient"
-            width={710}
-            height={610}
+            width={740}
+            height={620}
             layout="responsive"
-            className="object-contain grow max-md:mt-10 max-md:max-w-full"
+            className="object-contain grow max-md:mt-10 max-md:max-w-full "
           />
         </div>
       </div>

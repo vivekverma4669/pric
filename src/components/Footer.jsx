@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Footer = () => {
@@ -10,7 +9,7 @@ const Footer = () => {
             PRIC
           </div>
           <p className="mt-9 text-base leading-6 text-slate-100">
-            The worlds most trusted <br /> telehealth company.
+            The world&apos;s most trusted <br /> telehealth company.
           </p>
         </div>
         <nav className="flex-auto mt-3 max-md:max-w-full">
@@ -66,7 +65,7 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <div className="px-16 py-10 mt-36 w-full text-sm font-bold leading-normal text-amber-100 bg-amber-200 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      <div className="px-16 py-6 mt-36 w-full text-sm font-bold leading-normal text-amber-100 bg-amber-200 max-md:px-5 max-md:mt-10 max-md:max-w-full">
         All rights Reserved © PRIC, 2024
       </div>
     </footer>

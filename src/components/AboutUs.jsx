@@ -1,13 +1,19 @@
 import React from 'react';
 import grp3 from '../images/group3.png';
 import Image from 'next/image';
-import health from '../images/health-care.png'
+import health from '../images/doctor.png'
+
 const AboutUs = () => {
   return (
     <section id="about" className="mt-36 w-full max-w-[1690px] max-md:mt-10 max-md:max-w-full">
-      <h2 className="text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
-        ABOUT US
-      </h2>
+       <div className="relative">
+        <h2 className="relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
+          ABOUT US
+          <span className="absolute inset-0 flex items-center justify-center font-bold text-orange-400 text-3xl max-md:text-2xl">
+            ABOUT US
+          </span>
+        </h2>
+      </div>
       <div className="flex gap-5 mt-28 max-md:flex-col max-md:mt-10">
         <div className="flex flex-col w-[46%] max-md:ml-0 max-md:w-full">
           <div className="mt-20 max-md:mt-10 max-md:max-w-full">
@@ -41,7 +47,7 @@ const AboutUs = () => {
            <Image loading="lazy"
             src={health}
              alt="Healthcare professionals"
-              className="object-contain grow w-full aspect-[1.17] rounded-[348px] max-md:mt-10 max-md:max-w-full" 
+              className="object-contain grow w-full aspect-[1.17] max-md:mt-10 max-md:max-w-full" 
               /> 
         </div>
       </div>
