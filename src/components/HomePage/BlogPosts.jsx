@@ -7,13 +7,15 @@ import blog4 from '../../images/blog4.png'
 import cIcon from '../../images/cIcon.png'
 
 const BlogPostCard = ({ image, category, date, title }) => (
-  <div className="flex flex-col grow pb-6 w-full text-orange-400 bg-white rounded-2xl shadow-[0px_8px_16px_rgba(0,0,0,0.15)] max-md:mt-8">
+  <div className="flex flex-col grow pb-6 w-full text-orange-400 bg-white rounded-2xl shadow-[0px_8px_16px_rgba(0,0,0,0.15)] max-md:mt-8
+   hover:bg-orange-400 hover:text-white cursor-pointer hover:shadow-[rgba(0, 0, 0, 0.35) 0px 5px 15px]  transform transition-all duration-300">
     <Image
       loading="lazy"
       src={image}
       alt={title}
       layout="responsive"
-      className="object-contain w-full rounded-lg aspect-[1.09]"
+      className="object-contain w-full rounded-lg aspect-[1.09] 
+      transform transition-all duration-300 hover:scale-95"
     />
     <div className="flex flex-col items-start pr-12 pl-4 mt-6 w-full max-md:pr-5">
       <div className="flex gap-5 text-sm leading-normal">

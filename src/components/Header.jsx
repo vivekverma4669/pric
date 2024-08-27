@@ -10,22 +10,22 @@ const Header = () => {
         </div>
         <ul className="flex gap-9 self-stretch my-auto text-base max-md:max-w-full">
           <li>
-            <Link href="#about">
+            <Link href="/#about">
           About
             </Link>
           </li>
           <li>
-            <Link href="#departments">
+            <Link href="/departments">
             Departments
             </Link>
           </li>
           <li>
-            <Link href="#membership">
+            <Link href="#gallery">
             Gallery
             </Link>
           </li>
           <li>
-            <Link href="#testimonials">
+            <Link href="/#testimonials">
               Testimonials
             </Link>
           </li>
@@ -35,9 +35,12 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <button className="self-stretch px-7 py-5 text-sm text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5">
+
+        <Link href="/login"> 
+        <button className="self-stretch px-7 py-5 text-sm text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5       hover:bg-orange-400 hover:text-white transition duration-300 active:bg-orange-500 active:shadow-inner">
           Sign In
-        </button>
+        </button>   
+        </Link>
       </nav>
     </header>
   );

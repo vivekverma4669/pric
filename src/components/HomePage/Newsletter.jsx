@@ -1,6 +1,7 @@
 import Image from "next/image";
 import yt from '../../images/yt.png';
-import { Span } from "next/dist/trace";
+import fb from '../../images/logos_facebook.png';
+
 
 const Newsletter = () => {
   return (
@@ -17,6 +18,24 @@ const Newsletter = () => {
               <br />
               Providing world-class tests, and a wide range of other services.
             </div>
+            
+          <div className="flex gap-4 mt-1.5  max-w-full text-base text-neutral-700 w-[250px]">
+          <Image
+            src={yt}
+            alt="Channel icon"
+            width={32}
+            height={32}
+            className="object-contain shrink-0 w-8 aspect-square"
+          />
+          <Image
+            src={fb}
+            alt="Channel icon"
+            width={32}
+            height={32}
+            className="object-contain shrink-0 w-8 aspect-square"
+          />
+        
+        </div>
           </div>
 
           <div className="flex flex-wrap flex-col gap-2 my-auto text-base  max-md:max-w-full " >
@@ -32,22 +51,23 @@ const Newsletter = () => {
               placeholder="Email"
               className="grow mb-2 px-4 py-5  font-light rounded-3xl border border-solid border-neutral-500 text-neutral-500 w-[500px] max-md:pr-5 max-md:max-w-full bg-transparent "
             />
-            <button className=" ml-2 px-12 py-5 font-bold text-center bg-orange-400 rounded-2xl border border-orange-400 border-solid text-slate-100 max-md:px-5">
+            {/* <button className=" ml-2 px-12 py-5 font-bold text-center bg-orange-400 rounded-2xl border border-orange-400 border-solid text-slate-100 max-md:px-5">
               Subscribe
-            </button>
+            </button>  */}
+            <button className=" ml-2 relative px-12 py-5 overflow-hidden font-bold text-center text-slate-100 bg-orange-400 border border-orange-400 rounded-2xl shadow-inner group max-md:px-5">
+  <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-orange-600 group-hover:w-full ease"></span>
+  <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-orange-600 group-hover:w-full ease"></span>
+  <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
+  <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
+  <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-orange-500 opacity-0 group-hover:opacity-100"></span>
+  <span className="relative transition-colors duration-300 delay-200 group-hover:text-black ease">Subscribe</span>
+</button>
+
+
             </div>
 
 
-          <div className="flex gap-4 mt-1.5  max-w-full text-base text-neutral-700 w-[250px]">
-          <Image
-            src={yt}
-            alt="Channel icon"
-            width={32}
-            height={32}
-            className="object-contain shrink-0 w-8 aspect-square"
-          />
-          <div className="grow shrink my-auto w-[150px]">Channel Name</div>
-        </div>
+
 
 
           </div>

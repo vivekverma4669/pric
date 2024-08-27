@@ -1,0 +1,42 @@
+.buttonMask {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 11px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+    mask-size: 2300% 100%;
+  }
+  
+  .buttonMask:hover {
+    background-color: black;
+    animation: ani 0.7s steps(22) forwards;
+  }
+  
+  .buttonMask::before {
+    content: "MASK1";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  
+  /* Define keyframes */
+  @keyframes ani {
+    from {
+      mask-position: 0 0;
+    }
+    to {
+      mask-position: 100% 0;
+    }
+  }
+  

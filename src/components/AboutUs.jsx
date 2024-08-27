@@ -35,7 +35,7 @@ const AboutUs = () => {
                     <br /> possible for our patients and to offer treatment no matter
                     <br /> where they are — in person or at their convenience.
                   </p>
-                  <button className="px-14 py-6 mt-8 text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5">
+                  <button className="px-14 py-6 mt-8 text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5   hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner hover:bg-orange-400">
                     Learn more
                   </button>
                 </div>

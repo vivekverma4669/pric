@@ -1,9 +1,10 @@
-import Header from '@/components/Header'
+import DepartmentPage from '@/components/Departments/DepartmentPage'
 import React from 'react'
 
+
 const page = () => {
-  return (
-     <Header/>
+  return(
+      <DepartmentPage/>
   )
 }
 
