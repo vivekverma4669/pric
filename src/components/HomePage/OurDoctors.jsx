@@ -46,7 +46,7 @@ const OurDoctors = () => {
     }
   ];
 
-  const itemsToShow = window.innerWidth >= 1280 ? 3 : 2;
+  const itemsToShow =  3;
   const maxIndex = Math.max(0, doctors.length - itemsToShow);
   
   const handleLeftClick = () => {
@@ -88,9 +88,9 @@ const OurDoctors = () => {
             height={28}
             className="object-contain shrink-0 my-auto cursor-pointer
              hover:bg-slate-200 hover:border-orange-600 hover:text-black 
-  transition duration-300 ease-in-out 
-  active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px]
-   "
+                transition duration-300 ease-in-out 
+                active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px]
+                "
             onClick={handleLeftClick}
          />
           <div className="flex flex-row  gap-8 ">
@@ -105,8 +105,8 @@ const OurDoctors = () => {
             height={28}
             className="object-contain shrink-0 my-auto cursor-pointer
              hover:bg-slate-200 hover:border-orange-600 hover:text-black 
-  transition duration-300 ease-in-out 
-  active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px] "
+            transition duration-300 ease-in-out 
+            active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px] "
             onClick={handleRightClick}
           />
         </div>
