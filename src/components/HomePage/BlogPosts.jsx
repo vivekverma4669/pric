@@ -67,7 +67,7 @@ const blogPosts = [
 
 const BlogPosts = () => {
   return (
-    <section className="mt-48 max-md:mt-10 max-md:max-w-full">
+    <section className="mt-48 max-md:mt-10 max-md:max-w-full max-w-[1350px]">
      
       <div className="relative">
         <h2 className="relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
@@ -78,7 +78,7 @@ const BlogPosts = () => {
         </h2>
       </div>
     
-      <div className="mt-44 w-full max-w-[1448px] max-md:mt-10 max-md:max-w-full ">
+      <div className="mt-[80px] w-full max-w-[1400px] max-md:mt-10 max-md:max-w-full ">
         <div className="flex gap-5 max-md:flex-col m-2">
           {blogPosts.map((post, index) => (
             <div

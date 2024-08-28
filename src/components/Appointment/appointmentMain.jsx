@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState } from 'react';
 import AppointmentHeader from './appointmentHeader';
 
@@ -13,7 +12,7 @@ const InputField = ({ name, label, type = 'text', value, onChange }) => (
       value={value}
       onChange={onChange}
       placeholder={label}
-      className="w-full px-4 py-5 bg-white rounded-3xl border border-solid border-orange-400 border-opacity-30 max-md:pr-5 max-md:max-w-full"
+      className="w-full px-4 py-5 lg:py-3 lg:px-3 bg-white rounded-3xl border border-solid border-orange-400 border-opacity-30 max-md:pr-5 max-md:max-w-full"
       aria-label={label}
     />
   </div>
@@ -28,7 +27,7 @@ const SelectField = ({ name, label, options, value, onChange }) => (
         name={name}
         value={value}
         onChange={onChange}
-        className="w-full appearance-none px-5 py-4 rounded-3xl border border-solid border-orange-400 border-opacity-30 max-md:max-w-full"
+        className="w-full appearance-none px-5 py-4 lg:py-3 lg:px-3 rounded-3xl border border-solid border-orange-400 border-opacity-30 max-md:max-w-full"
         aria-label={label}
       >
         <option value="" disabled>{label}</option>
@@ -36,12 +35,6 @@ const SelectField = ({ name, label, options, value, onChange }) => (
           <option key={index} value={option}>{option}</option>
         ))}
       </select>
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e3e3ef5b6456e05842bf1b36278a5307c7d60210bcfd06fe77392c236731eaf?placeholderIfAbsent=true&apiKey=959314bec90d425ea66337d3a0b18ec1"
-        alt=""
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 object-contain w-3 aspect-square pointer-events-none"
-      />
     </div>
   </div>
 );
@@ -50,7 +43,7 @@ const Button = ({ children, type = 'button', className = '', onClick }) => (
   <button
     type={type}
     onClick={onClick}
-    className={`px-16 py-5 max-w-full text-center text-white bg-orange-400 border border-orange-400 border-solid rounded-[800px] w-[708px] max-md:px-5 ${className}`}
+    className={`px-16 py-5 lg:py-3 lg:px:10px max-w-full text-center text-white bg-orange-400 border border-orange-400 border-solid rounded-[800px] w-[708px] max-md:px-5 ${className}`}
   >
     {children}
   </button>
@@ -88,11 +81,11 @@ const AppointmentForm = () => {
   return (
     <main className="flex overflow-hidden flex-col pb-28 font-bold bg-white max-md:pb-24">
         <AppointmentHeader/>
-      <section className="flex flex-col self-center mt-20 max-w-full text-base text-neutral-500 w-[1242px] max-md:mt-10">
+      <section className="flex flex-col self-center mt-10 max-w-full text-base text-neutral-500 w-[1242px] max-md:mt-10">
         <h1 className="self-start text-3xl text-orange-400 max-md:max-w-full">
          Book An Appointment
         </h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <h2 className="self-start mt-10 text-neutral-800">Enter Details</h2>
           <div className="flex flex-wrap gap-10 mt-4 font-light max-md:max-w-full">
             <InputField
@@ -170,14 +163,16 @@ const AppointmentForm = () => {
 
 
 
-        </form>
-        <button className=" m-auto  relative self-center px-16 py-5 mt-11 max-w-full text-base font-bold text-center text-white bg-orange-400 border border-orange-400 rounded-[800px] w-[708px] group overflow-hidden">
+    </form>
+    <button className="relative self-center px-16 py-5 lg:px-10 mt-11 max-w-full text-base font-bold text-center text-white bg-orange-400 border border-orange-400 rounded-[800px] w-[708px] group overflow-hidden transition-transform transform active:scale-95">
   <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-orange-600 group-hover:w-full ease"></span>
   <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-orange-600 group-hover:w-full ease"></span>
   <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
   <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
   <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-orange-500 opacity-0 group-hover:opacity-100 rounded-[800px]"></span>
-  <span className="relative transition-colors duration-300 delay-200 group-hover:text-black ease"> Book an Appointment</span>
+  <span className="relative transition-colors duration-300 delay-200 group-hover:text-black ease">
+   Book An Appointment
+  </span>
 </button>
       </section>
     </main>

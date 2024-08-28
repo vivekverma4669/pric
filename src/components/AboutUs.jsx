@@ -24,12 +24,12 @@ const AboutUs = () => {
                  alt=""
                   className="object-contain shrink-0 aspect-[0.42] w-[94px] max-md:mt-10" /> 
               </div>
-              <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full">
+              <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full z-30">
                 <div className="flex flex-col grow items-start mt-28 text-base font-bold text-orange-400 max-md:mt-10 max-md:max-w-full">
                   <h3 className="self-stretch text-3xl max-md:max-w-full">
                     We are developing a healthcare <br /> system around you
                   </h3>
-                  <p className="mt-8 leading-6 text-orange-300 max-md:max-w-full">
+                  <p className="mt-8 leading-6 text-orange-300 max-md:max-w-full ">
                     We think that everyone should have easy access to excellent
                     <br /> healthcare. Our aim is to make the procedure as simple as
                     <br /> possible for our patients and to offer treatment no matter

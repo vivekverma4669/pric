@@ -15,6 +15,7 @@ import BG from "../../images/BG.svg"
 const MainLayout = () => {
   return (
     <div className="flex overflow-hidden flex-col items-center bg-white">    
+    
      <div className="flex relative flex-col self-stretch w-full min-h-[870px] max-md:max-w-full ">
          <Image
           loading="lazy"
@@ -22,7 +23,7 @@ const MainLayout = () => {
           alt="Background image"
           className="object-cover absolute inset-0 size-full"
         /> 
-        <Header/>
+         <Header/>
          <Hero/> 
        </div>
         <Departments/>

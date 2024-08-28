@@ -46,7 +46,7 @@ const OurDoctors = () => {
     }
   ];
 
-  const itemsToShow =  3;
+  const itemsToShow = 3;
   const maxIndex = Math.max(0, doctors.length - itemsToShow);
   
   const handleLeftClick = () => {
@@ -60,7 +60,7 @@ const OurDoctors = () => {
   const visibleDoctors = doctors.slice(currentIndex, currentIndex + itemsToShow);
 
   return (
-    <section className="mt-48 max-md:mt-10 max-md:max-w-full mb-20">
+    <section className="mt-48 max-md:mt-10 max-md:max-w-full mb-20 max-w-[1350px]">
 
       <div className="relative">
         <h2 className="relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
@@ -71,7 +71,7 @@ const OurDoctors = () => {
         </h2>
       </div>
 
-      <div className="flex flex-wrap gap-5 justify-between items-start mt-16 w-full text-base font-bold max-w-[1769px] max-md:mt-10 max-md:max-w-full">
+      <div className="flex flex-wrap gap-5 justify-between items-start mt-16 w-full text-base font-bold max-w-[1450px] max-md:mt-10 max-md:max-w-full">
         <Image
           src={grp3}
           alt=""
@@ -80,7 +80,7 @@ const OurDoctors = () => {
           className=" absolute  left-11 object-contain shrink-0 self-start max-w-full aspect-[0.41] w-[110px]"
         />
 
-        <div className="ml-5 flex gap-8 items-start self-end mt-28 max-md:mt-10 max-md:max-w-full z-50 mb-32 justify-center m-auto">
+        <div className="ml-5 flex gap-8 items-start self-end mt-28 max-md:mt-10 max-md:max-w-full z-50 mb-32 justify-center m-auto max-w-[1200px]">
           <Image
             src={leftArrow}
             alt="Left arrow"
@@ -88,9 +88,9 @@ const OurDoctors = () => {
             height={28}
             className="object-contain shrink-0 my-auto cursor-pointer
              hover:bg-slate-200 hover:border-orange-600 hover:text-black 
-                transition duration-300 ease-in-out 
-                active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px]
-                "
+              transition duration-300 ease-in-out 
+              active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px]
+              "
             onClick={handleLeftClick}
          />
           <div className="flex flex-row  gap-8 ">
@@ -105,8 +105,8 @@ const OurDoctors = () => {
             height={28}
             className="object-contain shrink-0 my-auto cursor-pointer
              hover:bg-slate-200 hover:border-orange-600 hover:text-black 
-            transition duration-300 ease-in-out 
-            active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px] "
+  transition duration-300 ease-in-out 
+  active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px] "
             onClick={handleRightClick}
           />
         </div>

@@ -2,47 +2,43 @@
 import React, { useState } from "react";
 import arrow1 from "../../images/Arrow1.svg";
 import Image from "next/image";
-import image1 from "../../images/phisiotheraphy.png";
-import image2 from "../../images/Layer_1 (1).png";
-import image3 from "../../images/Capa_1.png";
-import image4 from "../../images/r.png";
-
+import drCard from '../../images/drCard.png'
 let arr = [
   {
-    image: image1,
+    image: drCard,
     title: "Physiotherapy",
     patientCount: " 1000+ Patients",
   },
   {
-    image: image2,
+    image: drCard,
     title: "Psychology",
     patientCount: " 1000+ Patients",
   },
   {
-    image: image3,
+    image: drCard,
     title: "Dietetics",
     patientCount: " 1000+ Patients",
   },
   {
-    image: image4,
+    image: drCard,
     title: "Rheumatology ",
     patientCount: " 1000+ Patients",
   },
 
   {
-    image: image4,
+    image: drCard,
     title: "card 5",
     patientCount: " 1000+ Patients",
   },
 
   {
-    image: image4,
+    image: drCard,
     title: "card 6",
     patientCount: " 1000+ Patients",
   },
 ];
 
-const DepartmentContent = () => {
+const DoctorsContent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsToShow = 4;
   const maxIndex = Math.max(0, arr.length - itemsToShow);
@@ -59,7 +55,7 @@ const DepartmentContent = () => {
   const progressWidth = (currentIndex / maxIndex) * 100 ||  (1 / 4) * 100;
 
   return (
-    <div className="flex flex-col self-center mt-8 w-full max-w-[1300px]">
+    <div className="flex flex-col self-center mt-8 w-full max-w-[1450px]" >
       <div className="self-start ml-36 text-3xl font-bold text-orange-400">
         Meet Our Doctors
       </div>
@@ -68,7 +64,7 @@ const DepartmentContent = () => {
         exceptional care.
       </div>
 
-      <div className="flex flex-wrap gap-10 items-center mt-10 w-full " >
+      <div className="flex  flex-row gap-10 items-center mt-10 px-4" >
         <div
           className="rounded-full border-[3px] border-orange-500 cursor-pointer
         hover:bg-orange-500  transition-all duration-300
@@ -79,28 +75,27 @@ const DepartmentContent = () => {
           <Image
             loading="lazy"
             src={arrow1}
-            className=" object-contain shrink-0 self-stretch my-auto max-w-full p-[8px] rotate-180 aspect-square w-[60px] hover:invert hover:brightness-0"
+            className=" object-contain shrink-0 self-stretch my-auto max-w-full p-[8px] aspect-square w-[60px] rotate-180 hover:invert hover:brightness-0"
             alt="Doctor icon"
           />
         </div>
 
-        <div className="flex-auto self-stretch">
+        <div className="flex w-[92%]">
           <div className="flex gap-5  transition-all duration-500 ease-in-out">
             {visibleArr.map((item, index) => (
+             
               <div key={index} className="flex flex-col w-3/12">
-                <div className="flex flex-col grow items-center px-14 py-24 w-full text-center rounded-2xl bg-neutral-100">
+                <div className="flex flex-col grow items-center w-full text-center rounded-2xl bg-neutral-100">
                   <Image
                     loading="lazy"
                     src={item.image}
-                    className="object-contain max-w-full aspect-square w-[100px]"
+                    className="object-contain max-w-full aspect-square w-[98%] px-3"
                     alt=" icon"
-                  />
-                  <div className="mt-6 text-xl font-bold text-neutral-800">
-                    {item.title}
-                  </div>
-                  <div className="mt-3.5 text-base text-neutral-700">
-                    {item.patientCount}
-                  </div>
+                  />   
+                 <h3 className=" text-xl font-bold text-neutral-800">DR Gautam Dhir</h3>
+                 <p className="mb-4 text-base text-neutral-700">
+                  Orthologist <br /> MBBS ,MD
+                </p>
                 </div>
               </div>
             ))}
@@ -116,7 +111,7 @@ const DepartmentContent = () => {
           <Image
             loading="lazy"
             src={arrow1}
-            className=" object-contain shrink-0 self-stretch my-auto max-w-full  p-[8px] aspect-square w-[60px] hover:invert hover:brightness-0"
+            className=" object-contain shrink-0 self-stretch my-auto max-w-full   p-[8px] aspect-square w-[60px] hover:invert hover:brightness-0"
             alt="Doctor icon"
           />
         </div>
@@ -145,4 +140,4 @@ const DepartmentContent = () => {
   );
 };
 
-export default DepartmentContent;
+export default DoctorsContent;

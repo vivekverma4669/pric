@@ -1,12 +1,13 @@
 import React from 'react'
-import Header from '../../components/Header'
+import DoctorHeader from '@/components/OurDoctors/DoctorHeader';
+import DoctorContent from '@/components/OurDoctors/DoctorContent';
 
 const pages = () => {
   return (
-    <>
-    <Header/>
-     doctor page
-    </>
+    <div className="flex overflow-hidden flex-col pb-20 bg-white">  
+     <DoctorHeader/>
+     <DoctorContent/>
+    </div>
   )
 }
 

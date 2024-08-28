@@ -2,8 +2,8 @@ import Header from "@/components/Header";
 import React from "react";
 import subBG from '../../images/subBG.svg'
 import Image from "next/image";
-
-const DepartmentHeader = () => {
+ 
+const DoctorHeader = () => {
   return (
     <div className="flex relative flex-col  w-full font-bold min-h-[240px] max-md:max-w-full">
       <Image
@@ -15,13 +15,13 @@ const DepartmentHeader = () => {
       <Header/>
    
       <h2 className=" mt-4 relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
-        OUR DEPARTMENTS
+        OUR DOCTORS
           <span className="absolute inset-0 flex items-center justify-center font-bold text-orange-400 text-3xl max-md:text-2xl">
-          OUR DEPARTMENTS
+          OUR DOCTORS
           </span>
         </h2>
     </div>
   );
 };
 
-export default DepartmentHeader;
+export default DoctorHeader;

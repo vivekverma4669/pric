@@ -29,7 +29,7 @@ const Departments = () => {
   ];
 
   return (
-    <section id="departments" className="mt-64 max-md:mt-10 max-md:max-w-full">
+    <section id="departments" className="mt-64 max-md:mt-10 max-md:max-w-full max-w-[1350px]">
         <div className="relative">
         <h2 className="relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
           OUR DEPARTMENTS
@@ -38,7 +38,7 @@ const Departments = () => {
           </span>
         </h2>
       </div>
-      <div className="flex flex-wrap gap-5 justify-between mt-28 max-w-full text-2xl leading-normal text-center text-gray-400 whitespace-nowrap w-[1272px] max-md:mt-10">
+      <div className="flex flex-wrap gap-5 justify-between mt-28   max-w-full text-2xl leading-normal text-center text-gray-400 whitespace-nowrap max-md:mt-10 w-[1200px]">
         {departments.map((dept, index) => (
           <DepartmentItem key={index} icon={dept.icon} name={dept.name} />
         ))}

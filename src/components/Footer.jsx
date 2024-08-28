@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col self-stretch pt-32 w-full bg-orange-400 max-md:pt-24 max-md:max-w-full">
-      <div className="flex flex-wrap gap-10 items-start self-center w-full max-w-[1385px] max-md:max-w-full">
+    <footer className="flex flex-col self-stretch pt-32 w-full bg-orange-400 max-md:pt-24 max-md:max-w-full justify-center">
+      <div className=" m-auto flex flex-wrap gap-10 items-start self-center w-full max-w-[1350px] max-md:max-w-full">
         <div className="flex flex-col">
           <div className="self-start text-3xl font-bold text-orange-300">
             PRIC
@@ -65,7 +65,10 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <div className="px-16 py-6 mt-36 w-full text-sm font-bold leading-normal text-amber-100 bg-amber-200 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      {/* <div className="px-16 py-6 mt-36 w-full text-sm font-bold leading-normal text-amber-100 bg-amber-200 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+        All rights Reserved © PRIC, 2024
+      </div> */}
+      <div className="px-16 py-6 mt-20   text-sm font-bold  max-md:px-5 max-md:mt-10 max-md:max-w-full w-[360px] m-auto">
         All rights Reserved © PRIC, 2024
       </div>
     </footer>
