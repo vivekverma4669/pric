@@ -52,7 +52,7 @@ const ReportsItem = ({ appointment }) => {
               <Image
                 loading="lazy"
                 src={download}
-                className="object-contain shrink-0 self-start w-8 rounded-xl aspect-square"
+                className="object-contain shrink-0 self-start w-9 p-2  bg-orange-200 rounded-xl aspect-square"
                 alt="download icon"
               />
             </div>
@@ -72,7 +72,7 @@ const ReportsItem = ({ appointment }) => {
               <Image
                 loading="lazy"
                 src={editRaise}
-                className="object-contain shrink-0 aspect-square w-[18px]"
+                className="object-contain shrink-0 aspect-square w-[18px] "
                 alt="Query icon"
               />
               <div>Raise a Query</div>
