@@ -1,8 +1,9 @@
 import React from 'react'
+import ProfilePage from '@/components/ProfilePage/ProfilePage'
 
 const page = () => {
   return (
-    <div> Gallery</div>
+    <ProfilePage/>
   )
 }
 

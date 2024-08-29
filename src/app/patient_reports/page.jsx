@@ -1,8 +1,9 @@
+import ReportsPage from '@/components/PatientReports/ReportsPage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div> Gallery</div>
+   <ReportsPage/>
   )
 }
 
