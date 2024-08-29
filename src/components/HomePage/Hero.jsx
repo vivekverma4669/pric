@@ -17,7 +17,7 @@ const Hero = () => {
               You can get the care you need 24/7 – be it online or in <br />
               person. You will be treated by caring specialist doctors.
             </p>
-            <button className="self-start px-12 py-6 mt-4 text-sm text-center text-white bg-amber-200 border border-amber-200 border-solid rounded-[800px] max-md:px-5     hover:bg-white hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner hover:border-[1.5px]">
+            <button className="self-start px-12 py-6 mt-4 text-sm text-center text-black bg-amber-200 border border-amber-200 border-solid rounded-[800px] max-md:px-5     hover:bg-white hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner hover:border-[1.5px]">
               Make an Appointment
             </button>
           </div>
