@@ -6,10 +6,8 @@ const pages = () => {
   return (
     <>
      <LoginPage/>
-  
      </>
      
   )
 }
-
-export default pages
+export default pages;

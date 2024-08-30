@@ -23,7 +23,7 @@ const ProfilePage = () => {
     contactNumber: "",
     email: ""
   });
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(true);
   const [loading, setLoading] = useState(false);
 
  
@@ -64,9 +64,7 @@ const ProfilePage = () => {
     }));
   };
 
-  const handleEditClick = () => {
-    setIsEditing(true);
-  };
+  
 
   const handleSaveClick = async () => {
     setLoading(true);
@@ -92,25 +90,18 @@ const ProfilePage = () => {
   return (
     <div className="flex overflow-hidden flex-col pb-56 bg-white">
       <ProfileHeader />
-      <main className="flex flex-col self-center mt-16 max-w-full w-[1242px]">
+      <main className="flex flex-col self-center mt-10 max-w-full w-[1242px]">
         <section>
-          <h2 className="self-start text-2xl font-bold text-neutral-800">Profile</h2>
+        <h1 className="self-start text-3xl font-bold text-orange-400 max-md:max-w-full mb-10">
+        EDIT  YOUR PROFILE
+        </h1>
+
           <div className="flex flex-wrap gap-5 justify-between mt-2 w-full">
             <div className="text-2xl font-bold text-neutral-800">
-              Patient ID: <span>{profile.id}</span>
+              Patient ID: <span>{profile.uid}</span>
             </div>
-            <button
-              onClick={handleEditClick}
-              className="flex gap-2 self-start mt-4 text-base leading-none text-zinc-800"
-            >
-              <Image
-                loading="lazy"
-                src={edit}
-                alt="Edit icon"
-                className="object-contain shrink-0 aspect-square w-[21px]"
-              />
-              <span>Edit Profile</span>
-            </button>
+
+          
           </div>
           <div className="flex flex-wrap gap-10 mt-6 text-base font-light text-neutral-500">
             <InputField
@@ -130,33 +121,65 @@ const ProfilePage = () => {
           </div>
 
           <div className="flex flex-wrap gap-10 mt-3.5 w-full text-base font-light text-neutral-500">
-          <div className="flex flex-wrap flex-1 flex-auto  justify-between gap-10 items-start px-4 py-3 whitespace-nowrap bg-white rounded-3xl border border-solid border-orange-400 border-opacity-30">
-              <><label htmlFor="dob" className="my-auto font-bold">{profile.dob}</label>
-              <input type="date" id="dob" className="sr-only" /></>
+ 
 
-              <Image
-                loading="lazy"
-                src={dob}
-                alt="Calendar icon"
-                className="object-contain shrink-0 self-start w-9 aspect-square"
-              />
-            </div>
+    
+    <div className="grow px-4 py-4 bg-white rounded-2xl border border-solid border-orange-400 border-opacity-30 w-fit">
+      <label htmlFor="dob" className="sr-only">Date of Birth</label>
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        value={profile.dob}
+        onChange={handleInputChange}
+        disabled={!isEditing}
+        
+        className="w-full bg-transparent outline-none text-[18px] "
 
-            <div className="flex flex-wrap flex-1 flex-auto gap-5">
-              <InputField
-                label="Gender"
-                value={profile.gender}
-                name="gender"
-                onChange={handleInputChange}
-                disabled={!isEditing}
-              />
-              <InputField
-                label="Marital Status"
-                value={profile.maritalStatus}
-                name="maritalStatus"
-                onChange={handleInputChange}
-                disabled={!isEditing}
-              />
+      />
+      
+    </div>
+
+ 
+
+   <div className="flex flex-wrap flex-1 flex-auto gap-5">
+   
+    <div className="grow px-4 py-4 bg-white rounded-2xl border border-solid border-orange-400 border-opacity-30 w-fit">
+      <label className="sr-only" htmlFor="gender">Gender</label>
+      <select
+        id="gender"
+        name="gender"
+        value={profile.gender}
+        onChange={handleInputChange}
+        disabled={!isEditing}
+        className="w-full bg-transparent outline-none"
+      >
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+              
+    <div className="grow px-4 py-4 bg-white rounded-2xl border border-solid border-orange-400 border-opacity-30 w-fit">
+      <label className="sr-only" htmlFor="maritalStatus">Marital Status</label>
+      <select
+        id="maritalStatus"
+        name="maritalStatus"
+        value={profile.maritalStatus}
+        onChange={handleInputChange}
+        disabled={!isEditing}
+        className="w-full bg-transparent outline-none"
+      >
+        <option value="">Select Marital Status</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="divorced">Divorced</option>
+        <option value="widowed">Widowed</option>
+      </select>
+    </div>
+
             </div>
           </div>
         </section>
@@ -191,7 +214,7 @@ const ProfilePage = () => {
         </section>
 
         {isEditing && (
-          <button className="relative self-center px-16 py-5 lg:px-10 mt-11 max-w-full text-base font-bold text-center text-white bg-orange-400 border border-orange-400 rounded-[800px] w-[708px] group overflow-hidden transition-transform transform active:scale-95">
+          <button className="relative self-center px-14 py-5 lg:px-10 mt-11 max-w-full text-base font-bold text-center text-white bg-orange-400 border border-orange-400 rounded-[800px] w-[650px] group overflow-hidden transition-transform transform active:scale-95">
           <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-orange-600 group-hover:w-full ease"></span>
           <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-orange-600 group-hover:w-full ease"></span>
           <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>

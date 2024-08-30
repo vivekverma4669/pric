@@ -33,7 +33,6 @@ const MainLayout = () => {
       <Testimonials/>
       <BlogPosts/>
       <Newsletter/>
-      <Footer/>  
     </div>
   );
 };

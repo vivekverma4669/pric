@@ -9,14 +9,14 @@ import ReportHeader from "@/components/PatientReports/ReportHeader";
 
 
 const ReportsList = () => {
-  const [appointments, setAppointments] = useState([]);
+  const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(false);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const params = useParams();  
   const id = params.id;
 
 
-  const getAppointments = async () => {
+  const getReports = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
@@ -38,7 +38,7 @@ const ReportsList = () => {
         })),
         medicalTest: appointment.prescription.medical_tests?.join(", ") || "No Medical Tests",
       }));
-      setAppointments(appointmentsData);
+      setReports(appointmentsData);
     }
     catch (error) {
       console.error("Error fetching appointments:", error);
@@ -47,7 +47,7 @@ const ReportsList = () => {
   };
 
   useEffect(() => {
-    getAppointments();
+    getReports();
   }, []);
 
   return (
@@ -57,7 +57,7 @@ const ReportsList = () => {
         Test Reports
       </div>
 
-       
+      
 
       {loading ? (
         <Image 
@@ -68,13 +68,23 @@ const ReportsList = () => {
         />
       ) : (
         <div className="relative max-w-[1350px] mt-4">
-          <div
-            className="absolute top-0 bottom-10 w-[3px] bg-orange-500"
+
+         
+          <div className="absolute top-0 bottom-10 w-[3px] bg-orange-500"
             style={{ transform: "translateX(25px)" }}
           />
-          {appointments.map((appointment, index) => (
-            <ReportsItem key={index} appointment={appointment} />
-          ))}
+           
+           {reports.length === 0 ? (
+            <h1 className="text-black font-bold text-4xl"> 
+              No Test Reports found  
+              <span className="text-6xl">👩‍⚕️</span> 
+            </h1>
+          ) : (
+            reports.map((report, index) => (
+              <ReportsItem key={index} report={report} />
+            ))
+          )}
+
         </div>
       )}
 

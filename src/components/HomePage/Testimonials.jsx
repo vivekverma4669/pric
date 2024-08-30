@@ -43,7 +43,7 @@ const testimonialsCenter = [
 const TestimonialSection = () => {
   return (
     <>
-    <div className="relative mb-12" id="testimonials">
+    <div className="relative mb-12 " id="testimonials" >
         <h2 className="relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
       More than 100,000 Patients Cured
         <span className="absolute inset-0 flex items-center justify-center font-bold text-orange-400 text-3xl max-md:text-2xl">
@@ -54,7 +54,7 @@ const TestimonialSection = () => {
       
     <section className="px-12 pt-20  pb-24 bg-amber-200 max-md:px-5 w-full">
         
-     <div className="w-full max-w-[1468px]  m-auto max-md:max-w-full"  >
+     <div className={`w-full max-w-[1468px]  m-auto max-md:max-w-full `}>
          
      <div className="flex  gap-5 max-md:flex-col ">
 
@@ -95,7 +95,7 @@ const TestimonialSection = () => {
             <div className="flex flex-col self-end max-w-full w-[475px]" >
               {testimonials.slice(0, 3).map((testimonial, index) => (
                 <div key={index} className={index > 0 ? "mt-8" : ""}>
-                  <TestimonialCard {...testimonial} />
+                  <TestimonialCard {...testimonial}  />
                 </div>
               ))}
             </div>
@@ -108,7 +108,7 @@ const TestimonialSection = () => {
 
      </div>
 
-     <nav className=" flex flex-col gap-6  absolute">
+     <nav className=" flex flex-col gap-6  absolute "  >
   {[...Array(4)].map((_, index) => (
     <div key={index} className="flex gap-6">
       {[...Array(4)].map((_, innerIndex) => (
