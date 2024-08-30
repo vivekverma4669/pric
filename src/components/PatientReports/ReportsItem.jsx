@@ -61,12 +61,20 @@ const ReportsItem = ({ report }) => {
               />
             </div>
 
-            {report.reports.map((item, index) => (
+            {/* {report.reports.map((item, index) => (
               <div key={index} className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full hover:border-l hover:border-orange-600">
                 <div className="w-[30%]">{item.medicalReportValue}</div>
                 <div className="w-[30%]">{item.generatedAt}</div>
               </div>
-            ))}
+            ))} */}
+
+            <div className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full hover:border-l hover:border-orange-600">
+                <div className=" text-[15px] font-semibold">{'creatinine '} <br/>
+                <span className="font-normal text-[12px] m-1"> 0.6 -1.1 </span>
+                </div>
+                <div className="">{'0.9'}</div>
+              </div>
+            
 
             <div className="flex gap-1 self-end mt-5 mb-5 font-semibold text-orange-400">
               <Image
