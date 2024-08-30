@@ -11,12 +11,13 @@ const Newsletter = () => {
         <div className="flex flex-wrap gap-8 justify-between self-stretch mt-1.5 w-full max-md:max-w-full " >
           <div className="flex flex-col max-md:max-w-full"  >
             <div className="mr-5 text-3xl font-bold text-orange-400 max-md:mr-2.5 max-md:max-w-full">
-              Get an update every week
+            Stay inform and take  <br/>control of your health
             </div>
-            <div className="mt-3 text-base leading-6 text-neutral-700 max-md:max-w-full">
-              Livedoc was created in order to improve the patient experience.{" "}
+            <div className="mt-3 text-base font-normal  leading-6 text-neutral-700 max-md:max-w-full">
+            Subscribe our newsletter for the latest insights tips and <br/> breakthroughs in managing rheumatoid arthritis
+             {" "}
               <br />
-              Providing world-class tests, and a wide range of other services.
+           
             </div>
             
           <div className="flex gap-4 mt-1.5  max-w-full text-base text-neutral-700 ">

@@ -15,7 +15,7 @@ const OurDoctors = () => {
 
   const doctors = [
     {
-      image: img1,
+      image: "https://ui-avatars.com/api/?name=Elon+Musk",
       name: "Prashant Aggarwal",
       specialization: "MD DM (Immunology)",
       experience: "20+",
@@ -107,8 +107,8 @@ const OurDoctors = () => {
             height={28}
             className="object-contain shrink-0 my-auto cursor-pointer
              hover:bg-slate-200 hover:border-orange-600 hover:text-black 
-  transition duration-300 ease-in-out 
-  active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px] "
+              transition duration-300 ease-in-out 
+              active:bg-orange-500 active:shadow-inner  border-solid rounded-[20px] "
             onClick={handleRightClick}
           />
         </div>

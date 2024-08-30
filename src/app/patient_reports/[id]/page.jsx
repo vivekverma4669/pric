@@ -20,7 +20,7 @@ const ReportsList = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-          `${API_URL}/api/v1/patient/reports?patient_id=${id || 1}`
+          `${API_URL}/api/v1/patient/reports?patient_id=${id ||6767}`
       );
    
       const appointmentsData = res.data.payload.appointments.map((appointment) => ({
@@ -53,9 +53,11 @@ const ReportsList = () => {
   return (
     <div className="flex flex-col items-center pb-32 bg-white max-md:pb-24 w-full" >
         <ReportHeader/>
-      <div className="mt-16 text-2xl font-bold text-neutral-800 max-md:mt-10">
+      
+        { reports.length!=0 && <div className="mt-16 text-2xl font-bold text-neutral-800 max-md:mt-10 bg-slate-100 p-14">
         Test Reports
       </div>
+     }
 
       
 

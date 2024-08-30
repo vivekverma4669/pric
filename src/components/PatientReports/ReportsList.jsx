@@ -5,7 +5,6 @@ import ReportsItem from "@/components/PatientReports/ReportsItem";
 import loadingImage from '../../images/loading.gif'; 
 import Image from "next/image";
 import { useParams } from 'next/navigation';  
-import ReportHeader from "@/components/PatientReports/ReportHeader";
 
 
 const ReportsList = () => {
@@ -15,33 +14,26 @@ const ReportsList = () => {
   const params = useParams();  
   const id = params.id;
 
-
   const getReports = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
-          `${API_URL}/api/v1/patient/reports?patient_id=${id || 1}`
+        `${API_URL}/api/v1/patient/reports?patient_id=${id || 6767}`
       );
-   
-      const appointmentsData = res.data.payload.appointments.map((appointment) => ({
-        date: {
-          day: new Date(appointment.visit_date).getDate(),
-          month: new Date(appointment.visit_date).toLocaleString('default', { month: 'short' })
-        },
-        doctor: appointment.doctor_name,
-        diagnosis: appointment.prescription.diagnosis || "   ",
-        remarks: appointment.prescription.remarks || "No Remarks",
-        medicines: appointment.prescription.medicines.map((medicine) => ({
-          name: medicine.name,
-          frequency: medicine.description,
-          instructions: medicine.remark,
+      const reportData = res.data.payload.reports.map((reportCategory) => ({
+        medicalTest: reportCategory.medical_test,
+        full_name: res.data.payload.full_name,
+        gender: res.data.payload.gender,
+        reports: reportCategory.reports.map((report) => ({
+          medicalReportValue: report.medical_report_value,
+          reportId: report.report_id,
+          generatedAt: report.generated_at,
         })),
-        medicalTest: appointment.prescription.medical_tests?.join(", ") || "No Medical Tests",
       }));
-      setReports(appointmentsData);
-    }
-    catch (error) {
-      console.error("Error fetching appointments:", error);
+
+      setReports(reportData);
+    } catch (error) {
+      console.error("Error fetching reports:", error);
     }
     setLoading(false);
   };
@@ -51,13 +43,12 @@ const ReportsList = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center pb-32 bg-white max-md:pb-24 w-full" >
-        <ReportHeader/>
-      <div className="mt-16 text-2xl font-bold text-neutral-800 max-md:mt-10">
-        Test Reports
-      </div>
-
-      
+    <div className="flex flex-col items-center pb-32 bg-white max-md:pb-24 w-full">
+      {reports.length !== 0 && (
+        <div className="mt-16 text-2xl font-bold text-neutral-800 max-md:mt-10">
+          Test Reports
+        </div>
+      )}
 
       {loading ? (
         <Image 
@@ -68,28 +59,21 @@ const ReportsList = () => {
         />
       ) : (
         <div className="relative max-w-[1350px] mt-4">
-
-         
           <div className="absolute top-0 bottom-10 w-[3px] bg-orange-500"
-            style={{ transform: "translateX(25px)" }}
+               style={{ transform: "translateX(25px)" }}
           />
-           
-           {reports.length === 0 ? (
+          {reports.length === 0 ? (
             <h1 className="text-black font-bold text-4xl"> 
               No Test Reports found  
               <span className="text-6xl">👩‍⚕️</span> 
             </h1>
           ) : (
-            reports.map((report, index) => (
-              <ReportsItem key={index} report={report} />
+            reports.map((reportCategory, index) => (
+              <ReportsItem key={index} report={reportCategory} />
             ))
           )}
-
         </div>
       )}
-
-
-    
     </div>
   );
 };
