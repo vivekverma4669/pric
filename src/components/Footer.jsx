@@ -94,7 +94,7 @@ const Footer = () => {
           </div>
           <div className="mt-4 text-base leading-6 text-slate-100">
             <span className="text-orange-300">
-              World's Best Holistic <br/> Rheumatology Centre
+              World&apos;s Best Holistic <br/> Rheumatology Centre
             </span>
             <br />
            
