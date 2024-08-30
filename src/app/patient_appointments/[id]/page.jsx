@@ -83,7 +83,7 @@ const AppointmentListPage = () => {
         <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
         <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-orange-500 opacity-0 group-hover:opacity-100 rounded-[800px]"></span>
         <span className="relative transition-colors duration-300 delay-200 group-hover:text-black ease">
-          Contact Us
+         Book An Appointment 
         </span>
       </button>
     </div>
