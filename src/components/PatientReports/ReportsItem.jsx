@@ -5,6 +5,7 @@ import Image from "next/image";
 import arrowUp from '../../images/arrowUp.svg';
 import download from '../../images/download.svg';
 import editRaise from '../../images/raise-query.svg';
+import Link from "next/link";
 const ReportsItem = ({ appointment }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
@@ -75,7 +76,7 @@ const ReportsItem = ({ appointment }) => {
                 className="object-contain shrink-0 aspect-square w-[18px] "
                 alt="Query icon"
               />
-              <div>Raise a Query</div>
+               <Link  href={'/raise_query'} >  <div>Raise a Query</div></Link> 
             </div>
           </div>
         )}

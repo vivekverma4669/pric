@@ -31,9 +31,10 @@ const JointsCare = () => {
                 <br />
                 you and your loved ones.
               </p>
-              <button className="px-14 py-6 mt-8 text-center border border-solid bg-slate-100 border-slate-100 rounded-[800px] text-neutral-700 max-md:px-5    hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner">
-                Learn more
-              </button>
+             
+              <button className="px-14 py-6 mt-8 text-center border-solid  bg-slate-100 border-slate-100 text-black rounded-[800px] max-md:px-5   hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner hover:bg-orange-400">
+                    Learn more
+                  </button>
             </div>
           </div>
           <Image

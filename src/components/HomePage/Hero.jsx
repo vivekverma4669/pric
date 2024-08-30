@@ -4,7 +4,7 @@ import hero from '../../images/hero.png';
 const Hero = () => {
   return (
     <section className="relative z-10 self-center mt-32 mb-0 w-full max-w-[75%] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full">
-      <div className="flex gap-5 max-md:flex-col l:w-[1200px]">
+      <div className="flex gap-5 max-md:flex-col max-w-[1350px]">
         <div className="flex flex-col w-[50%]  max-md:w-full  ">
           <div className="flex relative flex-col mt-20  font-bold text-amber-200 max-md:mt-10 max-md:max-w-full">
             <h1 className="mr-2 text-5xl max-md:mr-2.5 max-md:max-w-full max-md:text-4xl">
@@ -17,7 +17,7 @@ const Hero = () => {
               You can get the care you need 24/7 – be it online or in <br />
               person. You will be treated by caring specialist doctors.
             </p>
-            <button className="self-start px-12 py-6 mt-4 text-sm text-center text-black bg-amber-200 border border-amber-200 border-solid rounded-[800px] max-md:px-5     hover:bg-white hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner hover:border-[1.5px]">
+            <button className="self-start px-12 py-6 mt-4 text-sm text-center text-black bg-amber-200 border border-amber-200 border-solid rounded-[800px] max-md:px-5     hover:bg-orange-300 hover:border-orange-600 hover:text-black hover:border-solid transition duration-300 active:bg-orange-500 active:shadow-inner hover:border-[1.5px]">
               Make an Appointment
             </button>
           </div>

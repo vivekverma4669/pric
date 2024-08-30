@@ -121,7 +121,6 @@
 // export default Header;
 
 
-
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -137,7 +136,7 @@ import styles from '../style/buttonStyle.css'
 
 const MenuItem = ({ icon, text, href, isActive }) => (
   <Link href={href}>
-    <div className={`flex gap-3.5 mt-3 ml-2 ${isActive ? 'px-2 py-1.5  rounded bg-orange-400 bg-opacity-50' : ''}`}>
+    <div className={`flex gap-3.5  ml-2 ${isActive ? 'px-2 py-1.5  rounded bg-orange-400 bg-opacity-50' : 'px-2 py-1.5'}`}>
       <Image loading="lazy" src={icon} alt="" className={`object-contain shrink-0 my-auto aspect-square w-[18px] ${isActive ? 'active-filter' : ''} `}
        />
       <div className={'grow shrink w-[130px]'}>{text}</div>

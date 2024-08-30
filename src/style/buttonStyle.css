@@ -33,6 +33,81 @@ slider buttons
 
 
 /* Global styles or in your CSS module */
+
+.primaryBtn {
+  position: relative;
+  align-self: center;
+  padding: 1.25rem 4rem;
+  margin-top: 2.75rem;
+  max-width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #fb923c; /* Equivalent to bg-orange-400 */
+  border: 1px solid #fb923c; /* Equivalent to border-orange-400 */
+  border-radius: 800px;
+  width: 708px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: scale(0.95);
+}
+
+.primaryBtn span {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn span.top-left, .primaryBtn span.bottom-right {
+  width: 0;
+  height: 0;
+  border: 2px solid #ea580c; /* Equivalent to border-orange-600 */
+}
+
+.primaryBtn:hover span.top-left, .primaryBtn:hover span.bottom-right {
+  width: 100%;
+}
+
+.primaryBtn span.bg-fill {
+  width: 100%;
+  height: 0;
+  background-color: #ea580c; /* Equivalent to bg-orange-600 */
+  transition: all 0.3s ease 0.2s;
+}
+
+.primaryBtn:hover span.bg-fill {
+  height: 100%;
+}
+
+.primaryBtn span.bg-opacity {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f97316; /* Equivalent to bg-orange-500 */
+  opacity: 0;
+  border-radius: 800px;
+  transition: all 0.3s ease 0.3s;
+}
+
+.primaryBtn:hover span.bg-opacity {
+  opacity: 1;
+}
+
+.primaryBtn span.text {
+  position: relative;
+  transition: color 0.3s ease 0.2s;
+}
+
+.primaryBtn:hover span.text {
+  color: black;
+}
+
+
 .active-filter {
   filter: brightness(0) saturate(100%) invert(27%) sepia(77%) saturate(1742%) hue-rotate(0deg) brightness(100%) contrast(70%);
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import arrowUp from '../../images/arrowUp.svg';
 import download from '../../images/download.svg';
 import editRaise from '../../images/raise-query.svg';
+import Link from "next/link";
 
 const AppointmentItem = ({ appointment }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,9 +65,9 @@ const AppointmentItem = ({ appointment }) => {
              {appointment.medicines.map((medicine, index) => (
              <div  key={index}  className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full 
              hover:border-l hover: border-orange-600" >
-                <div className="w-[30%]">{medicine.name}</div>
-                <div className="w-[30%]">{medicine.frequency}</div>
-                <div className="w-[30%]">{medicine.instructions}</div>
+                <div className="w-[51%] overflow-x-auto" >{medicine.name}</div>
+                <div className="w-[20%]">{medicine.frequency}</div>
+                <div className="w-[20%]">{medicine.instructions}</div>
             </div>
             ))}  
 
@@ -74,6 +75,7 @@ const AppointmentItem = ({ appointment }) => {
               Medical Test
             </div>
             <div className="self-start mt-2">{appointment.medicalTest}</div>
+
             <div className="flex gap-1 self-end mt-5  mb-5 font-semibold text-orange-400">
               <Image
                 loading="lazy"
@@ -81,8 +83,9 @@ const AppointmentItem = ({ appointment }) => {
                 className="object-contain shrink-0 aspect-square w-[18px] "
                 alt="Query icon"
               />
-              <div>Raise a Query</div>
+            <Link href={'/raise_query'} >  <div>Raise a Query</div></Link> 
             </div>
+            
           </div>
         )}
       </div>

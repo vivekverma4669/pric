@@ -93,7 +93,9 @@ const OurDoctors = () => {
               "
             onClick={handleLeftClick}
          />
-          <div className="flex flex-row  gap-8 ">
+          <div 
+          className="flex flex-row  gap-8 "
+          >
             {visibleDoctors.map((doctor, index) => (
               <DoctorCard key={index} {...doctor} />
             ))}
