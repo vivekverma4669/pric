@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function OTPVerification({ patientId, login }) {
   const [otp, setOtp] = useState(new Array(4).fill(''));
-  const router = useRouter(); // Initialize router
+  const router = useRouter(); 
 
   const verifyOtp = async () => {
     const otpString = otp.join(''); 
@@ -18,7 +18,7 @@ function OTPVerification({ patientId, login }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ patient_id: patientId, otp: otpString }), // Use the combined OTP string
+        body: JSON.stringify({ patient_id: patientId, otp: otpString }),
       });
 
       if (!response.ok) {
@@ -70,7 +70,8 @@ function OTPVerification({ patientId, login }) {
             id={`otp-input-${index}`}
             type="text"
             maxLength="1"
-            className="px-6 w-12 h-12 rounded-2xl border border-solid bg-neutral-100 border-orange-400 text-black border-opacity-30 max-md:px-5" 
+            className=" px-6 w-12 h-12 rounded-2xl border border-solid bg-neutral-100 border-orange-400 text-black border-opacity-30 max-md:px-5" 
+              style={{color:"black"}}
             aria-label={`OTP digit ${index + 1}`}
             value={digit}
             onChange={(e) => handleChange(e, index)}
