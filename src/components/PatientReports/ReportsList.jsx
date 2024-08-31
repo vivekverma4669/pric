@@ -98,7 +98,7 @@ const ReportsList = () => {
   const getReports = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API_URL}/api/v1/patient/reports?patient_id=6767`);
+      const res = await axios.get(`${API_URL}/api/v1/patient/reports?patient_id=${id || 6767}`);
       
       // Adjusting the mapping according to the new payload structure
       const reportData = res.data.payload.medical_test_reports.map((report) => ({
