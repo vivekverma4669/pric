@@ -118,7 +118,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex w-[55%] max-md:max-w-full justify-between ml-44" >
+        <div className="flex w-[55%] max-md:max-w-full justify-between ml-36" >
           <div className="flex gap-32 max-md:flex-col justify-between ml-36">
 
             <div className="flex flex-col  max-md:ml-0 max-md:w-full ">
@@ -142,10 +142,10 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col ml-5  max-md:ml-0 max-md:w-full pr-0" >
+            <div className="flex flex-col  max-md:ml-0 max-md:w-full pr-0 " >
               <div className="flex flex-col items-start text-base leading-loose text-orange-100 max-md:mt-10">
                 <div className="self-stretch text-xl leading-loose text-slate-100">
-                  Customer Care
+                 Info
                 </div>
                 <div className="mt-12 max-md:mt-10">About Us</div>
                 <div className="mt-1.5">Contact US</div>

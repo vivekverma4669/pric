@@ -28,19 +28,31 @@ const OurDoctors = () => {
     },
     {
       image: img3,
-      name: "Leo Mario",
+      name: "Vaidya Prabhu",
       specialization: "Physiotherapy, FitCare",
       experience: "25",
     },
     {
       image: img3,
-      name: "Rajan Verma",
+      name: "Khushboo",
       specialization: "Physiotherapy, FitCare",
       experience: "25",
     },
     {
       image: img3,
-      name: "Vivek Verma",
+      name: "Taruna",
+      specialization: "Physiotherapy, FitCare",
+      experience: "1",
+    },
+    {
+      image: img3,
+      name: "Harmanjot Kaur",
+      specialization: "Physiotherapy, FitCare",
+      experience: "1",
+    },
+    {
+      image: img3,
+      name: "Rohit K",
       specialization: "Physiotherapy, FitCare",
       experience: "1",
     }

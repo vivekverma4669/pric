@@ -2,6 +2,9 @@
 import React, { useState, useContext } from 'react';
 import OTPVerification from './OtpVerification';
 import { AuthContext } from '@/AuthContextApi/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function LoginForm() {
   const [patientId, setPatientId] = useState('');
@@ -25,6 +28,7 @@ function LoginForm() {
       const result = await response.json();
       console.log('OTP Response:', result); 
       setOtpOpen(true);
+      toast.success("OTP send to your register mobile number")
     } catch (error) {
       console.error('Error requesting OTP:', error);
       alert('Failed to request OTP. Please try again.');
@@ -34,7 +38,8 @@ function LoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (patientId.trim() === '') {
-      alert('Please enter a Patient ID');
+    
+      toast.error("Please enter a Patient ID ")
       return;
     }
     requestOtp();
@@ -42,6 +47,7 @@ function LoginForm() {
 
   return (
     <div className="flex flex-col grow justify-center items-center px-20 py-40 w-full text-base font-bold bg-white rounded-2xl shadow-[4px_4px_10px_rgba(0,0,0,0.25)] max-md:px-5 max-md:py-24 max-md:mt-10 max-md:max-w-full ">
+      <ToastContainer/>
       <div className="flex flex-col items-center max-w-full w-[602px]">
         <h1 className="text-xl text-orange-400">PRIC</h1>
         {otpOpen ? (

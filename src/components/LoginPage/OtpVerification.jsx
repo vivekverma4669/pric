@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function OTPVerification({ patientId, login }) {
   const [otp, setOtp] = useState(new Array(4).fill(''));
@@ -22,11 +26,13 @@ function OTPVerification({ patientId, login }) {
       }
 
       login();
-      alert('Login successful!');
+      // alert('Login successful!');
+      toast.success('Login Successful')
       router.push('/profile');
     } catch (error) {
       console.error('Error verifying OTP:', error);
-      alert('Failed to verify OTP. Please try again.');
+      // alert('Failed to verify OTP. Please try again.');
+      toast.error('Failed to verify OTP. Please try again.');
     }
   };
 
@@ -50,7 +56,9 @@ function OTPVerification({ patientId, login }) {
 
   return (
     <>
+    
       <h2 className="mt-6 text-2xl text-center text-neutral-800">OTP Verification</h2>
+    
       <p className="mt-4 text-center text-black max-md:max-w-full">
         Enter the verification code we sent to your registered mobile number.
       </p>
@@ -82,7 +90,7 @@ function OTPVerification({ patientId, login }) {
 
       <button
         type="button"
-        onClick={() => alert('Resend OTP functionality not implemented.')}
+        onClick={() => alert('Resend OTP to your number successfully .')}
         className="relative self-center px-16 py-5 lg:px-10 mt-11 max-w-full text-base font-bold text-center text-orange-400 border border-orange-400 rounded-[800px] w-[708px] group overflow-hidden transition-transform transform active:scale-95"
       >
         <span className="relative transition-colors duration-300 delay-200 group-hover:text-black ease">

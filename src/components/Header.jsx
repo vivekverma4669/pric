@@ -12,16 +12,31 @@ import editIconMenu from "../images/editIconMenu.svg";
 import editProfileMenu from "../images/editProfileMenu.svg";
 import styles from '../style/buttonStyle.css'
 import { AuthContext } from "@/AuthContextApi/AuthContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const MenuItem = ({ icon, text, href, isActive, onClick }) => (
-  <div
-    onClick={onClick}
-    className={`flex gap-3.5 ml-2 cursor-pointer ${isActive ? 'px-2 py-1.5 rounded bg-orange-400 bg-opacity-50' : 'px-2 py-1.5'}
-    hover:bg-orange-400 hover:bg-opacity-50 hover:border hover:border-orange-500`}
-  >
-    <Image loading="lazy" src={icon} alt="" className={`object-contain shrink-0 my-auto aspect-square w-[18px] ${isActive ? 'active-filter' : ''}`} />
-    <div className={'grow shrink w-[130px]'}>{text}</div>
-  </div>
+  href ? (
+    <Link href={href}>
+      <div
+        className={`flex gap-3.5 ml-2 cursor-pointer ${isActive ? 'px-2 py-1.5 rounded bg-orange-400 bg-opacity-50' : 'px-2 py-1.5'}
+        hover:bg-orange-400 hover:bg-opacity-50 hover:border hover:border-orange-500`}
+      >
+        <Image loading="lazy" src={icon} alt="" className={`object-contain shrink-0 my-auto aspect-square w-[18px] ${isActive ? 'active-filter' : ''}`} />
+        <div className={'grow shrink w-[130px]'}>{text}</div>
+      </div>
+    </Link>
+  ) : (
+    <div
+      onClick={onClick}
+      className={`flex gap-3.5 ml-2 cursor-pointer ${isActive ? 'px-2 py-1.5 rounded bg-orange-400 bg-opacity-50' : 'px-2 py-1.5'}
+      hover:bg-orange-400 hover:bg-opacity-50 hover:border hover:border-orange-500`}
+    >
+      <Image loading="lazy" src={icon} alt="" className={`object-contain shrink-0 my-auto aspect-square w-[18px] ${isActive ? 'active-filter' : ''}`} />
+      <div className={'grow shrink w-[130px]'}>{text}</div>
+    </div>
+  )
 );
 
 const Header = () => {
@@ -37,7 +52,9 @@ const Header = () => {
 
   return (
     <header className="flex relative flex-col justify-center items-center px-16 py-4 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full">
+       <ToastContainer/>
       <nav className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1465px] max-md:max-w-full">
+     
         <div className="self-stretch my-auto text-xl">
           <Link href="/"> <Image src={logo} alt="logo"/></Link>
         </div>
@@ -107,6 +124,7 @@ const Header = () => {
                     text="Logout"
                     isActive={pathname === "/"}
                     onClick={handleLogout} 
+                   
                   />
                 </div>
               </div>

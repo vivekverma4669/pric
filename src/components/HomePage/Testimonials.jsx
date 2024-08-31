@@ -69,7 +69,7 @@ const TestimonialSection = () => {
               ))}
             </div>
 
-            <div className="flex flex-col self-end max-w-full w-[475px]" >
+            <div className="flex flex-col self-end max-w-full w-[475px] overflow-y-hidden" >
                 <div className='mt-8'>
                   <TestimonialCard {...testimonials[2]} />
                 </div>
@@ -104,7 +104,9 @@ const TestimonialSection = () => {
 
 
         </div>
-
+           
+          
+          {/* <div className='bg-orange-400'> heloo</div> */}
 
      </div>
 

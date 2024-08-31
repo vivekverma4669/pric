@@ -233,6 +233,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import InputField from "./InputField";
 import ProfileHeader from "./ProfileHeader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -301,10 +303,12 @@ const ProfilePage = () => {
         contact_number: profile.contactNumber,
         email: profile.email
       });
-      alert('Profile details updated successfully!');
+      // alert('Profile details updated successfully!');
+      toast.success('Profile details updated successfully!')
     } catch (error) {
       console.log("Error saving profile details:", error);
-      alert('Failed to update profile details.');
+      // alert('Failed to update profile details.');
+      toast.error('Failed to update profile details!')
     } finally {
       setLoading(false);
     }
@@ -313,6 +317,7 @@ const ProfilePage = () => {
   return (
     <div className="flex overflow-hidden flex-col pb-56 bg-white">
       <ProfileHeader />
+      <ToastContainer/>
       <main className="flex flex-col self-center mt-10 max-w-full w-[1242px]">
         <section>
           <h1 className="self-start text-3xl font-bold text-orange-400 max-md:max-w-full mb-10">
