@@ -1,4 +1,3 @@
-
 import AppointmentsPage from '@/components/PatientAppointment/AppointmentsPage'
 import React from 'react'
 

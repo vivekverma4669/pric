@@ -13,9 +13,11 @@ const ReportsItem = ({ report }) => {
 
   return (
     <div className="flex flex-wrap gap-2 mb-4 max-w-full w-[658px]">
-     
-      <DateBadge day={20} month={'Aug'} />
-      
+    <DateBadge 
+      day={new Date(report.report_date).getDate()} 
+      month={new Date(report.report_date).toLocaleString('default', { month: 'short' })} 
+/>
+
       <div className="flex flex-col grow shrink-0 rounded-2xl basis-0 bg-neutral-100 w-fit max-md:max-w-full">
         <div
           className="flex flex-wrap gap-5 justify-between px-6 py-3.5 text-base font-semibold rounded-2xl bg-zinc-300 bg-opacity-50 text-neutral-800 max-md:px-5 max-md:max-w-full cursor-pointer"
@@ -61,20 +63,17 @@ const ReportsItem = ({ report }) => {
               />
             </div>
 
-            {/* {report.reports.map((item, index) => (
+            {report.reports.map((item, index) => (
               <div key={index} className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full hover:border-l hover:border-orange-600">
-                <div className="w-[30%]">{item.medicalReportValue}</div>
-                <div className="w-[30%]">{item.generatedAt}</div>
-              </div>
-            ))} */}
-
-            <div className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full hover:border-l hover:border-orange-600">
-                <div className=" text-[15px] font-semibold">{'creatinine '} <br/>
-                <span className="font-normal text-[12px] m-1"> 0.6 -1.1 </span>
+                <div className="text-[15px] font-semibold">
+                  {item.medicalTest} <br />
+                  <span className="font-normal text-[12px] m-1">
+                    {item.min} - {item.max}
+                  </span>
                 </div>
-                <div className="">{'0.9'}</div>
+                <div>{item.value}</div>
               </div>
-            
+            ))}
 
             <div className="flex gap-1 self-end mt-5 mb-5 font-semibold text-orange-400">
               <Image
