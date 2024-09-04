@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/AuthContextApi/AuthContext";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,12 +12,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
          <link rel="icon" href="https://img.freepik.com/free-vector/gradient-p-logo-template_23-2149372725.jpg?semt=ais_hybrid" />
       <body className={inter.className}>
         
-      <AuthProvider>
+       <AuthProvider>
+         <Header/>
           {children}
         </AuthProvider>
         

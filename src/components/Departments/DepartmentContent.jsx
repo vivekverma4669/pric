@@ -42,6 +42,7 @@ let arr = [
   },
 ];
 
+
 const DepartmentContent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsToShow = 4;

@@ -2,10 +2,6 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import Image from 'next/image';
 import loginPageIMage from '../../images/loginPageIMage.svg'
-import OTPVerification from './OtpVerification';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 
 function LoginPage() {
   return (
@@ -22,7 +18,7 @@ function LoginPage() {
             />
           </section>
           <section className="flex flex-col ml-5 w-[60%] max-md:ml-0 max-md:w-full">
-            <LoginForm /> 
+            <LoginForm/> 
             
           </section>
         </div>

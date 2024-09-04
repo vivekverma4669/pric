@@ -1,13 +1,8 @@
-import React from 'react'
-import AppointmentForm from '@/components/Appointment/appointmentMain'
-import AppointmentHeader from '@/components/Appointment/appointmentHeader'
+import AppointmentPage from '@/components/Appointment/AppointmentPage'
 
 const page = () => {
   return (
-    <>
-    
-    <AppointmentForm/>
-    </>
+    <AppointmentPage/>
   )
 }
 

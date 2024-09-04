@@ -2,9 +2,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import DoctorCard from './DoctorCard';
-import img1 from '../../images/anita.png.png';
-import img2 from '../../images/jane.png.png';
-import img3 from '../../images/leo-mario.png.png';
 import grp3 from '../../images/group3.png';
 import grp4 from '../../images/group4.png';
 import leftArrow from '../../images/left.png';
@@ -21,37 +18,37 @@ const OurDoctors = () => {
       experience: "20+",
     },
     {
-      image: img2,
+      image: "",
       name: "Bharti Aggarwal",
       specialization: "MD Medicine PDCC",
       experience: "12",
     },
     {
-      image: img3,
+      image: "",
       name: "Vaidya Prabhu",
       specialization: "Physiotherapy, FitCare",
       experience: "25",
     },
     {
-      image: img3,
+      image: "",
       name: "Khushboo",
       specialization: "Physiotherapy, FitCare",
       experience: "25",
     },
     {
-      image: img3,
+      image: "",
       name: "Taruna",
       specialization: "Physiotherapy, FitCare",
       experience: "1",
     },
     {
-      image: img3,
+      image: "",
       name: "Harmanjot Kaur",
       specialization: "Physiotherapy, FitCare",
       experience: "1",
     },
     {
-      image: img3,
+      image: "",
       name: "Rohit K",
       specialization: "Physiotherapy, FitCare",
       experience: "1",

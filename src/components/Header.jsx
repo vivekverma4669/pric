@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useContext, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'; 
 import logo from '../images/logo.png'
-import profile from "../images/profile.svg";
 import logoutImg from "../images/logout.svg";
 import reports from "../images/reports.svg";
 import appointmentIcon from "../images/appointmentIconMenu.svg";
@@ -41,7 +40,7 @@ const MenuItem = ({ icon, text, href, isActive, onClick }) => (
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const { isAuthenticated, logout } = useContext(AuthContext); 
+  const { isAuthenticated, logout ,formatUserData } = useContext(AuthContext); 
   const pathname = usePathname(); 
   const router = useRouter();
 
@@ -51,7 +50,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex relative flex-col justify-center items-center px-16 py-4 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full">
+    <header className={`flex relative flex-col justify-center items-center px-16 py-4 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
        <ToastContainer/>
       <nav className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1465px] max-md:max-w-full">
      
@@ -86,14 +85,15 @@ const Header = () => {
           <div>
             <Image
               onClick={() => setToggle(!toggle)}
-              src={'https://ui-avatars.com/api/?name=Ashu+Balia'}
+              src={`https://ui-avatars.com/api/?${formatUserData.full_name}`}
               width={50}
               height={50}
               alt={"profile image"}
               className="cursor-pointer rounded-full"
             />
+
             {toggle && (
-              <div className="flex flex-col text-sm leading-loose rounded-none max-w-[202px] text-neutral-700 absolute right-16 z-50">
+              <div className="flex flex-col text-sm leading-loose rounded-none max-w-[202px] text-neutral-700 absolute right-16 z-40">
                 <div className="flex flex-col items-start px-2 py-3.5 w-full bg-white rounded-md shadow-[0px_0px_5px_rgba(0,0,0,0.15)]">
                   <MenuItem
                     icon={editProfileMenu}

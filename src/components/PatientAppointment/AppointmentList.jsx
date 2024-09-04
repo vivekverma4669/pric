@@ -6,6 +6,7 @@ import loadingImage from '../../images/loading.gif'
 import Image from "next/image";
 import { useParams } from 'next/navigation';
 import Link from "next/link";
+import Cookies from "js-cookie";
 
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
@@ -14,13 +15,17 @@ const AppointmentList = () => {
   const params = useParams();  
   const id = params.id;
 
+  const token = Cookies.get('token');
+  console.log(token);
 
   const getAppointments = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(
-          `${API_URL}/api/v1/patient/appointments?patient_id=${id || 1}`
-      );
+      const res = await axios.get(`${API_URL}/api/v1/patient/appointments`, {
+        headers: {
+          'Authorization': `Token ${token}`
+        }
+      });
    
       const appointmentsData = res.data.payload.appointments.map((appointment) => ({
         date: {
@@ -54,8 +59,6 @@ const AppointmentList = () => {
       <div className="mt-16 text-2xl font-bold text-neutral-800 max-md:mt-10">
         Appointments
       </div>
-
-       
 
       {loading ? (
         <Image 

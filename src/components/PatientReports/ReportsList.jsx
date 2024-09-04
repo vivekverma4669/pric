@@ -5,6 +5,7 @@ import ReportsItem from "@/components/PatientReports/ReportsItem";
 import loadingImage from '../../images/loading.gif';
 import Image from "next/image";
 import { useParams } from 'next/navigation';
+import Cookies from "js-cookie";
 
 const ReportsList = () => {
   const [reports, setReports] = useState([]);
@@ -12,14 +13,19 @@ const ReportsList = () => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const params = useParams();
   const id = params.id;
+  const token = Cookies.get('token') || '';
 
   const getReports = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API_URL}/api/v1/patient/reports?patient_id=${id || 6767}`);
+      const res = await axios.get(`${API_URL}/api/v1/patient/reports`,{
+        headers: {
+          'Authorization': `Token ${token}`
+        }
+      });
       const reportData = res.data.payload.medical_test_reports.map((report) => {
-        const [day, month, year] = report.report_date.split('-'); // Split 'DD-MM-YYYY'
-        const formattedDate = `${year}-${month}-${day}`; // Rearrange to 'YYYY-MM-DD'
+      const [day, month, year] = report.report_date.split('-'); 
+      const formattedDate = `${year}-${month}-${day}`;
   
         return {
           medicalTest: report.medical_test,

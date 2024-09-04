@@ -23,7 +23,7 @@ const MainLayout = () => {
           alt="Background image"
           className="object-cover absolute inset-0 size-full"
         /> 
-         <Header/>
+         
          <Hero/> 
        </div>
         <Departments/>

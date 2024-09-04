@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative z-10 self-center mt-32 mb-0 w-full max-w-[75%] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full">
+    <section className="relative z-10 self-center mt-24 mb-0 w-full max-w-[75%] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full">
       <div className="flex gap-5 max-md:flex-col max-w-[1350px]">
         <div className="flex flex-col w-[50%]  max-md:w-full  ">
           <div className="flex relative flex-col mt-20  font-bold text-amber-200 max-md:mt-10 max-md:max-w-full">
@@ -29,10 +29,11 @@ const Hero = () => {
           <Image
             src={hero}
             alt="Doctor caring for a patient"
-            width={740}
-            height={620}
+            width={500}
+            height={500}
             layout="responsive"
-            className="object-contain grow max-md:mt-10 max-md:max-w-full"
+            className="object-contain grow max-md:mt-10 max-md:max-w-full "
+             style={{borderRadius :"50%"}}
           />
         </div>
       </div>

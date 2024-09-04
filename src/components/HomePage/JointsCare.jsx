@@ -1,14 +1,18 @@
 import Image from "next/image";
 import jointCare from '../../images/joint-care.png'
-import grp4 from '../../images/group3.png'
+import grp3 from '../../images/group3.png'
+import grp4 from '../../images/group4.png'
 
 
 const JointsCare = () => {
   return (
     <section className="flex flex-wrap gap-10 self-stretch py-10 pr-8 pl-20 mt-48 w-full bg-orange-300 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-      <div className="flex-auto max-md:max-w-full">
+    
+      <div className="flex-auto max-md:max-w-full" >
+     
         <div className="flex gap-5 max-md:flex-col">
-       
+        
+
           <div className="flex flex-col w-[58%] max-md:ml-0 max-md:w-full z-30">
             <Image 
               src={jointCare}
@@ -38,7 +42,7 @@ const JointsCare = () => {
             </div>
           </div>
           <Image
-        src={grp4}
+        src={grp3}
         alt=""
         width={92}
         height={224}
