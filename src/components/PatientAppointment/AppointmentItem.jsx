@@ -1,23 +1,140 @@
-"use client"
-import React, { useState } from "react";
+// "use client"
+// import React, { useState } from "react";
+// import DateBadge from "./DateBadge";
+// import Image from "next/image";
+// import arrowUp from '../../images/arrowUp.svg';
+// import download from '../../images/download.svg';
+// import editRaise from '../../images/raise-query.svg';
+// import Link from "next/link";
+// import PrescriptionPrint from './PrescriptionPrint';
+// import  { useRef } from 'react';
+// import { useReactToPrint } from 'react-to-print';
+
+// const AppointmentItem = ({ appointment }) => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const toggleOpen = () => setIsOpen(!isOpen);
+
+  
+//   const componentRef = useRef();
+
+//   const handlePrint = useReactToPrint({
+//     content: () => componentRef.current,
+//   });
+
+//   return (
+//     <div className="flex flex-wrap gap-2 mb-4 max-w-full w-[658px]">
+
+   
+//     <DateBadge day={appointment.date.day} month={appointment.date.month} />
+      
+//       <div className="flex flex-col grow shrink-0 rounded-2xl basis-0 bg-neutral-100 w-fit max-md:max-w-full">
+//         <div
+//           className="flex flex-wrap gap-5 justify-between px-6 py-3.5 text-base font-semibold rounded-2xl bg-zinc-300 bg-opacity-50 text-neutral-800 max-md:px-5 max-md:max-w-full cursor-pointer"
+//           onClick={toggleOpen}
+//         >
+//           <div>{appointment.doctor}</div>
+//           <Image
+//             loading="lazy"
+//             src={arrowUp}
+//             className={`object-contain shrink-0 my-auto aspect-[1.8] stroke-[2px] stroke-neutral-800 w-[18px] transition-transform ${
+//               isOpen ? "transform " : "rotate-180"
+//             }`}
+//             alt="Toggle details"
+//           />
+//         </div>
+//         {isOpen && appointment.diagnosis && (
+//           <div className="flex flex-col px-6 mt-6 w-full text-xs text-neutral-700 max-md:px-5 max-md:max-w-full">
+//             <div className="flex flex-wrap gap-5 justify-between text-sm max-md:max-w-full">
+//               <div className="flex flex-col">
+//                 <div className="text-center">
+//                   <span className="font-semibold text-neutral-800">
+//                     Diagnosis:{" "}
+//                   </span>
+//                   {appointment.diagnosis}
+//                 </div>
+//                 <div className="mt-2 max-md:mr-2.5">
+//                   <span className="font-semibold text-neutral-800">
+//                     Remarks:{" "}
+//                   </span>
+//                   {appointment.remarks}
+//                 </div>
+//                 <div className="self-start mt-4 font-semibold text-neutral-800">
+//                   Medicines
+//                 </div>
+//               </div>
+
+//           <Image
+//              onClick={handlePrint}
+//                 loading="lazy"
+//                 src={download}
+//                 className="object-contain cursor-pointer  shrink-0 self-start w-9 p-2  bg-orange-200 rounded-xl aspect-square"
+//                 alt="download  icon"
+//               />
+//             </div>
+
+//              {appointment.medicines.map((medicine, index) => (
+//              <div  key={index}  className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full 
+//              hover:border-l hover: border-orange-600" >
+//                 <div className="w-[51%] overflow-x-auto" >{medicine.name}</div>
+//                 <div className="w-[20%]">{medicine.frequency}</div>
+//                 <div className="w-[20%]">{medicine.instructions}</div>
+//             </div>
+//             ))}  
+
+//             <div className="self-start mt-4 text-sm font-semibold text-neutral-800">
+//               Medical Test
+//             </div>
+//             <div className="self-start mt-2">{appointment.medicalTest}</div>
+
+//             <div className="flex gap-1 self-end mt-5  mb-5 font-semibold text-orange-400">
+//               <Image
+//                 loading="lazy"
+//                 src={editRaise}
+//                 className="object-contain shrink-0 aspect-square w-[18px] "
+//                 alt="Query icon"
+//               />
+//             <Link href={'/raise_query'} >  <div>Raise a Query</div></Link> 
+//             </div>
+            
+//           </div>
+//         )}
+//       </div>
+//       <div style={{ display: 'none' }}>
+//         <PrescriptionPrint ref={componentRef} />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AppointmentItem;
+
+import React, { useState, useRef } from "react";
 import DateBadge from "./DateBadge";
 import Image from "next/image";
 import arrowUp from '../../images/arrowUp.svg';
 import download from '../../images/download.svg';
 import editRaise from '../../images/raise-query.svg';
 import Link from "next/link";
+import PrescriptionPrint from './PrescriptionPrint';
+import { useReactToPrint } from 'react-to-print';
 
 const AppointmentItem = ({ appointment }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const componentRef = useRef("hello print "); 
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: 'Prescription Print',
+    onAfterPrint: () => console.log('Print job finished') 
+  });
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <div className="flex flex-wrap gap-2 mb-4 max-w-full w-[658px]">
+      <DateBadge day={appointment.date.day} month={appointment.date.month} />
 
-   
-    <DateBadge day={appointment.date.day} month={appointment.date.month} />
-      
       <div className="flex flex-col grow shrink-0 rounded-2xl basis-0 bg-neutral-100 w-fit max-md:max-w-full">
         <div
           className="flex flex-wrap gap-5 justify-between px-6 py-3.5 text-base font-semibold rounded-2xl bg-zinc-300 bg-opacity-50 text-neutral-800 max-md:px-5 max-md:max-w-full cursor-pointer"
@@ -55,40 +172,49 @@ const AppointmentItem = ({ appointment }) => {
               </div>
 
               <Image
+                onClick={handlePrint}
                 loading="lazy"
                 src={download}
-                className="object-contain  shrink-0 self-start w-9 p-2  bg-orange-200 rounded-xl aspect-square"
-                alt="download  icon"
+                className="object-contain cursor-pointer shrink-0 self-start w-9 p-2 bg-orange-200 rounded-xl aspect-square"
+                alt="Download icon"
               />
             </div>
 
-             {appointment.medicines.map((medicine, index) => (
-             <div  key={index}  className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full 
-             hover:border-l hover: border-orange-600" >
-                <div className="w-[51%] overflow-x-auto" >{medicine.name}</div>
+            {appointment.medicines.map((medicine, index) => (
+              <div
+                key={index}
+                className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full hover:border-l hover:border-orange-600"
+              >
+                <div className="w-[51%] overflow-x-auto">{medicine.name}</div>
                 <div className="w-[20%]">{medicine.frequency}</div>
                 <div className="w-[20%]">{medicine.instructions}</div>
-            </div>
-            ))}  
+              </div>
+            ))}
 
             <div className="self-start mt-4 text-sm font-semibold text-neutral-800">
               Medical Test
             </div>
             <div className="self-start mt-2">{appointment.medicalTest}</div>
 
-            <div className="flex gap-1 self-end mt-5  mb-5 font-semibold text-orange-400">
+            <div className="flex gap-1 self-end mt-5 mb-5 font-semibold text-orange-400">
               <Image
                 loading="lazy"
                 src={editRaise}
-                className="object-contain shrink-0 aspect-square w-[18px] "
+                className="object-contain shrink-0 aspect-square w-[18px]"
                 alt="Query icon"
               />
-            <Link href={'/raise_query'} >  <div>Raise a Query</div></Link> 
+              <Link href={"/raise_query"}>
+                <div>Raise a Query</div>
+              </Link>
             </div>
-            
           </div>
         )}
       </div>
+
+      
+       <div style={{ display: "none" }}>
+        <PrescriptionPrint ref={componentRef} />
+       </div>
     </div>
   );
 };

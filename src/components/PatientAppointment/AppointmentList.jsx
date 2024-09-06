@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import AppointmentItem from "./AppointmentItem";
 import loadingImage from '../../images/loading.gif'
@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useParams } from 'next/navigation';
 import Link from "next/link";
 import Cookies from "js-cookie";
+import { AuthContext } from "@/AuthContextApi/AuthContext";
+
 
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
@@ -15,8 +17,45 @@ const AppointmentList = () => {
   const params = useParams();  
   const id = params.id;
 
+   
+  const { isAuthenticated, profile, setProfile } = useContext(AuthContext);
   const token = Cookies.get('token');
-  console.log(token);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      const fetchProfileDetails = async () => {
+        setLoading(true);
+        const token = Cookies.get('token');
+        if (!token) {
+          toast.error("No authentication token found");
+          setLoading(false);
+          return;
+        }
+        try {
+          const res = await axios.get(`${API_URL}/api/v1/patient`, {
+            headers: {
+              Authorization: `Token ${token}`,
+            },
+          });
+          const data = res.data.payload;
+          setProfile(data);
+          Cookies.set('userProfile', JSON.stringify(data));
+        } catch (error) {
+          console.log("Error fetching profile details:", error);
+          if (!toast.isActive("profile-error")) {
+            toast.error('Failed to fetch profile details ', { toastId: "profile-error" });
+          }
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchProfileDetails();
+    } else {
+      console.log("User is not authenticated");
+    }
+  }, [isAuthenticated, setProfile]);
+
 
   const getAppointments = async () => {
     setLoading(true);

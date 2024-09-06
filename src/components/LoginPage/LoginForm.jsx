@@ -5,7 +5,6 @@ import { AuthContext } from '@/AuthContextApi/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 function LoginForm() {
   const [patientId, setPatientId] = useState('');
   const [otpOpen, setOtpOpen] = useState(false);
@@ -25,9 +24,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
         body: JSON.stringify({ patient_id: patientId }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to request OTP');
-      }
+      // if (!response.ok) {
+      //   throw new Error('Failed to request OTP');
+      // }
 
       const result = await response.json();
       console.log('OTP Response:', result); 

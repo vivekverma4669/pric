@@ -11,85 +11,21 @@ import Cookies from 'js-cookie';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const ProfilePage = () => {
-  const { isAuthenticated, formatUserData } = useContext(AuthContext);
-  const [profile, setProfile] = useState({
-    id: '',
-    uid: "",
-    firstName: "",
-    lastName: "",
-    dob: "",
-    gender: "",
-    maritalStatus: "",
-    address: "",
-    contactNumber: "",
-    email: ""
-  });
+  const { isAuthenticated, profile, setProfile } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      const fetchProfileDetails = async () => {
-        setLoading(true);
-        const token = Cookies.get('token');
-        console.log(token +"<- token");
-        if (!token) {
-          toast.error("No authentication token found");
-          setLoading(false);
-          return;
-        }
-   
-        try {
-          const res = await axios.get(`${API_URL}/api/v1/patient`, {
-            headers: {
-              'Authorization':`Token ${token}`
-            }
-          });
-          const data = res.data.payload;
-          
-          console.log(data +"data user");
-          const formattedData = formatUserData(data);
-          setProfile({
-            id: formattedData.id,
-            uid: formattedData.uid || "",
-            firstName: formattedData.first_name || "",
-            lastName: formattedData.last_name || "",
-            dob: formattedData.dob || "",
-            gender: formattedData.gender || "",
-            maritalStatus: formattedData.marital_status || "",
-            address: formattedData.address || "",
-            contactNumber: formattedData.contact_number || "",
-            email: formattedData.email || "",
-          });
-        }
-        catch (error) {
-          console.log("Error fetching profile details:", error);
-          if (!toast.isActive("profile-error")) {
-            toast.error('Failed to fetch profile details ', { toastId: "profile-error" });
-          }
-        } finally {
-          setLoading(false);
-        }
-      };
-  
-      fetchProfileDetails();
-    } else {
-      console.log("User is not authenticated");
-    }
-  }, [isAuthenticated, formatUserData]);
-  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProfile((prevProfile) => ({
       ...prevProfile,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSaveClick = async () => {
     setLoading(true);
-    const token = Cookies.get('token') || '';
-
+    const token = Cookies.get('token');
     if (!token) {
       toast.error("No authentication token found");
       setLoading(false);
@@ -97,35 +33,36 @@ const ProfilePage = () => {
     }
 
     try {
-      await axios.put(`${API_URL}//api/v1/patient`, {
-        first_name: profile.firstName,
-        last_name: profile.lastName,
-        dob: profile.dob,
-        gender: profile.gender,
-        marital_status: profile.maritalStatus,
-        address: profile.address,
-        contact_number: profile.contactNumber,
-        email: profile.email
-      }, {
-        headers: {
-          'Authorization': `Token ${token}`
+      await axios.put(
+        `${API_URL}/api/v1/patient`,
+        {
+          first_name: profile.first_name,
+          last_name: profile.last_name,
+          dob: profile.dob,
+          gender: profile.gender,
+          marital_status: profile.marital_status,
+          address: profile.address,
+          contact_number: profile.contact_number,
+          email: profile.email,
+        },
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+          },
         }
-      });
-      
+      );
       toast.success('Profile details updated successfully!');
-    }
-    catch (error) {
+    } catch (error) {
       console.log("Error saving profile details:", error);
       toast.error('Failed to update profile details!');
-    }
-    finally {
+    } finally {
       setLoading(false);
     }
   };
 
   return (
     <div className="flex overflow-hidden flex-col pb-56 bg-white">
-      <CustomTitle title={'PROFILE'} />
+      <CustomTitle title={"PROFILE"} />
       <main className="flex flex-col self-center mt-10 max-w-full w-[1242px]">
         <section>
           <div className="flex flex-wrap gap-5 justify-between mt-2 w-full">
@@ -137,14 +74,14 @@ const ProfilePage = () => {
           <div className="flex flex-wrap gap-10 mt-6 text-base font-light text-neutral-500">
             <InputField
               label="First Name"
-              value={profile.firstName}
-              name="firstName"
+              value={profile.first_name}
+              name="first_name"
               onChange={handleInputChange}
             />
             <InputField
               label="Last Name"
-              value={profile.lastName}
-              name="lastName"
+              value={profile.last_name}
+              name="last_name"
               onChange={handleInputChange}
             />
           </div>
@@ -180,11 +117,11 @@ const ProfilePage = () => {
               </div>
 
               <div className="grow px-4 py-4 bg-white rounded-2xl border border-solid border-orange-400 border-opacity-30 w-fit">
-                <label className="sr-only" htmlFor="maritalStatus">Marital Status</label>
+                <label className="sr-only" htmlFor="marital_status">Marital Status</label>
                 <select
-                  id="maritalStatus"
-                  name="maritalStatus"
-                  value={profile.maritalStatus}
+                  id="marital_status"
+                  name="marital_status"
+                  value={profile.marital_status}
                   onChange={handleInputChange}
                   className="w-full bg-transparent outline-none"
                 >
@@ -211,8 +148,8 @@ const ProfilePage = () => {
           <div className="flex flex-wrap gap-10 mt-3.5 text-base font-light text-neutral-500">
             <InputField
               label="Contact Number"
-              value={profile.contactNumber}
-              name="contactNumber"
+              value={profile.contact_number}
+              name="contact_number"
               onChange={handleInputChange}
             />
             <InputField
@@ -224,21 +161,13 @@ const ProfilePage = () => {
           </div>
         </section>
 
-        
-
-
-        <button  onClick={handleSaveClick}  disabled={loading} className="relative self-center px-16 py-5 lg:px-10 mt-11 max-w-full text-base font-bold text-center text-white bg-orange-400 border border-orange-400 rounded-[800px] w-[708px] group overflow-hidden transition-transform transform active:scale-95">
-        <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-orange-600 group-hover:w-full ease"></span>
-        <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-orange-600 group-hover:w-full ease"></span>
-        <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
-        <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-orange-600 group-hover:h-full ease"></span>
-        <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-orange-500 opacity-0 group-hover:opacity-100 rounded-[800px]"></span>
-        <span className="relative transition-colors duration-300 delay-200 group-hover:text-black ease">
-        {loading ? 'Saving...' : 'Save Changes'}
-        </span>
-      </button>
-
-
+        <button
+          onClick={handleSaveClick}
+          disabled={loading}
+          className="relative self-center px-16 py-5 lg:px-10 mt-11 max-w-full text-base font-bold text-center text-white bg-orange-400 border border-orange-400 rounded-[800px] w-[708px] group overflow-hidden transition-transform transform active:scale-95"
+        >
+          {loading ? "Saving..." : "Save Changes"}
+        </button>
       </main>
     </div>
   );

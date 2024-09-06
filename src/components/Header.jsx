@@ -40,7 +40,7 @@ const MenuItem = ({ icon, text, href, isActive, onClick }) => (
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const { isAuthenticated, logout ,formatUserData } = useContext(AuthContext); 
+  const { isAuthenticated, logout , profile} = useContext(AuthContext); 
   const pathname = usePathname(); 
   const router = useRouter();
 
@@ -85,13 +85,14 @@ const Header = () => {
           <div>
             <Image
               onClick={() => setToggle(!toggle)}
-              src={`https://ui-avatars.com/api/?${formatUserData.full_name}`}
+              src={`https://ui-avatars.com/api/?name=${profile.full_name}`}
+            
               width={50}
               height={50}
               alt={"profile image"}
               className="cursor-pointer rounded-full"
             />
-
+             
             {toggle && (
               <div className="flex flex-col text-sm leading-loose rounded-none max-w-[202px] text-neutral-700 absolute right-16 z-40">
                 <div className="flex flex-col items-start px-2 py-3.5 w-full bg-white rounded-md shadow-[0px_0px_5px_rgba(0,0,0,0.15)]">

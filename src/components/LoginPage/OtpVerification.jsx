@@ -31,7 +31,7 @@ function OTPVerification({ patientId, login }) {
       console.log(payload +"payload")
       login(payload);
       toast.success('Login Successful')
-      router.push('/profile');
+      router.push('/patient_appointments');
     }
     catch (error) {
       console.error('Error verifying OTP:', error);

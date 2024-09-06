@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+
+@media print {
+  .hidden {
+    display: none;
+  }
+  .print-block {
+    display: block;
+  }
+}
