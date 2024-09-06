@@ -203,7 +203,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
   return (
     <div ref={ref} className="pl-5">
       <div style={{ position: 'absolute', left: '60px', right:'60px', top: '10px' }}>
-        <img src={logo} alt="logo" width="100" className="logo-img" />
+        <img src={logo} alt="logo" width="100"  height={'100'} className="logo-img" />
       </div>
 
       <h2 className="text-center mt-2 mb-3"> Punjab Rheumatology & Immunology centre </h2>
@@ -363,5 +363,5 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
     </div>
   );
 });
-
+PrescriptionPrint.displayName = 'PrescriptionPrint';
 export default PrescriptionPrint;
