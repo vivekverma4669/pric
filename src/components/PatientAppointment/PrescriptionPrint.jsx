@@ -115,7 +115,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
              <table>
               <tbody>
                 {medicines.map((medi,index)=>(
-                 <tr style={{ fontSize: '14px', width: '100%', marginBottom: '6px', marginLeft :'5px', margin:medi.salt? '5px' :""}} key={index}>
+                 <tr key={index} style={{ fontSize: '14px', width: '100%', marginBottom: '6px', marginLeft :'5px', margin:medi.salt? '5px' :""}}>
                  <td style={{ width: '15px', fontSize: '16px' }}>{index+1}</td>
 
                  <td className='min-w-[350px]' style={{  height: '25px' }}>
