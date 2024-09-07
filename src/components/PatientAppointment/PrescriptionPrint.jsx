@@ -5,7 +5,7 @@ import Image from 'next/image';
 const PrescriptionPrint = React.forwardRef((props, ref) => {
   const { prescription } = props;
 
-  if (!prescription || !prescription.payload) return null;
+  // if (!prescription || !prescription.payload) return null;
 
   const {
     patient_full_name,
@@ -27,9 +27,9 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
   }= prescription.payload.appointment;
   let visit_date = originalVisitDate.split('-').reverse().join('/');
 
-  const {
-    investigation,
-  } = prescription
+  // const {
+  //   investigation,
+  // } = prescription
 
   const dobYear = new Date(patient_dob).getFullYear();
   // console.log("weight: ", weight);
@@ -91,8 +91,10 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 <div><p>Diagnosis:</p></div>
               </td>
               <td>
-              {diagnosis.map((daig, index)=>(
-                <div key={index}><p style={{ wordWrap: 'break-word' }}>{daig} </p></div>
+              {diagnosis.map((daig,index)=>(
+                <div key={index}>
+                  <p style={{ wordWrap: 'break-word' }}>{daig} </p>
+                  </div>
               ))}
               </td>
             </tr>
