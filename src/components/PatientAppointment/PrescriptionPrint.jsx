@@ -5,7 +5,7 @@ import Image from 'next/image';
 const PrescriptionPrint = React.forwardRef((props, ref) => {
   const { prescription } = props;
 
-  // if (!prescription || !prescription.payload) return null;
+   if (!prescription || !prescription.payload) return null;
 
   const {
     patient_full_name,

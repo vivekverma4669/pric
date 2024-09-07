@@ -35,7 +35,6 @@ const AppointmentItem = ({ appointment }) => {
           'Authorization': `Token ${token}`
         }
       });
-      console.log( 'res data ' , res.data);
       setPrescriptionData(res.data);
     }
     catch (error) {
