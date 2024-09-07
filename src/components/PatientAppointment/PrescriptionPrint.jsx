@@ -91,8 +91,8 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 <div><p>Diagnosis:</p></div>
               </td>
               <td>
-              {diagnosis.map((daig)=>(
-                <div><p style={{ wordWrap: 'break-word' }}>{daig} </p></div>
+              {diagnosis.map((daig, index)=>(
+                <div key={index}><p style={{ wordWrap: 'break-word' }}>{daig} </p></div>
               ))}
               </td>
             </tr>
