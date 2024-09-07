@@ -27,7 +27,6 @@ export function AuthProvider({ children }) {
         };
   });
   
-  console.log(profile);
    
   const login = (userData) => {
     Cookies.set('token', userData.token);

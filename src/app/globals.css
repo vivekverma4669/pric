@@ -31,7 +31,7 @@ body {
     text-wrap: balance;
   }
 }
-
+/* 
 @media print {
   .hidden {
     display: none;
@@ -39,4 +39,4 @@ body {
   .print-block {
     display: block;
   }
-}
+} */

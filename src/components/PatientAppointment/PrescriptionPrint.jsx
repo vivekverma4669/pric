@@ -1,314 +1,139 @@
-// import React from 'react';
-// import Image from 'next/image';
-// import logo from '../../images/logo.png'
-
-// const PrintPrescription = (({ reportData, patientData }, ref) => {
-//   const { appointment, organization, prescription, Doctor, Medicine } = reportData;
-//   const doctor = appointment.doctor.id === Doctor.parshant.id ? Doctor.bharti : appointment.doctor;
-
-//   return (
-//     <div className="pl-5" ref={ref}>
-//       <div className="relative">
-//         <div className="absolute left-20 top-2">
-//           <Image src={logo} alt="logo" width={100} height={50} className="logo-img" />
-//         </div>
-
-//         <h2 className="text-center mt-2 mb-3">{organization.name}</h2>
-
-//         <div className="max-w-4xl mx-auto">
-//           <div className="flex justify-between">
-//             {appointment.consultant.id === Doctor.parshant.id && (
-//               <div>
-//                 <h4>Dr Parshant Aggarwal</h4>
-//                 {Doctor.parshant.details.split('\r\n').map((detail, index) => (
-//                   <p key={index}>{detail}</p>
-//                 ))}
-//               </div>
-//             )}
-
-//             <div>
-//               <h4>{doctor.full_name}</h4>
-//               {doctor.details.split('\r\n').map((detail, index) => (
-//                 <p key={index}>{detail}</p>
-//               ))}
-//             </div>
-//           </div>
-
-//           <hr className="my-2" />
-
-//           <div className="patient-details">
-//             <div className="flex justify-between mb-2">
-//               <p>
-//                 <strong>{patientData.full_name.toUpperCase()}</strong> ({appointment.patient.uid})
-//               </p>
-//               <p>Date: {new Date(appointment.visit_date).toLocaleDateString('en-GB')}</p>
-//             </div>
-
-//             <table className="w-full">
-//               <tbody>
-//                 <tr>
-//                   <td className="flex justify-between">
-//                     {appointment.weight && <p>{appointment.weight} Kg</p>}
-//                     {appointment.bp_s && (
-//                       <p>
-//                         {appointment.bp_s} / {appointment.bp_d}
-//                       </p>
-//                     )}
-//                     <p>
-//                       YOB: {new Date(patientData.dob).getFullYear()} &nbsp; {patientData.gender}
-//                     </p>
-//                   </td>
-//                   <td className="text-right">
-//                     {appointment.new_visit_type || appointment.old_visit_type ? (
-//                       <small>(Valid for 1 Revisit within 7 days)</small>
-//                     ) : (
-//                       <b>{appointment.visit_type}</b>
-//                     )}
-//                   </td>
-//                 </tr>
-//               </tbody>
-//             </table>
-
-//             <div className="my-2">
-//               <div className="flex">
-//                 <p className="w-40">Diagnosis:</p>
-//                 <p>{prescription.diagnosis.join(', ')}</p>
-//               </div>
-//             </div>
-
-//             {prescription.daily_exercise ||
-//             prescription.dietitian ||
-//             prescription.physiotherapist ||
-//             prescription.psychologist ? (
-//               <div className="flex">
-//                 <p>Recommendations: </p>
-//                 {prescription.daily_exercise && <p>Regular Exercise</p>}
-//                 {(prescription.dietitian ||
-//                   prescription.physiotherapist ||
-//                   prescription.psychologist) && (
-//                   <p>
-//                     Meet{' '}
-//                     {['dietitian', 'physiotherapist', 'psychologist']
-//                       .filter((field) => prescription[field])
-//                       .join(', ')}
-//                   </p>
-//                 )}
-//               </div>
-//             ) : null}
-
-//             <div className="my-2">
-//               <div className="flex">
-//                 <p className="w-40">Notes:</p>
-//                 <p>{prescription.notes}</p>
-//               </div>
-//             </div>
-
-//             <div className="medicines mb-5">
-//               <h5>
-//                 <b>Medicines</b>
-//               </h5>
-//               <table className="table-auto w-full">
-//                 <tbody>
-//                   {prescription.medicines.list &&
-//                     prescription.medicines.list.map((med, i) => {
-//                       const medicine = Medicine.find((medItem) => medItem.name === med.name);
-//                       return (
-//                         <tr key={i} className="text-sm mb-2">
-//                           <td className="text-lg">{i + 1}</td>
-//                           <td className="w-80 h-12">
-//                             <p>{medicine?.form_type?.toUpperCase()} {med.name}</p>
-//                             {medicine && medicine.name === med.name.trim() && (
-//                               <small className="uppercase absolute">{medicine.medicine_salt.name}</small>
-//                             )}
-//                           </td>
-//                           <td className="w-52">{med.description}</td>
-//                           <td className="w-96">{med.remark}</td>
-//                         </tr>
-//                       );
-//                     })}
-//                 </tbody>
-//               </table>
-//             </div>
-
-//             <table className="mb-5 w-full">
-//               <tbody>
-//                 <tr>
-//                   <td className="w-40">
-//                     <p>Special Instructions:</p>
-//                   </td>
-//                   <td>
-//                     <p>{prescription.special_instructions?.join(', ')}</p>
-//                   </td>
-//                 </tr>
-//                 <tr>
-//                   <td className="w-40">
-//                     <p>Follow Up:</p>
-//                   </td>
-//                   <td>
-//                     <p>{prescription.followup}</p>
-//                   </td>
-//                 </tr>
-//                 <tr>
-//                   <td className="w-40">
-//                     <p>Videos:</p>
-//                   </td>
-//                   <td>
-//                     <p>{prescription.videos.join(', ')}</p>
-//                   </td>
-//                 </tr>
-//                 {prescription.additional_tests && (
-//                   <tr>
-//                     <td className="w-40">
-//                       <p>Additional Tests:</p>
-//                     </td>
-//                     <td>
-//                       <p>{prescription.additional_tests}</p>
-//                     </td>
-//                   </tr>
-//                 )}
-//                 <tr>
-//                   <td className="w-40">
-//                     <p>Investigations:</p>
-//                   </td>
-//                   <td>
-//                     <p>{prescription.medical_tests.map((test) => test.toUpperCase()).join(', ')}</p>
-//                   </td>
-//                 </tr>
-//               </tbody>
-//             </table>
-//           </div>
-//         </div>
-
-//         <footer className="absolute bottom-5 text-xs text-center w-full">
-//           <hr />
-//           <p>
-//             Main Ferozepur Road Near MBD Mall Ludhiana (PB) 9878736644, 9814267774,
-//             punjabrheumatology@gmail.com | www.praic.in. Advice given without physical checkup
-//             is Provisional, pending physical evaluation by a qualified Doctor.{' '}
-//             <b>Patient Can Buy Generic Medicine of Same Salt</b>
-//           </p>
-//         </footer>
-//       </div>
-//     </div>
-//   );
-// });
-
-// export default PrintPrescription;
-
 import React from 'react';
 import logo from '../../images/logo.png';
-
+import Image from 'next/image';
 
 const PrescriptionPrint = React.forwardRef((props, ref) => {
-  return (
-    <div ref={ref} className="pl-5">
-      <div style={{ position: 'absolute', left: '60px', right:'60px', top: '10px' }}>
-        <img src={logo} alt="logo" width="100"  height={'100'} className="logo-img" />
+  const { prescription } = props;
+
+  if (!prescription || !prescription.payload) return null;
+
+  const {
+    patient_full_name,
+    patient_uid,
+    patient_dob,
+    followup,
+    diagnosis,
+    medical_tests_list,
+    medicines,
+    notes,
+    special_instructions,
+    vedios = '',
+  } = prescription.payload; 
+
+  const {
+    weight,
+    visit_type,
+    visit_date: originalVisitDate, 
+  }= prescription.payload.appointment;
+  let visit_date = originalVisitDate.split('-').reverse().join('/');
+
+  const {
+    investigation,
+  } = prescription
+
+  const dobYear = new Date(patient_dob).getFullYear();
+  // console.log("weight: ", weight);
+
+
+
+  return ( 
+     <div  ref={ref} className="pl-10 pr-10 ml-5 mr-5 mt-5 w-[1000px]  min-h-[1400px]">
+      <div className="relative  left-0 top-12" >
+        <Image src={logo} alt="logo" width="95"  height='95' className="logo-img" />
       </div>
 
-      <h1 className="text-center mt-2 mb-3"> Punjab Rheumatology & Immunology centre </h1>
+      <h1 className="text-center mt-2 mb-3 text-[27px]"> Punjab Rheumatology & Immunology centre </h1>
       <br />
 
-      <div style={{ maxWidth: '1000px', margin: 'auto' }}>
+      <div style={{ maxWidth: '1300px', margin: 'auto',}}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
-            <h4>Dr Parshant Aggarwal</h4>
+            <h1 className="text-[24px] mb-2">Dr Parshant Aggarwal</h1>
+            
             <p>MD DM (Immunology) </p>
-            <p>Rheumatology & Immunology</p>
-            <p>EX Consultant Apollo Hospital .LDH</p>
-            <p>Regn No . 29517</p>
+            <p>Rheumatologist  & Immunology</p>
+            <p>EX Consultant Apollo Hospital. LDH</p>
+            <p>EX Asstt. prof DMC & H, LDH</p>
+            <p>Regn No. PMC 29517</p>
           </div>
 
-          <div className='ml-[5px]'>
-            <h4>Dr Bharti</h4>
+          <div className='mr-[10px]'>
+            <h4 className="text-[24px] mb-2">Dr Bharti Aggarwal</h4>
+           
             <p>MD Medicine PDCC</p>
             <p>EULAR Fellow</p>
-            <p>EX Consultant Apollo Hospital .LDH</p>
-            <p>Regn No . 29517</p>
+            <p>Physician & Rheumatologist</p>
+            <p>EX Asstt. prof DMC & H, LDH</p>
+            <p>Regn No . PMC 31277</p>
           </div>
         </div>
-        <hr />
+        <br/>
+        <hr/>
+        <br/>
 
         <div className="patient-details">
-          <h5 className="mb-2 d-flex justify-content-between">
-            <p><b>JOHN DOE</b> (123456)</p>
-            <p>Date: 05/09/2024</p>
-          </h5>
+          <div className="mb-2 flex justify-between ">
+            <p className='text-[24px]'><span className='font-semibold' >{patient_full_name}</span> ({patient_uid})</p>
+            <p className='text-[18px]'>Date: {visit_date}</p>
+          </div>
 
-          <table style={{ width: '100%' }}>
-            <tr>
-              <td className="d-flex justify-content-between">
-                <p className="list-item d-flex">75 Kg</p>
-                <p className="list-item d-flex">120 / 80</p>
-                <p className="list-item d-flex">YOB: 1990 &nbsp;&nbsp;&nbsp; Male</p>
-              </td>
-              <td style={{ width: '50%', textAlign: 'right' }}>
-                <p>
-                  <small>(Valid for 1 Revisit within 7 days)</small>
-                </p>
-              </td>
-            </tr>
-          </table>
+          <div style={{ width: '100%'  }} className="flex justify-between mb-3">
+                <span className="">weight :&nbsp;{weight}</span>
+                <span  className="">YOB: {dobYear} &nbsp;&nbsp;&nbsp; Male</span>
+                {visit_type === 'New' || visit_type === 'Old' ? 'Valid for 1 Revisit within 7 days' : visit_type}
+          </div>
+              
+       
 
-          <table style={{ width: '100%' }} className="mb-2 mt-2 mb-1">
+          <table style={{ width: '100%' }} className=" mt-2 mb-1">
             <tr>
               <td style={{ width: '150px', verticalAlign: 'top' }}>
                 <div><p>Diagnosis:</p></div>
               </td>
               <td>
-                <div><p style={{ wordWrap: 'break-word' }}>Diagnosis details here</p></div>
+              {diagnosis.map((daig)=>(
+                <div><p style={{ wordWrap: 'break-word' }}>{daig} </p></div>
+              ))}
               </td>
             </tr>
           </table>
 
-          <table className="medicines mb-1 w-100">
+          {/* <table className="medicines mb-1 w-100">
             <tr>
               <td style={{ width: '150px', verticalAlign: 'top' }}></td>
               <td>Regular Exercise</td>
             </tr>
-          </table>
+          </table> */}
 
-          <table style={{ width: '100%' }} className="mb-2 mt-2 mb-3">
-            <tr>
-              <td style={{ width: '150px', verticalAlign: 'top' }}>
-                <div><p>Notes:</p></div>
-              </td>
-              <td>
-                <div><p style={{ wordWrap: 'break-word' }}>Notes content here</p></div>
-              </td>
-            </tr>
-          </table>
+          <div className="mt-2"><span className="mr-24">Notes: </span>  {notes}  </div>
+            
+               
+             
 
-          <div className="medicines medicine-print mb-5">
-            <h5><b>Medicines</b></h5>
-            <table>
+          <div className="medicines medicine-print mb-20 mt-5">
+            <h5 className='mb-5'><b>Medicines</b></h5>
+             <table>
               <tbody>
-                <tr style={{ fontSize: '14px', width: '100%', marginBottom: '10px' }}>
-                  <td style={{ width: '15px', fontSize: '16px' }}>1</td>
-                  <td style={{ width: '325px', height: '45px' }}>
-                    <p style={{ fontSize: '16px' }}>CAPSULE Medicine Name</p>
-                    <small style={{ textTransform: 'uppercase', position: 'absolute', width: '100%' }}>Medicine Salt Name</small>
-                  </td>
-                  <td style={{ width: '200px' }}>
-                    <p style={{ fontSize: '14px' }}>Description here</p>
-                  </td>
-                  <td style={{ width: '400px' }}>
-                    <p style={{ fontSize: '14px' }}>Remarks here</p>
-                  </td>
-                </tr>
-                <tr style={{ fontSize: '14px', width: '100%', marginBottom: '10px' }}>
-                  <td style={{ width: '15px', fontSize: '16px' }}>1</td>
-                  <td style={{ width: '325px', height: '45px' }}>
-                    <p style={{ fontSize: '16px' }}>CAPSULE Medicine Name</p>
-                    <small style={{ textTransform: 'uppercase', position: 'absolute', width: '100%' }}>Medicine Salt Name</small>
-                  </td>
-                  <td style={{ width: '200px' }}>
-                    <p style={{ fontSize: '14px' }}>Description here</p>
-                  </td>
-                  <td style={{ width: '400px' }}>
-                    <p style={{ fontSize: '14px' }}>Remarks here</p>
-                  </td>
-                </tr>
+                {medicines.map((medi,index)=>(
+                 <tr style={{ fontSize: '14px', width: '100%', marginBottom: '6px', marginLeft :'5px', margin:medi.salt? '5px' :""}} key={index}>
+                 <td style={{ width: '15px', fontSize: '16px' }}>{index+1}</td>
+
+                 <td className='min-w-[350px]' style={{  height: '25px' }}>
+                   <p style={{ fontSize: '16px'}}>{medi.name}</p>
+                   <small style={{ fontSize: '14px',  marginTop:'2px'}}>{medi.salt}</small>
+                 </td>
+                
+                 <td style={{ width: '200px' }}>
+                   <p style={{ fontSize: '14px' }}>{medi.description}</p>
+                 
+                 </td>
+                 <td style={{ width: '400px' }}>
+                   <p style={{ fontSize: '14px' }}>{medi.remark}</p>
+                 </td>
+               </tr>
+
+
+                ))}
               </tbody>
             </table>
           </div>
@@ -316,10 +141,10 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
           <table className="mb-5">
             <tr>
               <td style={{ width: '150px' }}>
-                <div><p>Spl inst:</p></div>
+                <div><p>Spl instructions:</p> </div>
               </td>
               <td>
-                <div><p>Special instructions content</p></div>
+                <div><p>{special_instructions}</p></div>
               </td>
             </tr>
 
@@ -328,7 +153,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 <div><p>Follow up:</p></div>
               </td>
               <td>
-                <div><p>Follow up details</p></div>
+                <div><p>{followup}</p></div>
               </td>
             </tr>
 
@@ -337,7 +162,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 <div><p>Videos:</p></div>
               </td>
               <td>
-                <div><p>Video links here</p></div>
+                <div><p> <a href={vedios}> </a> </p></div>
               </td>
             </tr>
 
@@ -346,22 +171,201 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 <div><p>Investigations:</p></div>
               </td>
               <td style={{ wordWrap: 'break-word' }}>
-                <div><p>Investigation details here</p></div>
+                <div><p>COMPLETE HAEMOGRAM, CRP QUANTITATIVE, CREATININE, SGOT, SGPT, ALP, RBS, URINE ROUTINE, CXR PA, X
+                RAY PELVIS AP WITH BOTH HIPS, ANA IF, CPK, LDH, RHEUMATOID FACTOR, X RAY BOTH HANDS WITH WRISTS A</p></div>
               </td>
             </tr>
           </table>
         </div>
       </div>
 
-      <div className="footer" style={{ position: 'absolute', bottom: '20px', fontSize: '12px' }}>
+      <div className="footer pb-5   max-w-[1200px] "  style={{ position: 'absolute', bottom: '0', left: '0', right: '0', width: '100%'}}>
         <hr />
-        <p className="text-center">
+        <p className="text-center pt-3  text-[12px]">
           Main Ferozepur Road Near MBD Mall Ludhiana (PB) 9878736644, 9814267774, punjabrheumatology@gmail.com | www.praic.in.
           Advice given without physical checkup is Provisional, pending physical evaluation by a qualified Doctor. <b>Patient Can Buy Generic Medicine of Same Salt</b>
         </p>
       </div>
+
     </div>
   );
 });
 PrescriptionPrint.displayName = 'PrescriptionPrint';
 export default PrescriptionPrint;
+
+
+
+// import React from 'react';
+// import logo from '../../images/logo.png';
+// import Image from 'next/image';
+
+// const PrescriptionPrint = React.forwardRef(({ prescription }, ref) => {
+//   if (!prescription) return null; // Prevent rendering if no prescription is passed
+
+//   const {
+//     patient_full_name,
+//     patient_id,
+//     patient_dob,
+//     weight,
+//     diagnosis_list,
+//     medical_tests_list,
+//     medicines,
+//     notes,
+//     special_instructions,
+//     vedios,
+//   } = prescription;
+//   console.log("pres: ", prescription);
+//   const dobYear = new Date(patient_dob).getFullYear();
+
+//   return (
+//     <div ref={ref} className="pl-10 ml-5 mr-5 mt-5 pr-10 min-h-[1400px]">
+//       <div className="relative left-0 top-12">
+//         <Image src={logo} alt="logo" width={95} height={95} className="logo-img" />
+//       </div>
+
+//       <h1 className="text-center mt-2 mb-3 text-[27px]">Punjab Rheumatology & Immunology Centre</h1>
+//       <br />
+
+//       <div style={{ maxWidth: '1200px', margin: 'auto' }}>
+//         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+//           <div>
+//             <h1 className="text-[24px] mb-2">Dr Parshant Aggarwal</h1>
+//             <p>MD DM (Immunology)</p>
+//             <p>Rheumatologist & Immunology</p>
+//             <p>EX Consultant Apollo Hospital. LDH</p>
+//             <p>EX Asstt. Prof DMC & H, LDH</p>
+//             <p>Regn No. PMC 29517</p>
+//           </div>
+
+//           <div className='ml-[5px]'>
+//             <h4 className="text-[24px] mb-2">Dr Bharti Aggarwal</h4>
+//             <p>MD Medicine PDCC</p>
+//             <p>EULAR Fellow</p>
+//             <p>Physician & Rheumatologist</p>
+//             <p>EX Asstt. Prof DMC & H, LDH</p>
+//             <p>Regn No. PMC 31277</p>
+//           </div>
+//         </div>
+//         <br />
+//         <hr />
+//         <br />
+
+//         <div className="patient-details">
+//           <div className="mb-2 flex justify-between">
+//             <p className='text-[24px]'><span className='font-semibold'>{patient_full_name}</span> ({patient_id})</p>
+//             <p className='text-[18px]'>Date: {new Date().toLocaleDateString()}</p>
+//           </div>
+
+//           <div style={{ width: '100%' }} className="flex justify-between mb-3">
+//             <span>Weight in Kg: {weight || 'N/A'}</span>
+//             <span>YOB: {dobYear}</span>
+//             <span>(Valid for 1 Revisit within 7 days)</span>
+//           </div>
+
+//           <table style={{ width: '100%' }} className="mt-2 mb-1">
+//             <tbody>
+//               <tr>
+//                 <td style={{ width: '150px', verticalAlign: 'top' }}>
+//                   <p>Diagnosis:</p>
+//                 </td>
+//                 <td>
+//                   <p style={{ wordWrap: 'break-word' }}>{diagnosis_list || 'N/A'}</p>
+//                 </td>
+//               </tr>
+//             </tbody>
+//           </table>
+
+//           <table className="medicines mb-1 w-100">
+//             <tbody>
+//               <tr>
+//                 <td style={{ width: '150px', verticalAlign: 'top' }}></td>
+//                 <td>Regular Exercise</td>
+//               </tr>
+//             </tbody>
+//           </table>
+
+//           <div className="mt-2">
+//             <span className="mr-24">Notes: </span>{notes || 'No additional notes'}
+//           </div>
+
+//           <div className="medicines medicine-print mb-20 mt-5">
+//             <h5><b>Medicines</b></h5>
+//             <table>
+//               <tbody>
+//                 {medicines && medicines.length > 0 ? (
+//                   medicines.map((medicine, index) => (
+//                     <tr key={index} style={{ fontSize: '14px', width: '100%', marginBottom: '10px' }}>
+//                       <td style={{ width: '15px', fontSize: '16px' }}>{index + 1}</td>
+//                       <td style={{ width: '325px', height: '45px' }}>
+//                         <p style={{ fontSize: '16px' }}>{medicine.name}</p>
+//                         <small style={{ textTransform: 'uppercase', position: 'absolute', width: '100%' }}>{medicine.salt_name}</small>
+//                       </td>
+//                       <td style={{ width: '200px' }}>
+//                         <p style={{ fontSize: '14px' }}>{medicine.description}</p>
+//                       </td>
+//                       <td style={{ width: '400px' }}>
+//                         <p style={{ fontSize: '14px' }}>{medicine.remarks}</p>
+//                       </td>
+//                     </tr>
+//                   ))
+//                 ) : (
+//                   <tr>
+//                     <td colSpan="4">No medicines prescribed.</td>
+//                   </tr>
+//                 )}
+//               </tbody>
+//             </table>
+//           </div>
+
+//           <table className="mb-5">
+//             <tbody>
+//               <tr>
+//                 <td style={{ width: '150px' }}>
+//                   <p>Special Instructions:</p>
+//                 </td>
+//                 <td>
+//                   <p>{special_instructions || 'None'}</p>
+//                 </td>
+//               </tr>
+//               <tr>
+//                 <td style={{ width: '150px' }}>
+//                   <p>Follow Up:</p>
+//                 </td>
+//                 <td>
+//                   <p>100 Days</p>
+//                 </td>
+//               </tr>
+//               <tr>
+//                 <td style={{ width: '150px' }}>
+//                   <p>Videos:</p>
+//                 </td>
+//                 <td>
+//                   <p>{vedios || 'No videos available'}</p>
+//                 </td>
+//               </tr>
+//               <tr>
+//                 <td style={{ width: '150px', verticalAlign: 'top' }}>
+//                   <p>Investigations:</p>
+//                 </td>
+//                 <td style={{ wordWrap: 'break-word' }}>
+//                   <p>COMPLETE HAEMOGRAM, CRP QUANTITATIVE, CREATININE, SGOT, SGPT, ALP, RBS, URINE ROUTINE, CXR PA, X RAY PELVIS AP WITH BOTH HIPS, ANA IF, CPK, LDH, RHEUMATOID FACTOR, X RAY BOTH HANDS WITH WRISTS A</p>
+//                 </td>
+//               </tr>
+//             </tbody>
+//           </table>
+//         </div>
+//       </div>
+
+//       <div className="footer pb-5 max-w-[1200px]" style={{ position: 'absolute', bottom: '0', left: '0', right: '0', width: '100%' }}>
+//         <hr />
+//         <p className="text-center pt-3 text-[12px]">
+//           Main Ferozepur Road Near MBD Mall Ludhiana (PB) 9878736644, 9814267774, punjabrheumatology@gmail.com | www.praic.in.
+//           Advice given without physical checkup is Provisional, pending physical evaluation by a qualified Doctor. <b>Patient Can Buy Generic Medicine of Same Salt</b>
+//         </p>
+//       </div>
+//     </div>
+//   );
+// });
+
+// PrescriptionPrint.displayName = 'PrescriptionPrint';
+// export default PrescriptionPrint;

@@ -66,6 +66,7 @@ const AppointmentList = () => {
         }
       });
    
+      console.log(res.data.payload.appointments);
       const appointmentsData = res.data.payload.appointments.map((appointment) => ({
         date: {
           day: new Date(appointment.visit_date).getDate(),
@@ -74,6 +75,7 @@ const AppointmentList = () => {
         doctor: appointment.doctor_name,
         diagnosis: appointment.prescription.diagnosis || "No Diagnosis",
         remarks: appointment.prescription.remarks || "No Remarks",
+        prescriptionId: appointment.prescription.id,
         medicines: appointment.prescription.medicines.map((medicine) => ({
           name: medicine.name,
           frequency: medicine.description,
