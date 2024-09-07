@@ -171,13 +171,22 @@ const AppointmentItem = ({ appointment }) => {
                 </div>
               </div>
 
-              <Image
+              {/* <Image
                 onClick={handlePrint}
                 loading="lazy"
                 src={download}
                 className="object-contain cursor-pointer shrink-0 self-start w-9 p-2 bg-orange-200 rounded-xl aspect-square"
                 alt="Download icon"
-              />
+              /> */
+              }
+                <a href="/PRIC-prescription.pdf" download>
+                <Image
+                  loading="lazy"
+                  src={download}
+                  className="object-contain cursor-pointer shrink-0 self-start w-9 p-2 bg-orange-200 rounded-xl aspect-square"
+                  alt="Download icon"
+                />
+              </a>
             </div>
 
             {appointment.medicines.map((medicine, index) => (
