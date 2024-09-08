@@ -117,14 +117,16 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
            
 
                 {medicines.map((medi,index)=>(
+               
                  <div key={index} className={`w-[100%] flex justify-between mt-1  `} >
+                    { console.log(medi)}
                  
                  <div className='mr-3 text-[16px]'> {index+1}</div>
 
-                 <small className='min-w-600px text-gray-700 absolute left-20 mt-3 ' >{medi.salt} </small>
-                 <div className='min-w-[420px] ' style={{  height: '25px'}}>
-                   <p style={{ fontSize: '16px'}}>{medi.name}</p>
                 
+                 <div className='min-w-[420px] '>
+                   <p style={{ fontSize: '16px'}} >{medi.name}</p>
+                   <small className=' block w-[900px] text-gray-700 mb-1 mt-0'  style={{fontSize:'16px'}}>{medi.salt} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate minima illo ad nulla dolorem mollitia sed!</small>
                  </div>
                    
                
