@@ -73,13 +73,13 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
         <div className="patient-details">
           <div className="mb-2 flex justify-between ">
             <p className='text-[24px]'><span className='font-semibold' >{patient_full_name}</span> ({patient_uid})</p>
-            <p className='text-[18px]'>Date: {visit_date}</p>
+            <p className='text-[18px] font-semibold'>Date: {visit_date}</p>
           </div>
 
           <div style={{ width: '100%'  }} className="flex justify-between mb-3">
                 <span className="">weight :&nbsp;{weight}</span>
                 <span  className="">YOB: {dobYear} &nbsp;&nbsp;&nbsp; Male</span>
-                {visit_type === 'New' || visit_type === 'Old' ? 'Valid for 1 Revisit within 7 days' : visit_type}
+                {visit_type === 'New' || visit_type === 'Old' ? '(Valid for 1 Revisit within 7 days)' : visit_type}
           </div>
               
        
@@ -126,7 +126,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 
                  <div className='min-w-[420px] '>
                    <p style={{ fontSize: '16px'}} >{medi.name}</p>
-                   <small className=' block w-[900px] text-gray-700 mb-1 mt-0'  style={{fontSize:'16px'}}>{medi.salt} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate minima illo ad nulla dolorem mollitia sed!</small>
+                   <small className=' block w-[900px] text-gray-700 mb-1 mt-0'  style={{fontSize:'16px'}}>{medi.salt} </small>
                  </div>
                    
                
