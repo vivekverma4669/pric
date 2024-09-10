@@ -36,12 +36,13 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
 
 
   return ( 
-     <div  ref={ref} className="pl-10 pr-10 ml-5 mr-5 mt-5 w-[1000px]  min-h-[1400px] text-black">
-      <div className="relative  left-0 top-12" >
+     <div  ref={ref} className="px-28 pt-1  w-[1170px]  min-h-[1560px] text-black flex flex-col justify-between">
+      <div>
+      <div className="relative  left-0 top-10" >
         <Image src={logo} alt="logo" width="95"  height='95' className="logo-img" />
       </div>
 
-      <h1 className="text-center mt-2 mb-3 text-[30px]"> Punjab Rheumatology & Immunology centre </h1>
+      <h1 className="text-center  mb-3 text-[32px]"> Punjab Rheumatology & Immunology centre </h1>
       <br />
 
       <div style={{ maxWidth: '1300px', margin: 'auto',}}>
@@ -72,8 +73,8 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
 
         <div className="patient-details">
           <div className="mb-2 flex justify-between ">
-            <p className='text-[24px]'><span className='font-semibold' >{patient_full_name}</span> ({patient_uid})</p>
-            <p className='text-[18px] font-semibold'>Date: {visit_date}</p>
+            <p className='text-[22px]'><span className='font-semibold' >{patient_full_name}</span> ({patient_uid})</p>
+            <p className='text-[18px] '>Date: {visit_date}</p>
           </div>
 
           <div style={{ width: '100%'  }} className="flex justify-between mb-3">
@@ -124,18 +125,18 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                  <div className='mr-3 text-[16px]'> {index+1}</div>
 
                 
-                 <div className='min-w-[420px] '>
+                 <div className='min-w-[400px] '>
                    <p style={{ fontSize: '16px'}} >{medi.name}</p>
                    <small className=' block w-[950px] text-[12px]'>{medi.salt} </small>
                  </div>
                    
                
                 
-                 <div style={{ width: '200px' }}>
+                 <div style={{ width: '250px' }}>
                    <p style={{ fontSize: '16px' }}>{medi.description}</p>
                  </div>
 
-                 <div style={{ width: '380px' }}>
+                 <div style={{ width: '350px' }}>
                    <p style={{ fontSize: '16px' }}>{medi.remark}</p>
                  </div>
 
@@ -187,8 +188,10 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
           </table>
         </div>
       </div>
-
-      <div className="footer pb-5   max-w-[1200px] "  style={{ position: 'absolute', bottom: '0', left: '0', right: '0', width: '100%'}}>
+          
+      </div>
+  
+      <div className="footer  ">
         <hr />
         <p className="text-center pt-3  text-[12px]">
           Main Ferozepur Road Near MBD Mall Ludhiana (PB) 9878736644, 9814267774, punjabrheumatology@gmail.com | www.praic.in.
