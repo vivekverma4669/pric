@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/logo.png';
+// import logo from '../../images/logo.png';
 import Image from 'next/image';
 
 const PrescriptionPrint = React.forwardRef((props, ref) => {
@@ -10,6 +10,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
     patient_full_name,
     patient_uid,
     patient_dob,
+    patient_gender,
     followup,
     diagnosis,
     medical_tests_list,
@@ -23,32 +24,46 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
     weight,
     visit_type,
     visit_date: originalVisitDate, 
+    investigations,
+    consultant_doctor= {},
+    doctor,
   }= prescription.payload.appointment;
+
   let visit_date = originalVisitDate.split('-').reverse().join('/');
 
-  // const {
-  //   investigation,
-  // } = prescription
+  const {
+    logo,
+    name,
+    contact_number,
+    address,
+    city,
+    website,
+    code,
+     email,
+    footer,
+    state
+
+  } = prescription.payload.organization;
+
+  
 
   const dobYear = new Date(patient_dob).getFullYear();
-  // console.log("weight: ", weight);
-
-
+ 
 
   return ( 
      <div  ref={ref} className="px-28 pt-1  w-[1170px]  min-h-[1560px] text-black flex flex-col justify-between">
       <div>
-      <div className="relative  left-0 top-10" >
+      <div className="relative  left-0 top-12" >
         <Image src={logo} alt="logo" width="95"  height='95' className="logo-img" />
       </div>
 
-      <h1 className="text-center  mb-3 text-[32px]"> Punjab Rheumatology & Immunology centre </h1>
+      <h1 className="text-center mt-1 mb-3 text-[32px]"> {name} </h1>
       <br />
 
       <div style={{ maxWidth: '1300px', margin: 'auto',}}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
-            <h1 className="text-[24px] mb-2">Dr Parshant Aggarwal</h1>
+            <h1 className="text-[24px] mb-2">{doctor.full_name}</h1>
             
             <p>MD DM (Immunology) </p>
             <p>Rheumatologist  & Immunology</p>
@@ -58,13 +73,17 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
           </div>
 
           <div className='mr-[10px]'>
-            <h4 className="text-[24px] mb-2">Dr Bharti Aggarwal</h4>
-           
-            <p>MD Medicine PDCC</p>
-            <p>EULAR Fellow</p>
-            <p>Physician & Rheumatologist</p>
-            <p>EX Asstt. prof DMC & H, LDH</p>
-            <p>Regn No . PMC 31277</p>
+            <h4 className="text-[24px] mb-2">{consultant_doctor.full_name}</h4>
+                      
+            {consultant_doctor ? (
+              <div>
+                <p>MD Medicine PDCC</p>
+                <p>EULAR Fellow</p>
+                <p>Physician & Rheumatologist</p>
+                <p>EX Asstt. Prof DMC & H, LDH</p>
+                <p>Regn No. PMC 31277</p>
+              </div>
+            ) : ""}
           </div>
         </div>
         <br/>
@@ -79,7 +98,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
 
           <div style={{ width: '100%'  }} className="flex justify-between mb-3">
                 <span className="">weight :&nbsp;{weight}</span>
-                <span  className="">YOB: {dobYear} &nbsp;&nbsp;&nbsp; Male</span>
+                <span  className="">YOB: {dobYear} &nbsp;&nbsp;&nbsp; {patient_gender} </span>
                 {visit_type === 'New' || visit_type === 'Old' ? '(Valid for 1 Revisit within 7 days)' : visit_type}
           </div>
               
@@ -120,7 +139,6 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 {medicines.map((medi,index)=>(
                
                  <div key={index} className={`w-[100%] flex justify-between mt-1  `} >
-                    { console.log(medi)}
                  
                  <div className='mr-3 text-[16px]'> {index+1}</div>
 
@@ -181,8 +199,9 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 <div><p>Investigations:</p></div>
               </td>
               <td style={{ wordWrap: 'break-word' }}>
-                <div><p>COMPLETE HAEMOGRAM, CRP QUANTITATIVE, CREATININE, SGOT, SGPT, ALP, RBS, URINE ROUTINE, CXR PA, X
-                RAY PELVIS AP WITH BOTH HIPS, ANA IF, CPK, LDH, RHEUMATOID FACTOR, X RAY BOTH HANDS WITH WRISTS A</p></div>
+                <div><p>
+                {investigations.map(item => item.toUpperCase()).join(', ')}
+                 </p></div>
               </td>
             </tr>
           </table>
@@ -191,10 +210,10 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
           
       </div>
   
-      <div className="footer  ">
+      <div className="footer">
         <hr />
         <p className="text-center pt-3  text-[12px]">
-          Main Ferozepur Road Near MBD Mall Ludhiana (PB) 9878736644, 9814267774, punjabrheumatology@gmail.com | www.praic.in.
+          {address} {city} ({state}) {contact_number} {email} | {website} &nbsp;
           Advice given without physical checkup is Provisional, pending physical evaluation by a qualified Doctor. <b>Patient Can Buy Generic Medicine of Same Salt</b>
         </p>
       </div>
