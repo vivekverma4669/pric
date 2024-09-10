@@ -126,7 +126,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 
                  <div className='min-w-[420px] '>
                    <p style={{ fontSize: '16px'}} >{medi.name}</p>
-                   <small className=' block w-[950px] '  style={{fontSize:'10px'}}>{medi.salt} </small>
+                   <small className=' block w-[950px] '  style={{fontSize:'12px'}}>{medi.salt} </small>
                  </div>
                    
                
