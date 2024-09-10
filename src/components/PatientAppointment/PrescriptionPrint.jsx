@@ -126,7 +126,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                 
                  <div className='min-w-[420px] '>
                    <p style={{ fontSize: '16px'}} >{medi.name}</p>
-                   <small className=' block w-[900px] text-gray-700 mb-1 mt-0'  style={{fontSize:'16px'}}>{medi.salt} </small>
+                   <small className=' block w-[950px] '  style={{fontSize:'10px'}}>{medi.salt} </small>
                  </div>
                    
                
@@ -144,31 +144,7 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
 
               </div>
 
-          {/* <table>
-              <tbody>
-                {medicines.map((medi,index)=>(
-                 <tr key={index} style={{ fontSize: '14px', width: '100%', marginBottom: '6px', marginLeft :'5px', margin:medi.salt? '5px' :""}}>
-                 <td style={{ width: '15px', fontSize: '16px' }}>{index+1}</td>
-
-                 <td className='min-w-[420px]' style={{  height: '25px' }}>
-                   <p style={{ fontSize: '16px'}}>{medi.name}</p>
-                   <small className='min-w-600px text-gray-700' style={{ fontSize: '14px',  marginTop:'2px'  }}>{medi.salt} </small>
-                 </td>
-                 
-                
-                 <td style={{ width: '200px' }}>
-                   <p style={{ fontSize: '16px' }}>{medi.description}</p>
-                 
-                 </td>
-                 <td style={{ width: '380px' }}>
-                   <p style={{ fontSize: '16px' }}>{medi.remark}</p>
-                 </td>
-               </tr>
-
-
-                ))}
-              </tbody>
-            </table> */}
+      
 
 
           <table className="mb-5">
