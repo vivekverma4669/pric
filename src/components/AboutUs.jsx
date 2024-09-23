@@ -14,7 +14,7 @@ const AboutUs = () => {
           </span>
         </h2>
       </div>
-      <div className="flex gap-5 mt-28 max-md:flex-col max-md:mt-10">
+      <div className="flex gap-5 mt-28 max-md:flex-col max-md:mt-10  max-sm:mt-0  max-sm:pt-0">
         <div className="flex flex-col w-[46%] max-md:ml-0 max-md:w-full">
           <div className="mt-20 max-md:mt-10 max-md:max-w-full">
             <div className="flex gap-5 max-md:flex-col">
@@ -22,10 +22,10 @@ const AboutUs = () => {
                 <Image loading="lazy"
                  src={grp3}
                  alt=""
-                  className="object-contain shrink-0 aspect-[0.42] w-[94px] max-md:mt-10" /> 
+                  className="object-contain shrink-0 aspect-[0.42] w-[94px] max-md:mt-10 max-sm:hidden "  /> 
               </div>
               <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full z-30">
-                <div className="flex flex-col grow items-start mt-28 text-base font-bold text-orange-400 max-md:mt-10 max-md:max-w-full">
+                <div className="flex flex-col grow items-start mt-28 text-base font-bold text-orange-400 max-md:mt-10 max-md:max-w-full max-sm:ml-4 max-sm:mt-0  max-sm:pt-0 ">
                   <h3 className="self-stretch text-3xl max-md:max-w-full">
                     We are developing a healthcare <br /> system around you
                   </h3>
@@ -43,7 +43,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col ml-5 w-[54%] max-md:ml-0 max-md:w-full mt-0">
            <Image loading="lazy"
             src={health}
              alt="Healthcare professionals"

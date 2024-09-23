@@ -3,7 +3,6 @@ import group3T from '../images/group3T.png'
 import group4T from '../images/group4T.png'
 import Image from "next/image";
 
-
 const CustomTitle = ( {title}) => {
   return (
     <div className="flex relative  flex-col top-0   w-full font-bold min-h-[160px] max-md:max-w-full">

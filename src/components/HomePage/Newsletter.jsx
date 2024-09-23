@@ -50,7 +50,7 @@ const Newsletter = () => {
             <input
               type="email"
               placeholder="Email"
-              className="grow mb-2 px-4 py-5  font-light rounded-3xl border border-solid border-neutral-500 text-neutral-500 w-[500px] xl:w-[400px]  max-md:pr-5 max-md:max-w-full bg-transparent "
+              className="grow mb-2 px-4 py-5  font-light rounded-3xl border border-solid border-neutral-500 text-neutral-500 w-[500px] xl:w-[400px] max-sm:w-[320px]  max-md:pr-5 max-md:max-w-full bg-transparent "
             />
             {/* <button className=" ml-2 px-12 py-5 font-bold text-center bg-orange-400 rounded-2xl border border-orange-400 border-solid text-slate-100 max-md:px-5">
               Subscribe
@@ -67,14 +67,8 @@ const Newsletter = () => {
 
             </div>
 
-
-
-
-
           </div>
         </div>
-
-       
       </div>
     </section>
   );

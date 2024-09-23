@@ -17,13 +17,13 @@ const MainLayout = () => {
     <div className="flex overflow-hidden flex-col items-center bg-white">    
     
      <div className="flex relative flex-col self-stretch w-full min-h-[870px] max-md:max-w-full ">
-         <Image
+         {/* <Image
           loading="lazy"
           src={BG}
           alt="Background image"
           className="object-cover absolute inset-0 size-full"
         /> 
-         
+          */}
          <Hero/> 
        </div>
         <Departments/>

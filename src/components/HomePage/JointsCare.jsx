@@ -20,10 +20,10 @@ const JointsCare = () => {
               width={700}
               height={479}
               layout="responsive"
-              className="object-contain grow max-md:mt-10 max-md:max-w-full"
+              className="object-contain grow max-md:mt-10  max-sm:mt-4 max-md:max-w-full"
             />
           </div>
-          <div className="flex flex-col ml-5 w-[42%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col ml-5 w-[42%] max-md:ml-0 max-md:w-full max-sm:mt-0">
             <div className="flex flex-col items-start self-stretch my-auto text-base font-bold text-slate-100 max-md:mt-10 max-md:max-w-full">
               <h2 className="self-stretch text-3xl max-md:max-w-full">
                 Joints Care with top professionals in Punjab and In Budget
@@ -41,12 +41,12 @@ const JointsCare = () => {
                   </button>
             </div>
           </div>
-          <Image
+      <Image
         src={grp3}
         alt=""
         width={92}
         height={224}
-        className="object-contain shrink-0 self-end mt-72 max-md:mt-10"
+        className="object-contain shrink-0 self-end mt-72 max-md:mt-10 max-sm:hidden" 
       />
         </div>
       </div>

@@ -23,10 +23,10 @@ const DepartmentItem = ({ icon, name }) => (
 const Departments = () => {
   const departments = [
     { icon: physicotheraphy, name: "Physiotherapy" },
-    { icon: psycology, name: "Psychology" },
     { icon: dietetics, name: "Dietetics" },
     { icon: rheumatology, name: "Rheumatology" },
     { icon: radiology, name: "Radiology" },
+    { icon: psycology, name: "Psychology" },
   ];
 
   return (
@@ -39,7 +39,7 @@ const Departments = () => {
           </span>
         </h2>
       </div>
-      <div className="flex flex-wrap gap-5 justify-between mt-28   max-w-full text-2xl leading-normal text-center text-gray-400 whitespace-nowrap max-md:mt-10 w-[1200px] ">
+      <div className="flex flex-wrap gap-8 justify-between mt-28   max-w-full text-2xl leading-normal text-center text-gray-400 whitespace-nowrap max-md:mt-10 w-[1200px]  max-sm:justify-center  max-sm:gap-14">
         {departments.map((dept, index) => (
           <DepartmentItem key={index} icon={dept.icon} name={dept.name} />
         ))}

@@ -50,14 +50,14 @@ const Header = () => {
   };
 
   return (
-    <header className={`flex relative flex-col justify-center items-center px-16 py-4 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
+    <header className={`flex relative flex-col justify-center items-center px-16 py-2 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
        <ToastContainer/>
-      <nav className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1465px] max-md:max-w-full">
+      <nav className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1465px] max-md:max-w-full ">
      
         <div className="self-stretch my-auto text-xl">
           <Link href="/"> <Image src={logo} alt="logo"/></Link>
         </div>
-        <ul className="flex gap-9 self-stretch my-auto text-base max-md:max-w-full">
+        <ul className="flex gap-9 self-stretch my-auto text-base max-md:max-w-full flex-col md:flex-row">
           <li>
             <Link href="/#about" className={` ${pathname=='/#about'?  'rounded bg-orange-500 bg-opacity-90 text-white p-2' : 'p-2'}  rounded   hover:bg-orange-400  hover:text-white  `} >About</Link>
           </li>

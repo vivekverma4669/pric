@@ -86,7 +86,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="flex flex-col   px-16 py-24 pb-4 bg-orange-400 max-md:px-5">
-      <div className="flex flex-wrap gap-10 justify-between w-full  m-auto max-w-[1460px] max-md:max-w-full"  >
+      <div className="flex flex-wrap gap-10 justify-between w-full  m-auto max-w-[1460px] max-md:max-w-full   "  >
       
         <div className=" flex flex-col my-auto mt-0"  >
           <div className="self-start text-3xl font-bold text-orange-300">
@@ -118,8 +118,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex w-[55%] max-md:max-w-full justify-between ml-36" >
-          <div className="flex gap-32 max-md:flex-col justify-between ml-36">
+        <div className="flex w-[55%] max-md:max-w-full justify-between ml-36 max-sm:ml-0 flex-row-reverse"  >
+          <div className="flex gap-32 max-md:flex-col justify-between ml-36 max-sm:ml-0 ">
 
             <div className="flex flex-col  max-md:ml-0 max-md:w-full ">
               <div className="flex flex-col grow items-start text-base leading-loose text-orange-100 max-md:mt-10">
