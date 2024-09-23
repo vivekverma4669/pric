@@ -50,34 +50,34 @@ const Header = () => {
   };
 
   return (
-    <header className={`flex relative flex-col justify-center items-center px-16 py-2 w-full font-bold text-orange-400 bg-slate-50 shadow-[0px_25px_45px_rgba(47,46,65,0.075)] max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
+    <header className={`flex relative flex-col justify-center items-center px-48 py-4 w-full font-bold text-orange-400 bg-white  max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
        <ToastContainer/>
-      <nav className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1465px] max-md:max-w-full ">
-     
+      <nav className="flex flex-wrap gap-6 justify-between items-center w-full max-w-[1260px] max-md:max-w-full text-black font-normal  ">
+{/*      
         <div className="self-stretch my-auto text-xl">
           <Link href="/"> <Image src={logo} alt="logo"/></Link>
-        </div>
-        <ul className="flex gap-9 self-stretch my-auto text-base max-md:max-w-full flex-col md:flex-row">
+        </div> */}
+        <ul className="flex gap-4 self-stretch my-auto text-base max-md:max-w-full flex-col md:flex-row">
           <li>
-            <Link href="/#about" className={` ${pathname=='/#about'?  'rounded bg-orange-500 bg-opacity-90 text-white p-2' : 'p-2'}  rounded   hover:bg-orange-400  hover:text-white  `} >About</Link>
+            <Link href="/" className={` ${pathname=='/'?  'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `} >HOME</Link>
           </li>
           <li>
-            <Link href="/departments"  className={` ${pathname=='/departments'?  'rounded bg-orange-500 bg-opacity-90 text-white p-2' : 'p-2'}  rounded   hover:bg-orange-400  hover:text-white  `}>Departments</Link>
+            <Link href="/departments"  className={` ${pathname=='/departments'?  'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `}>DEPARTMENTS</Link>
           </li>
           <li>
-            <Link href="/gallery" className={` ${pathname=='/gallery'?   'rounded bg-orange-500 bg-opacity-90 text-white p-2' : 'p-2'}  rounded   hover:bg-orange-400  hover:text-white  `}>Gallery</Link>
+            <Link href="/gallery" className={` ${pathname=='/gallery'?   'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `}>GALLERY</Link>
           </li>
           <li>
-            <Link href="/#testimonials"  className={` ${pathname=='/#testimonials'?   'rounded bg-orange-500 bg-opacity-90 text-white p-2' : 'p-2'}  rounded   hover:bg-orange-400  hover:text-white  `} >Testimonials</Link>
+            <Link href="/#testimonials"  className={` ${pathname=='/#testimonials'?   'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `} >TESTIMONIALS</Link>
           </li>
           <li>
-            <Link href="/appointment" className={` ${pathname=='/appointment'?   'rounded bg-orange-500 bg-opacity-90 text-white p-2' : 'p-2'}  rounded   hover:bg-orange-400  hover:text-white  `}>Book Appointment</Link>
+            <Link href="/appointment" className={` ${pathname=='/appointment'?   'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `}>BOOK APPOINTMENT</Link>
           </li>
         </ul>
 
         {!isAuthenticated ? (
           <Link href="/login"> 
-            <button className="self-stretch px-7 py-5 text-sm text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5 hover:bg-orange-400 hover:text-white transition duration-300 active:bg-orange-500 active:shadow-inner">
+            <button className="self-stretch px-7 py-3 text-sm text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5 hover:bg-orange-400 hover:text-white transition duration-300 active:bg-orange-500 active:shadow-inner">
               Sign In
             </button>   
           </Link>

@@ -43,16 +43,15 @@ const testimonialsCenter = [
 const TestimonialSection = () => {
   return (
     <>
-    <div className="relative mb-12 " id="testimonials" >
-        <h2 className="relative text-8xl font-bold text-center text-orange-100 max-md:text-4xl">
-      More than 100,000 Patients Cured
-        <span className="absolute inset-0 flex items-center justify-center font-bold text-orange-400 text-3xl max-md:text-2xl">
-        More than 100,000 Patients Cured
-        </span>
+    <div className=" relative right-0  mt-14 " id="testimonials" >
+        <h2 className=" text-6xl font-bold  text-orange-400 max-md:text-4xl">
+          Testimonials
+          
       </h2>
+      <p className='text-orange-400 max-md:text-4xl'  > More than 100,000 Patients Cured</p>
     </div> 
       
-    <section className="px-12 pt-20  pb-24 bg-amber-200 max-md:px-5 w-full">
+    <section className="px-12 pt-20  pb-24 max-md:px-5 w-full">
         
      <div className={`w-full max-w-[1468px]  m-auto max-md:max-w-full `}>
          

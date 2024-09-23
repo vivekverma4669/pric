@@ -15,24 +15,14 @@ import BG from "../../images/BG.svg"
 const MainLayout = () => {
   return (
     <div className="flex overflow-hidden flex-col items-center bg-white">    
-    
-     <div className="flex relative flex-col self-stretch w-full min-h-[870px] max-md:max-w-full ">
-         {/* <Image
-          loading="lazy"
-          src={BG}
-          alt="Background image"
-          className="object-cover absolute inset-0 size-full"
-        /> 
-          */}
-         <Hero/> 
-       </div>
-        <Departments/>
-       <JointsCare/>
-      <AboutUs/>
-      <OurDoctors/>
+      <Hero/> 
+      {/* <Departments/> */}
+      {/* <JointsCare/> */}
+      {/* <AboutUs/> */}
+      {/* <OurDoctors/> */}
       <Testimonials/>
-      <BlogPosts/>
-      <Newsletter/>
+      {/* <BlogPosts/> */}
+      {/* <Newsletter/> */}
     </div>
   );
 };

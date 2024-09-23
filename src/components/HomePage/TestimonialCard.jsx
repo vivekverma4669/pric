@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const TestimonialCard = ({ content, author, role, imageSrc }) => {
   return (
-    <article className="flex flex-col px-6 py-5 w-full bg-white rounded-2xl border-2 border-orange-400 border-solid max-md:px-5 max-md:max-w-full">
+    <article className="flex flex-col px-6 py-5 w-full bg-white rounded-2xl border-8 border-orange-400 border-solid max-md:px-5 max-md:max-w-full">
       <p className="text-base leading-6 text-neutral-700 max-md:max-w-full overflow-hidden">
         {content}
       </p>
