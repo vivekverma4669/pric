@@ -39,7 +39,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full max-xl:w-full">
+          <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full max-xl:w-full max-sm:w-[90%] max-sm:m-auto">
             <Image
               src={hero}
               alt="Doctor caring for a patient"
@@ -63,28 +63,17 @@ const Hero = () => {
     {
       content :(
         <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
-           <div className="flex flex-col  max-md:w-full bg-black">
-          </div>
+            <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
+          </div> 
 
-          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]   w-[85%]  " style={{borderRadius :'30px'}}>
-          
-
+          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  w-[85%] max-sm:bg-white  max-sm:flex-col " style={{borderRadius :'30px'}}>
            
-           <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16" > 
+           <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:gap-4 max-sm:w-full " > 
              <h1 className="text-4xl font-bold text-black" >Our <span className="text-orange-400"> Mission</span> </h1>
              <p  className=" text-black text-[22px]" >To Provide Worlds best <br/>
-             Holistic Rheumatology <br/> Care </p>
+             Holistic Rheumatology  Care </p>
             </div> 
-            
-           
-             {/* <Image
-              src={Ellipse33}
-              alt="bg"
-              width={400}
-              height={400}
-              layout="responsive"
-              className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
-            /> */}
+          
 
              <Image
               src={meeting}
@@ -92,7 +81,7 @@ const Hero = () => {
               width={400}
               height={400}
               layout="responsive"
-              className="object-contain  grow max-md:mt-10 max-md:max-w-full  z-40 h-[400px]"
+              className="object-contain  grow max-md:mt-10 max-md:max-w-full h-[400px] max-sm:mt-0"
             />
            
              
@@ -103,75 +92,65 @@ const Hero = () => {
     {
       content: (
         
-        <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-center">
-         
-          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  ml-20  w-[60%]  " style={{borderRadius :'30px'}}>
-          <Image
-              src={image}
-              alt="bg"
-              width={400}
-              height={400}
-              layout="responsive"
-              className="object-contain  grow max-md:mt-10 max-md:max-w-full  z-40 h-[400px]"
-            />
-           
+ <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-center max-sm:mt-40">
+  <div className="flex flex-row justify-between max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px] ml-20 w-[60%] max-sm:w-[95%] max-sm:m-auto max-sm:gap-0 max-sm:flex-col-reverse max-sm:bg-white" style={{ borderRadius: '30px' }}>
+    
+    <Image
+      src={image}
+      alt="bg"
+      width={400}
+      height={400}
+      layout="responsive"
+      className="object-contain grow max-md:mt-10 max-md:max-w-full max-sm:mt-0 z-40 h-[400px]"
+    />
 
-           
-           <div className=" flex flex-col py-20 pl-10 w-[70%]  gap-16" > 
-             <h1 className="text-4xl font-bold text-black" >Raise  <span className="text-orange-400"> The Bar</span> </h1>
-             <p  className=" text-black text-[22px]" >Looks For Ways of <br/>
-             Improvement everyday Day  <br/></p>
-            </div> 
-            
-           
-             {/* <Image
-              src={Ellipse33}
-              alt="bg"
-              width={400}
-              height={400}
-              layout="responsive"
-              className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
-            /> */}
-             
-           </div>
-        </div>
+    {/* Adjusted gap and padding for mobile screens */}
+    <div className="flex flex-col py-20 pl-10 w-[70%] gap-16 max-sm:gap-4 max-sm:w-full mx-auto max-sm:pt-0 max-sm:mb-0 text-center ">
+      <h1 className="text-4xl font-bold text-black">Raise <span className="text-orange-400"> The Bar</span></h1>
+      <p className="text-black text-[22px]">
+        Looks For Ways of <br />
+        Improvement every day <br />
+      </p>
+    </div>
+    
+    {/* Commented out extra image */}
+    {/* <Image
+      src={image}
+      alt="bg"
+      width={400}
+      height={400}
+      layout="responsive"
+      className="object-contain grow max-md:mt-10 max-md:max-w-full max-sm:mt-0 z-40 h-[400px]"
+    /> */}
+    
+  </div>
+</div>
+
       )
     },
     {
         content: (
           
-          <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
-             <div className="flex flex-col  max-md:w-full bg-black">
+          <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between max-sm:gap-0 max-sm:w-[95%]">
+             <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
             </div>
   
-            <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]   w-[85%]  " style={{borderRadius :'30px'}}>
-            
-  
+            <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  max-sm:bg-white  w-[85%] max-sm:flex-col  " style={{borderRadius :'30px'}}>
              
-             <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16" > 
+             <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:gap-4 max-sm:w-full m-auto  max-sm:pl-0 text-center " > 
                <h1 className="text-4xl font-bold text-black" >Humane <span className="text-orange-400"> Approach</span> </h1>
                <p  className=" text-black text-[22px]" >We Respect snd Value <br/>
               the trust you place in us <br/></p>
               </div> 
-              
-             
-               {/* <Image
-                src={Ellipse33}
-                alt="bg"
-                width={400}
-                height={400}
-                layout="responsive"
-                className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
-              /> */}
-  
-               {/* <Image
+               
+               <Image
                 src={doctor}
                 alt="bg"
                 width={400}
                 height={400}
                 layout="responsive"
-                className="object-contain  grow max-md:mt-10 max-md:max-w-full   z-40 h-[400px]"
-              /> */}
+                className="object-contain  grow max-md:mt-10 max-md:max-w-full max-sm:mt-0   z-40 h-[400px]"
+              /> *
              
                
              </div>
@@ -210,7 +189,7 @@ const Hero = () => {
         alt="Previous"
         width={40}
         height={40}
-        className="absolute left-8 bottom-[50%] cursor-pointer p-2 rounded-e-full hover:bg-slate-200 rotate-180 z-50" 
+        className="absolute left-8 bottom-[50%] cursor-pointer p-2 rounded-e-full hover:bg-slate-200 rotate-180 z-50 hidden sm:block" 
         onClick={() => sliderRef?.current?.slickPrev()} 
       />
 
@@ -247,7 +226,7 @@ const Hero = () => {
         alt="next"
         width={40}
         height={40}
-        className="absolute right-8 bottom-[50%] cursor-pointer p-2 rounded-e-full hover:bg-slate-200 " 
+        className="absolute right-8 bottom-[50%] cursor-pointer p-2 rounded-e-full hover:bg-slate-200 hidden sm:block" 
         onClick={() => sliderRef?.current?.slickNext()}
       />
 
