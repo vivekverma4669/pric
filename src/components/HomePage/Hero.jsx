@@ -4,15 +4,15 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import hero from '../../images/hero.png';
+import hero from '../../images/hero.svg';
 import Ellipse33 from '../../images/Ellipse33.png'
-import Ellipse31 from '../../images/Ellipse31.png'
+import meeting from '../../images/meeting.svg'
 import heroBottom from '../../images/heroBottom.png';
 import component1 from '../../images/component1.svg';
 import sliderarrow from '../../images/sliderarrow.svg';
 import right from '../../images/right.png';
-import doctor from '../../images/doctor.png'
-import image from '../../images/image.png'
+import doctor from '../../images/doctor.svg'
+import image from '../../images/hero2.svg'
 
 const Hero = () => {
 
@@ -21,38 +21,40 @@ const Hero = () => {
     {
       content: (
         <div className="flex gap-5 max-md:flex-col max-w-[1225px] mx-auto">
-          <div className="flex flex-col w-[50%] max-md:w-full">
-            <div className="flex relative flex-col mt-16 font-bold text-black max-md:mt-10 max-md:max-w-full max-sm:ml-2">
-              <h1 className="mr-2 text-5xl max-md:mr-2.5 max-md:max-w-full max-md:text-4xl">
-                <span className="font-light text-[18px]">WELCOME TO</span> <br />
-                <span className="font-light text-7xl">PRIAC</span>
+
+          <div className="flex flex-col w-[50%] max-md:w-full max-sm:w-full">
+            <div className="flex relative flex-col mt-16 font-bold text-black max-md:mt-10 max-md:max-w-full max:sm:m-auto">
+              <h1 className="mr-2 text-5xl max-md:mr-2.5 max-md:max-w-full max-md:text-4xl max-sm:text-center">
+                <span className="font-light text-[18px] max-sm:text-[16px] " >WELCOME TO</span> <br />
+                <span className="font-light text-7xl max-sm:text-5xl  ">PRIAC</span>
                 <br />
-                <span className="mt-6 text-5xl font-bold leading-none text-orange-400 max-md:text-4xl">India s BIGGEST</span>
+                <span className="mt-6 text-5xl font-bold leading-none text-orange-400 max-md:text-4xl max-sm:text-3xl max-sm:text-center max-sm:m-auto">India s BIGGEST</span>
                 <br />
               </h1>
-              <p className="mt-4 text-2xl leading-7 max-md:max-w-full font-normal">
+              <p className="mt-4 text-2xl leading-7 max-md:max-w-full font-normal max-sm:text-1xl max:sm:text-[8px]  max-sm:text-center max-sm:m-auto">
                 RHEUMATOLOGY
                 <br />
                 DAY CARE CENTER
               </p>
             </div>
           </div>
-          <div className="flex flex-col ml-5 w-[80%] max-md:ml-0 max-md:w-full max-xl:w-full">
+
+          <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full max-xl:w-full">
             <Image
               src={hero}
               alt="Doctor caring for a patient"
               width={800}
               height={1200}
-              layout="responsive"
-              className="object-contain grow max-md:mt-10 max-md:max-w-full -mb-52 z-40"
+               layout="responsive"
+              className="object-contain grow max-md:mt-10 max-md:max-w-full  -mb-52 z-40"
             />
-            <Image
+            {/* <Image
               src={heroBottom}
               alt="hero bottom"
               width={400}
               height={400}
               className="object-contain -mt-1 grow max-md:max-w-full w-[448px]"
-            />
+            /> */}
           </div>
         </div>
       )
@@ -85,7 +87,7 @@ const Hero = () => {
             /> */}
 
              <Image
-              src={Ellipse31}
+              src={meeting}
               alt="bg"
               width={400}
               height={400}
@@ -162,14 +164,14 @@ const Hero = () => {
                 className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
               /> */}
   
-               <Image
+               {/* <Image
                 src={doctor}
                 alt="bg"
                 width={400}
                 height={400}
                 layout="responsive"
                 className="object-contain  grow max-md:mt-10 max-md:max-w-full   z-40 h-[400px]"
-              />
+              /> */}
              
                
              </div>
@@ -225,7 +227,7 @@ const Hero = () => {
         alt="dot"
         width={200}
         height={200}
-        className="object-contain absolute left-0 top-80 grow max-md:max-w-full w-[105px]" 
+        className="object-contain absolute left-0 top-80 grow max-md:max-w-full w-[105px] max-sm:hidden " 
       /> 
 
       {/* Progress Bar */}
@@ -242,7 +244,7 @@ const Hero = () => {
 
       <Image  
         src={sliderarrow}
-        alt="Previous"
+        alt="next"
         width={40}
         height={40}
         className="absolute right-8 bottom-[50%] cursor-pointer p-2 rounded-e-full hover:bg-slate-200 " 

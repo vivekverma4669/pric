@@ -15,6 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const MenuItem = ({ icon, text, href, isActive, onClick }) => (
   href ? (
     <Link href={href}>
@@ -40,6 +41,7 @@ const MenuItem = ({ icon, text, href, isActive, onClick }) => (
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { isAuthenticated, logout , profile} = useContext(AuthContext); 
   const pathname = usePathname(); 
   const router = useRouter();
@@ -49,14 +51,25 @@ const Header = () => {
     router.push('/'); 
   };
 
+  
+
   return (
     <header className={`flex relative flex-col justify-center items-center px-48 py-4 w-full font-bold text-orange-400 bg-white  max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
        <ToastContainer/>
       <nav className="flex flex-wrap gap-6 justify-between items-center w-full max-w-[1260px] max-md:max-w-full text-black font-normal  ">
-{/*      
-        <div className="self-stretch my-auto text-xl">
-          <Link href="/"> <Image src={logo} alt="logo"/></Link>
-        </div> */}
+
+           
+              
+    <div className="menu text-black" onClick={() => setMenuOpen(!menuOpen)  }>
+    <span className="menu text-black"></span>
+    <span className="menu text-black"></span>
+    <span className="menu text-black"></span>
+    </div>
+
+    {/* <ul className={menuOpen ? "open" : ""}>
+      
+    </ul> */}
+
         <ul className="flex gap-4 self-stretch my-auto text-base max-md:max-w-full flex-col md:flex-row">
           <li>
             <Link href="/" className={` ${pathname=='/'?  'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `} >HOME</Link>
