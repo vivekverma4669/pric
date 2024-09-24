@@ -11,18 +11,14 @@ import Footer from "../Footer";
 import JointsCare from "./JointsCare";
 import Image from "next/image";
 import BG from "../../images/BG.svg"
+import OurDoctorsName from "./OurDoctorsName";
 
 const MainLayout = () => {
   return (
     <div className="flex overflow-hidden flex-col items-center bg-white">    
       <Hero/> 
-      {/* <Departments/> */}
-      {/* <JointsCare/> */}
-      {/* <AboutUs/> */}
-      {/* <OurDoctors/> */}
+      <OurDoctorsName/>
       <Testimonials/>
-      {/* <BlogPosts/> */}
-      {/* <Newsletter/> */}
     </div>
   );
 };

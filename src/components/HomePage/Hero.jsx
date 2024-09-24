@@ -6,10 +6,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import hero from '../../images/hero.png';
 import Ellipse33 from '../../images/Ellipse33.png'
+import Ellipse31 from '../../images/Ellipse31.png'
 import heroBottom from '../../images/heroBottom.png';
 import component1 from '../../images/component1.svg';
 import sliderarrow from '../../images/sliderarrow.svg';
 import right from '../../images/right.png';
+import doctor from '../../images/doctor.png'
+import image from '../../images/image.png'
 
 const Hero = () => {
 
@@ -54,25 +57,35 @@ const Hero = () => {
         </div>
       )
     },
+    
     {
-      content: (
-        
+      content :(
         <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
            <div className="flex flex-col  max-md:w-full bg-black">
           </div>
 
-          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  w-[85%] " style={{borderRadius :'30px'}}>
+          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]   w-[85%]  " style={{borderRadius :'30px'}}>
           
 
-           <div className=" flex flex-col py-20 pl-20 w-[50%]  gap-12" > 
+           
+           <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16" > 
              <h1 className="text-4xl font-bold text-black" >Our <span className="text-orange-400"> Mission</span> </h1>
-             <p  className="font-normal text-black font-medium " >To Provide Worlds best <br/>
-             Holistic Rheumatology Care </p>
+             <p  className=" text-black text-[22px]" >To Provide Worlds best <br/>
+             Holistic Rheumatology <br/> Care </p>
             </div> 
             
            
-             <Image
+             {/* <Image
               src={Ellipse33}
+              alt="bg"
+              width={400}
+              height={400}
+              layout="responsive"
+              className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
+            /> */}
+
+             <Image
+              src={Ellipse31}
               alt="bg"
               width={400}
               height={400}
@@ -82,12 +95,88 @@ const Hero = () => {
            
              
            </div>
-           
-       
-          
         </div>
       )
+    },
+    {
+      content: (
+        
+        <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-center">
+         
+          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  ml-20  w-[60%]  " style={{borderRadius :'30px'}}>
+          <Image
+              src={image}
+              alt="bg"
+              width={400}
+              height={400}
+              layout="responsive"
+              className="object-contain  grow max-md:mt-10 max-md:max-w-full  z-40 h-[400px]"
+            />
+           
+
+           
+           <div className=" flex flex-col py-20 pl-10 w-[70%]  gap-16" > 
+             <h1 className="text-4xl font-bold text-black" >Raise  <span className="text-orange-400"> The Bar</span> </h1>
+             <p  className=" text-black text-[22px]" >Looks For Ways of <br/>
+             Improvement everyday Day  <br/></p>
+            </div> 
+            
+           
+             {/* <Image
+              src={Ellipse33}
+              alt="bg"
+              width={400}
+              height={400}
+              layout="responsive"
+              className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
+            /> */}
+             
+           </div>
+        </div>
+      )
+    },
+    {
+        content: (
+          
+          <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
+             <div className="flex flex-col  max-md:w-full bg-black">
+            </div>
+  
+            <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]   w-[85%]  " style={{borderRadius :'30px'}}>
+            
+  
+             
+             <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16" > 
+               <h1 className="text-4xl font-bold text-black" >Humane <span className="text-orange-400"> Approach</span> </h1>
+               <p  className=" text-black text-[22px]" >We Respect snd Value <br/>
+              the trust you place in us <br/></p>
+              </div> 
+              
+             
+               {/* <Image
+                src={Ellipse33}
+                alt="bg"
+                width={400}
+                height={400}
+                layout="responsive"
+                className=" relative object-contain  grow max-md:mt-10 max-md:max-w-full   h-[400px]"
+              /> */}
+  
+               <Image
+                src={doctor}
+                alt="bg"
+                width={400}
+                height={400}
+                layout="responsive"
+                className="object-contain  grow max-md:mt-10 max-md:max-w-full   z-40 h-[400px]"
+              />
+             
+               
+             </div>
+          </div>
+        )
     }
+
   ];
 
   // State to track the current slide
