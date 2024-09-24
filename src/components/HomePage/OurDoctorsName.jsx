@@ -24,8 +24,7 @@ const OurDoctorsName = () => {
             </div>
         </div>
 
-        <div style={{borderLeft :'2px solid gray' , height:'120px'}}> </div>
-          
+        <div style={{borderLeft :'2px solid gray' , height:'120px'}}> </div>    
            
         <div className='text-black flex flex-col '>
             <div className='m-auto' >
@@ -40,7 +39,72 @@ const OurDoctorsName = () => {
         </div>
 
         </section>
-      
+
+
+      <section className=" w-[90%]  mt-24 mx-auto flex flex-wrap   justify-center gap-10 bg-gray-100 px-12 pt-8 pb-8  4 max-md:px-5  " style={{borderRadius :'30px'}}>
+        
+        <div className='text-black flex flex-col w-[280px]'>
+          <div className='m-auto' >
+          <h1 className='text-3xl font-bold '> VAIDYA PRABHU </h1>
+          </div>
+          <div className='m-auto text-center mt-4 flex flex-col  gap-0'>
+              <p className='text-[22px] font-light p-1 -m-2' >MD DM (Immunology)</p>
+              <p className='text-[22px] font-light  p-1 -m-2'> MBBS ,MD </p>
+          </div>
+        </div>
+
+       <div style={{borderLeft :'2px solid gray' , height:'120px'}}> </div> 
+
+        <div className='text-black flex flex-col   w-[280px]'>
+          <div className='m-auto' >   
+          <h1 className='text-3xl font-bold '>KHUSHBOO</h1>
+          </div>
+          <div className='m-auto text-center mt-4 flex flex-col  gap-0'>
+              <p className='text-[22px] font-light p-1 -m-2' >MD Medicine PDCC </p>
+              <p className='text-[22px] font-light  p-1 -m-2'> MBBS ,MD </p>
+          </div>
+      </div>
+
+      <div style={{borderLeft :'2px solid gray' , height:'120px'}}> </div>   
+
+      <div className='text-black flex flex-col  w-[280px] '>
+          <div className='m-auto' >   
+          <h1 className='text-3xl font-bold '>KHUSHBOO</h1>
+          </div>
+          <div className='m-auto text-center mt-4 flex flex-col  gap-0'>
+              <p className='text-[22px] font-light p-1 -m-2' >MD Medicine PDCC </p>
+              <p className='text-[22px] font-light  p-1 -m-2'> MBBS ,MD </p>     
+          </div>
+      </div>
+
+
+
+      <div className='text-black flex flex-col  w-[280px] '>
+          <div className='m-auto' >   
+          <h1 className='text-3xl font-bold '>TARUNA</h1>
+          </div>
+      </div>
+
+      <div style={{borderLeft :'2px solid gray' , height:'120px'}}> </div> 
+
+      <div className='text-black flex flex-col  w-[290px] '>
+          <div className='m-auto' >   
+          <h1 className='text-3xl font-bold '>HARMANJOT KAUR</h1>
+          </div>
+         
+      </div>
+
+      <div style={{borderLeft :'2px solid gray' , height:'120px'}}> </div> 
+      <div className='text-black flex flex-col  w-[280px] '>
+          <div className='m-auto' >   
+          <h1 className='text-3xl font-bold '>ROHIT K</h1>
+          </div>
+          
+      </div>
+
+
+
+      </section>
     </div> 
       
   </>

@@ -109,16 +109,7 @@ const TestimonialSection = () => {
 
      </div>
 
-     <nav className=" flex flex-col gap-6  absolute "  >
-  {[...Array(4)].map((_, index) => (
-    <div key={index} className="flex gap-6">
-      {[...Array(4)].map((_, innerIndex) => (
-        <div key={innerIndex} className="flex shrink-0 rounded-full border border-amber-100 border-solid h-[30px] w-[31px]" tabIndex="0" role="button" aria-label={`Navigation dot ${index * 4 + innerIndex + 1}`} />
-      ))}
-    </div>
-  ))}
-</nav> 
-
+    
     </section>
 
    
