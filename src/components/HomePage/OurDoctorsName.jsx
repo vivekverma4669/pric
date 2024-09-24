@@ -7,10 +7,11 @@ const OurDoctorsName = () => {
 
     <div className="relative  self-center mt-40 mb-0 w-full mx-auto max-md:mt-10 max-md:mb-2.5 max-md:max-w-ful max-w-[1350px] px-10 max-sm:px-0 max-sm:mt-28 max:sm:mb-0 max:sm:px-4" >
 
-        <h2 className="text-5xl font-light text-black max-md:text-4xl max:sm:mt-24 text-center">
-        Our <span className='text-orange-400 font-bold'  >  Doctors</span>   </h2>
+        <h2 className="text-5xl font-light ml-10 text-black max-md:text-4xl max:sm:mt-24 max-sm:text-center">
+        Our <span className='text-orange-400 font-bold ' style={{textShadow :'2px 2px gray'}} >  Doctors</span>   </h2>
        
-        <section className=" w-[90%]  mt-24 mx-auto flex  justify-center gap-24 bg-gray-100 px-12 pt-8 pb-8  4 max-md:px-5 max:sm:w-[100%] max-sm:gap-4 max:sm:px-5  " style={{borderRadius :'30px', boxShadow :'rgb(38, 57, 77) 0px 20px 30px -10px' }}>
+       
+        <section className=" w-[90%]  mt-24 mx-auto flex  justify-center gap-24 bg-gray-100 px-12 pt-8 pb-8  4 max-md:px-5 max:sm:w-[100%] max-sm:gap-4 max:sm:px-5  " style={{borderRadius :'30px' , boxShadow:"rgba(0, 0, 0, 0.25) 0px  28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"}}>
         
           <div className='text-black flex flex-col '>
             <div className='m-auto' >
@@ -38,10 +39,12 @@ const OurDoctorsName = () => {
             </div>
         </div>
 
+
         </section>
 
 
       <section className=" w-[90%]  mt-24 mx-auto flex flex-wrap   justify-center gap-10 bg-gray-100 px-12 pt-8 pb-8  max-md:px-5  max-sm:gap-4  " style={{borderRadius :'30px'}}>
+        
         
         <div className='text-black flex flex-col w-[280px]'>
           <div className='m-auto' >
