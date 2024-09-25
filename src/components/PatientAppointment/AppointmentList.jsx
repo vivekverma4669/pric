@@ -9,7 +9,6 @@ import Link from "next/link";
 import Cookies from "js-cookie";
 import { AuthContext } from "@/AuthContextApi/AuthContext";
 
-
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,22 +65,22 @@ const AppointmentList = () => {
         }
       });
    
-      console.log(res.data.payload.appointments);
-      const appointmentsData = res.data.payload.appointments.map((appointment) => ({
+      console.log(res?.data?.payload?.appointments);
+      const appointmentsData = res?.data?.payload?.appointments?.map((appointment) => ({
         date: {
           day: new Date(appointment.visit_date).getDate(),
           month: new Date(appointment.visit_date).toLocaleString('default', { month: 'short' })
         },
-        doctor: appointment.doctor_name,
-        diagnosis: appointment.prescription.diagnosis || "No Diagnosis",
-        remarks: appointment.prescription.remarks || "No Remarks",
-        prescriptionId: appointment.prescription.id,
-        medicines: appointment.prescription.medicines.map((medicine) => ({
-          name: medicine.name,
-          frequency: medicine.description,
-          instructions: medicine.remark,
+        doctor: appointment?.doctor_name,
+        diagnosis: appointment?.prescription?.diagnosis || "",
+        remarks: appointment?.prescription?.remarks || "",
+        prescriptionId: appointment?.prescription?.id,
+        medicines: appointment?.prescription?.medicines.map((medicine) => ({
+          name: medicine?.name,
+          frequency: medicine?.description,
+          instructions: medicine?.remark,
         })),
-        medicalTest: appointment.prescription.medical_tests?.join(", ") || "No Medical Tests",
+        medicalTest: appointment?.prescription?.medical_tests?.join(", ") || "No Medical Tests",
       }));
       setAppointments(appointmentsData);
     }

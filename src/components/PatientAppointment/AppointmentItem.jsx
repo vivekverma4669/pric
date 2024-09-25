@@ -51,14 +51,14 @@ const AppointmentItem = ({ appointment }) => {
  
   return (
     <div className="flex flex-wrap gap-2 mb-4 max-w-full w-[658px]">
-      <DateBadge day={appointment.date.day} month={appointment.date.month} />
+      <DateBadge day={appointment?.date.day} month={appointment?.date.month} />
 
       <div className="flex flex-col grow shrink-0 rounded-2xl basis-0 bg-neutral-100 w-fit max-md:max-w-full">
         <div
           className="flex flex-wrap gap-5 justify-between px-6 py-3.5 text-base font-semibold rounded-2xl bg-zinc-300 bg-opacity-50 text-neutral-800 max-md:px-5 max-md:max-w-full cursor-pointer"
           onClick={toggleOpen}
         >
-          <div>{appointment.doctor}</div>
+          <div>{appointment?.doctor}</div>
           <Image
             loading="lazy"
             src={arrowUp}
@@ -68,7 +68,7 @@ const AppointmentItem = ({ appointment }) => {
             alt="Toggle details"
           />
         </div>
-        {isOpen && appointment.diagnosis && (
+        {isOpen && appointment?.diagnosis && (
           <div className="flex flex-col px-6 mt-6 w-full text-xs text-neutral-700 max-md:px-5 max-md:max-w-full">
             <div className="flex flex-wrap gap-5 justify-between text-sm max-md:max-w-full">
               <div className="flex flex-col">
@@ -76,13 +76,13 @@ const AppointmentItem = ({ appointment }) => {
                   <span className="font-semibold text-neutral-800">
                     Diagnosis:{" "}
                   </span>
-                  {appointment.diagnosis}
+                  {appointment?.diagnosis}
                 </div>
                 <div className="mt-2 max-md:mr-2.5">
                   <span className="font-semibold text-neutral-800">
                     Remarks:{" "}
                   </span>
-                  {appointment.remarks}
+                  {appointment?.remarks}
                 </div>
                 <div className="self-start mt-4 font-semibold text-neutral-800">
                   Medicines
@@ -108,21 +108,21 @@ const AppointmentItem = ({ appointment }) => {
 
             </div>
              
-            {appointment.medicines.map((medicine, index) => (
+            {appointment?.medicines?.map((medicine, index) => (
               <div
                 key={index}
                 className="flex flex-wrap gap-5 justify-between px-6 py-3.5 mt-2 bg-white rounded-xl max-md:px-5 max-md:max-w-full hover:border-l hover:border-orange-600"
               >
-                <div className="w-[51%] overflow-x-auto">{medicine.name}</div>
-                <div className="w-[20%]">{medicine.frequency}</div>
-                <div className="w-[20%]">{medicine.instructions}</div>
+                <div className="w-[51%] overflow-x-auto">{medicine?.name}</div>
+                <div className="w-[20%]">{medicine?.frequency}</div>
+                <div className="w-[20%]">{medicine?.instructions}</div>
               </div>
             ))}
 
             <div className="self-start mt-4 text-sm font-semibold text-neutral-800">
               Medical Test
             </div>
-            <div className="self-start mt-2">{appointment.medicalTest}</div>
+            <div className="self-start mt-2">{appointment?.medicalTest}</div>
 
             <div className="flex gap-1 self-end mt-5 mb-5 font-semibold text-orange-400">
               <Image
