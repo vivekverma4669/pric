@@ -20,7 +20,7 @@ const Hero = () => {
   const slides = [
     {
       content: (
-        <div className="flex gap-5 max-md:flex-col max-w-[1225px] mx-auto">
+        <div className="flex gap-5 max-md:flex-col max-w-[1225px] mx-auto max-sm:gap-0 ">
 
           <div className="flex flex-col w-[45%] max-md:w-full max-sm:w-full">
             <div className="flex relative flex-col mt-16 font-bold text-black max-md:mt-10 max-md:max-w-full max:sm:m-auto">
@@ -61,11 +61,11 @@ const Hero = () => {
     },
     { 
       content :(
-        <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
+        <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between  max-sm:w-[95%] max-sm:gap-0 " >
             <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
           </div> 
 
-          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px]  w-[90%] max-sm:bg-white  max-sm:flex-col " style={{borderRadius :'30px'}}>
+          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px]  w-[90%] max-sm:gap-0 max-sm:bg-white  max-sm:flex-col " style={{borderRadius :'30px'}}>
            
            <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:pl-0 max-sm:gap-4 max-sm:w-full max-sm:text-center" > 
              <h1 className="text-4xl font-bold text-black" >Our <span className="text-orange-400"> Mission</span> </h1>
@@ -91,7 +91,7 @@ const Hero = () => {
     {
       content: (
         
- <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-center max-sm:mt-40">
+ <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-center max-sm:mt-40  max-sm:w-[95%] max-sm:gap-0 ">
   <div className="flex flex-row justify-between max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px] ml-20 w-[85%] max-sm:w-[95%] max-sm:m-auto max-sm:gap-0 max-sm:flex-col-reverse max-sm:bg-white" style={{ borderRadius: '30px' }}>
     
     <Image
@@ -131,7 +131,7 @@ const Hero = () => {
     {
         content: (
           
-          <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between max-sm:gap-0 max-sm:w-[95%]">
+          <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between max-sm:w-[95%] max-sm:gap-0 ">
              <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
             </div>
   
