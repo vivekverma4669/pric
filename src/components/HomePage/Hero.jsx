@@ -4,7 +4,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import hero from '../../images/hero.svg';
+import hero from '../../images/hero.png';
 import Ellipse33 from '../../images/Ellipse33.png'
 import meeting from '../../images/meeting.svg'
 import heroBottom from '../../images/heroBottom.png';
@@ -22,16 +22,16 @@ const Hero = () => {
       content: (
         <div className="flex gap-5 max-md:flex-col max-w-[1225px] mx-auto">
 
-          <div className="flex flex-col w-[50%] max-md:w-full max-sm:w-full">
+          <div className="flex flex-col w-[45%] max-md:w-full max-sm:w-full">
             <div className="flex relative flex-col mt-16 font-bold text-black max-md:mt-10 max-md:max-w-full max:sm:m-auto">
               <h1 className="mr-2 text-5xl max-md:mr-2.5 max-md:max-w-full max-md:text-4xl max-sm:text-center">
-                <span className="font-light text-[18px] max-sm:text-[16px] " >WELCOME TO</span> <br />
-                <span className="font-light text-7xl max-sm:text-5xl  ">PRIAC</span>
+                <span className=" text-[19px]  max-sm:text-[16px] font-normal" >WELCOME TO</span> <br />
+                <span className="font-semibold text-7xl max-sm:text-5xl  ">PRIAC</span>
                 <br />
                 <span className="mt-6 text-5xl font-bold leading-none text-orange-400 max-md:text-4xl max-sm:text-3xl max-sm:text-center max-sm:m-auto">India s BIGGEST</span>
                 <br />
               </h1>
-              <p className="mt-4 text-2xl leading-7 max-md:max-w-full font-normal max-sm:text-1xl max:sm:text-[8px]  max-sm:text-center max-sm:m-auto">
+              <p className="mt-4 text-3xl leading-7 max-md:max-w-full font-medium max-sm:text-1xl max:sm:text-[8px]  max-sm:text-center max-sm:m-auto">
                 RHEUMATOLOGY
                 <br />
                 DAY CARE CENTER
@@ -39,14 +39,14 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col ml-5 w-[85%] max-md:ml-0 max-md:w-full max-xl:w-full max-sm:w-[90%] max-sm:m-auto">
+          <div className="flex flex-col ml-5 w-[85%]   max-md:ml-0 max-md:w-full max-xl:w-full  max-sm:w-[90%] max-sm:m-auto">
             <Image
               src={hero}
               alt="Doctor caring for a patient"
               width={800}
               height={1200}
                layout="responsive"
-              className="object-contain grow max-md:mt-10 max-md:max-w-full  -mb-52 z-40"
+              className="object-contain grow max-md:mt-10 max-md:max-w-full   z-40"
             />
             {/* <Image
               src={heroBottom}
@@ -59,14 +59,13 @@ const Hero = () => {
         </div>
       )
     },
-    
     {
       content :(
         <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
             <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
           </div> 
 
-          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  w-[85%] max-sm:bg-white  max-sm:flex-col " style={{borderRadius :'30px'}}>
+          <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px]  w-[90%] max-sm:bg-white  max-sm:flex-col " style={{borderRadius :'30px'}}>
            
            <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:gap-4 max-sm:w-full " > 
              <h1 className="text-4xl font-bold text-black" >Our <span className="text-orange-400"> Mission</span> </h1>
@@ -93,7 +92,7 @@ const Hero = () => {
       content: (
         
  <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-center max-sm:mt-40">
-  <div className="flex flex-row justify-between max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px] ml-20 w-[60%] max-sm:w-[95%] max-sm:m-auto max-sm:gap-0 max-sm:flex-col-reverse max-sm:bg-white" style={{ borderRadius: '30px' }}>
+  <div className="flex flex-row justify-between max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px] ml-20 w-[85%] max-sm:w-[95%] max-sm:m-auto max-sm:gap-0 max-sm:flex-col-reverse max-sm:bg-white" style={{ borderRadius: '30px' }}>
     
     <Image
       src={image}
@@ -135,7 +134,7 @@ const Hero = () => {
              <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
             </div>
   
-            <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[450px]  max-sm:bg-white  w-[85%] max-sm:flex-col  " style={{borderRadius :'30px'}}>
+            <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px]  max-sm:bg-white  w-[90%] max-sm:flex-col  " style={{borderRadius :'30px'}}>
              
              <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:gap-4 max-sm:w-full m-auto  max-sm:pl-0 text-center " > 
                <h1 className="text-4xl font-bold text-black" >Humane <span className="text-orange-400"> Approach</span> </h1>

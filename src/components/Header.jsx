@@ -58,13 +58,23 @@ const Header = () => {
        <ToastContainer/>
       <nav className="flex flex-wrap gap-6 justify-between items-center w-full max-w-[1260px] max-md:max-w-full text-black font-normal  ">
 
-           
+            <div>
+            <Link href="/" >
+             <Image src={logo}
+             width={'100'}
+             height={'80'}
+             alt="logo"
+             className="cursor-pointer "
+             />
+             </Link>
+            
+            </div>
               
-    <div className="menu text-black" onClick={() => setMenuOpen(!menuOpen)  }>
+    {/* <div className="menu text-black" onClick={() => setMenuOpen(!menuOpen)  }>
     <span className="menu text-black"></span>
     <span className="menu text-black"></span>
     <span className="menu text-black"></span>
-    </div>
+    </div> */}
 
     {/* <ul className={menuOpen ? "open" : ""}>
       
