@@ -89,11 +89,11 @@ const Footer = () => {
       <div className="flex flex-wrap gap-10 justify-between w-full  m-auto max-w-[1460px] max-md:max-w-full   "  >
       
         <div className=" flex flex-col my-auto mt-0"  >
-          <div className="self-start text-3xl font-bold text-orange-300">
+          <div className="self-start text-3xl font-bold text-white">
             PRIC
           </div>
           <div className="mt-4 text-base leading-6 text-slate-100">
-            <span className="text-orange-300">
+            <span className=" text-white">
               World&apos;s Best Holistic <br/> Rheumatology Centre
             </span>
             <br />

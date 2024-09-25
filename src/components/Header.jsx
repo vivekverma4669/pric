@@ -13,6 +13,7 @@ import styles from '../style/buttonStyle.css'
 import { AuthContext } from "@/AuthContextApi/AuthContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import hamburger from '../images/hamburger.svg'
 
 
 
@@ -21,7 +22,7 @@ const MenuItem = ({ icon, text, href, isActive, onClick }) => (
     <Link href={href}>
       <div
         className={`flex gap-3.5 ml-2 cursor-pointer ${isActive ? 'px-2 py-1.5 rounded bg-orange-400 bg-opacity-50' : 'px-2 py-1.5'}
-        hover:bg-orange-400 hover:bg-opacity-50 hover:border hover:border-orange-500`}
+        hover:bg-orange-400 hover:bg-opacity-50 hover:border `}
       >
         <Image loading="lazy" src={icon} alt="" className={`object-contain shrink-0 my-auto aspect-square w-[18px] ${isActive ? 'active-filter' : ''}`} />
         <div className={'grow shrink w-[130px]'}>{text}</div>
@@ -41,7 +42,7 @@ const MenuItem = ({ icon, text, href, isActive, onClick }) => (
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [navbar, setNavbar] = useState(false);
   const { isAuthenticated, logout , profile} = useContext(AuthContext); 
   const pathname = usePathname(); 
   const router = useRouter();
@@ -56,31 +57,42 @@ const Header = () => {
   return (
     <header className={`flex relative flex-col justify-center items-center px-48 py-4 w-full font-bold text-orange-400 bg-white  max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
        <ToastContainer/>
+
       <nav className="flex flex-wrap gap-6 justify-between items-center w-full max-w-[1260px] max-md:max-w-full text-black font-normal  ">
 
-            <div>
-            <Link href="/" >
-             <Image src={logo}
-             width={'100'}
-             height={'80'}
-             alt="logo"
-             className="cursor-pointer "
-             />
-             </Link>
-            
-            </div>
-              
-    {/* <div className="menu text-black" onClick={() => setMenuOpen(!menuOpen)  }>
-    <span className="menu text-black"></span>
-    <span className="menu text-black"></span>
-    <span className="menu text-black"></span>
-    </div> */}
+      <div>
+      <Link href="/" >
+        <Image src={logo}
+        width={'100'}
+        height={'80'}
+        alt="logo"
+        className="cursor-pointer "
+        />
+        </Link>
+      </div>
 
-    {/* <ul className={menuOpen ? "open" : ""}>
-      
-    </ul> */}
-
-        <ul className="flex gap-4 self-stretch my-auto text-base max-md:max-w-full flex-col md:flex-row">
+      <div className="md:hidden">
+                <button
+                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {navbar ? (
+                    <Image src={hamburger} width={30} height={30} alt="logo"
+                    className=" absolute top-5 right-8 z-50" />
+                  ) : (
+                    <Image
+                      src={hamburger}
+                      width={30}
+                      height={30}
+                      alt="logo"
+                      className="focus:border-none active:border-none "
+                    />
+                  )}
+         </button>
+      </div>
+   
+    
+        <ul className={` max-md:${navbar ? 'p-12 md:p-0  z-40 absolute w-[90%] top-0 right-0    bg-slate-200' : 'hidden'}  flex gap-4 self-stretch my-auto text-base max-md:max-w-full flex-col max-sm:justify-center  md:flex-row `}>
           <li>
             <Link href="/" className={` ${pathname=='/'?  'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `} >HOME</Link>
           </li>
@@ -96,16 +108,16 @@ const Header = () => {
           <li>
             <Link href="/appointment" className={` ${pathname=='/appointment'?   'rounded bg-orange-500 bg-opacity-90 text-white p-1' : 'p-1'}  rounded   hover:bg-orange-400  hover:text-white  `}>BOOK APPOINTMENT</Link>
           </li>
-        </ul>
+        </ul> 
 
-        {!isAuthenticated ? (
-          <Link href="/login"> 
+         {!isAuthenticated ? (
+          <Link href="/login" className={` max-md:${navbar ? ' md:p-0 block' : 'hidden'} `}> 
             <button className="self-stretch px-7 py-3 text-sm text-center border border-orange-400 border-solid rounded-[800px] max-md:px-5 hover:bg-orange-400 hover:text-white transition duration-300 active:bg-orange-500 active:shadow-inner">
               Sign In
             </button>   
           </Link>
-        ) : (
-          <div>
+          ) : (
+          <div className={`max-md:${navbar ? 'p-12 md:p-0 block' : 'hidden'} `}>
             <Image
               onClick={() => setToggle(!toggle)}
               src={`https://ui-avatars.com/api/?name=${profile.full_name}`}
@@ -154,7 +166,8 @@ const Header = () => {
               </div>
             )}
           </div>
-        )}
+        )} 
+
       </nav>
     </header>
   );

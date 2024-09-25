@@ -11,7 +11,7 @@ const OurDoctorsName = () => {
         Our <span className='text-orange-400 font-bold '>  Doctors</span>   </h2>
        
        
-        <section className=" w-[70%]  mt-24 mx-auto flex  justify-center gap-24 bg-gray-100 px-12 pt-8 pb-8  4 max-md:px-5 max:sm:w-[100%] max-sm:gap-4 max:sm:px-5  " style={{borderRadius :'30px' , boxShadow:"rgba(17, 17, 26, 0.1) 0px 1px 0px"}}>
+        <section className=" w-[70%]  mt-24 mx-auto flex  justify-center gap-24 bg-gray-100 px-12 pt-8 pb-8    max-sm:w-[95%] max-md:w-[98%] max-sm:gap-4 max-md:gap-4 max-sm:px-1 max-md:px-4  " style={{borderRadius :'30px' , boxShadow:"rgba(17, 17, 26, 0.1) 0px 1px 0px"}}>
         
           <div className='text-black flex flex-col '>
             <div className='m-auto' >
@@ -43,7 +43,7 @@ const OurDoctorsName = () => {
         </section>
 
 
-      <section className=" w-[70%]  mt-24 mx-auto  gap-10 bg-gray-100 px-12 pt-8 pb-8  gap-y-20  max-md:px-5  max-sm:gap-4  grid grid-cols-1 md:grid-cols-3 " style={{borderRadius :'30px'}}>
+      <section className=" w-[70%]  mt-24 mx-auto  gap-10 bg-gray-100 px-12 pt-8 pb-8  gap-y-20  grid grid-cols-1 md:grid-cols-3  max-sm:w-[95%] max-md:w-[98%] max-sm:gap-4 max-md:gap-4 max-sm:px-1 max-md:px-4  " style={{borderRadius :'30px'}}>
         
         
         <div className='text-black flex flex-col '>

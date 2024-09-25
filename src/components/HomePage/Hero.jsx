@@ -31,7 +31,7 @@ const Hero = () => {
                 <span className="mt-6 text-5xl font-bold leading-none text-orange-400 max-md:text-4xl max-sm:text-3xl max-sm:text-center max-sm:m-auto">India s BIGGEST</span>
                 <br />
               </h1>
-              <p className="mt-4 text-3xl leading-7 max-md:max-w-full font-medium max-sm:text-1xl max:sm:text-[8px]  max-sm:text-center max-sm:m-auto">
+              <p className="mt-4 text-3xl leading-7 max-md:max-w-full font-medium max-sm:text-1xl max:sm:text-[8px] max-sm:text-2xl max-sm:font-light max-sm:text-center max-sm:m-auto">
                 RHEUMATOLOGY
                 <br />
                 DAY CARE CENTER
@@ -46,7 +46,7 @@ const Hero = () => {
               width={800}
               height={1200}
                layout="responsive"
-              className="object-contain grow max-md:mt-10 max-md:max-w-full   z-40"
+              className="object-contain grow max-md:mt-10 max-md:max-w-full  z-40"
             />
             {/* <Image
               src={heroBottom}
@@ -59,7 +59,7 @@ const Hero = () => {
         </div>
       )
     },
-    {
+    { 
       content :(
         <div className="flex gap-5 max-md:flex-col max-w-[1350px] mx-auto justify-between">
             <div className="flex flex-col  max-md:w-full bg-black max-sm:hidden">
@@ -67,7 +67,7 @@ const Hero = () => {
 
           <div className="flex flex-row justify-between   max-md:ml-0 max-md:w-full max-xl:w-full bg-gray-100 h-[500px]  w-[90%] max-sm:bg-white  max-sm:flex-col " style={{borderRadius :'30px'}}>
            
-           <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:gap-4 max-sm:w-full " > 
+           <div className=" flex flex-col py-20 pl-20 w-[65%]  gap-16 max-sm:pl-0 max-sm:gap-4 max-sm:w-full max-sm:text-center" > 
              <h1 className="text-4xl font-bold text-black" >Our <span className="text-orange-400"> Mission</span> </h1>
              <p  className=" text-black text-[22px]" >To Provide Worlds best <br/>
              Holistic Rheumatology  Care </p>
@@ -100,12 +100,13 @@ const Hero = () => {
       width={400}
       height={400}
       layout="responsive"
-      className="object-contain grow max-md:mt-10 max-md:max-w-full max-sm:mt-0 z-40 h-[400px]"
+      className="object-contain grow max-md:mt-10 max-sm:pb-6 max-md:max-w-full max-sm:mt-0 z-40 h-[500px]"
     />
 
     {/* Adjusted gap and padding for mobile screens */}
-    <div className="flex flex-col py-20 pl-10 w-[70%] gap-16 max-sm:gap-4 max-sm:w-full mx-auto max-sm:pt-0 max-sm:mb-0 text-center ">
-      <h1 className="text-4xl font-bold text-black">Raise <span className="text-orange-400"> The Bar</span></h1>
+
+    <div className="flex flex-col py-20 pl-10 w-[70%] gap-16 max-sm:gap-4 max-sm-pl-0 max-sm:w-full mx-auto max-sm:pt-0 max-sm:mb-0 max-sm:text-center ">
+      <h1 className="text-4xl font-bold text-black max-sm:text-center">Raise <span className="text-orange-400"> The Bar</span></h1>
       <p className="text-black text-[22px]">
         Looks For Ways of <br />
         Improvement every day <br />
