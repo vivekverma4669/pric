@@ -9,12 +9,13 @@ import Link from "next/link";
 import Cookies from "js-cookie";
 import { AuthContext } from "@/AuthContextApi/AuthContext";
 
+
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(false);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const params = useParams();  
-  const id = params.id;
+  const id = params?.id;
 
    
   const { isAuthenticated, profile, setProfile } = useContext(AuthContext);
@@ -65,17 +66,17 @@ const AppointmentList = () => {
         }
       });
    
-      console.log(res?.data?.payload?.appointments);
+      console.log(res.data.payload.appointments);
       const appointmentsData = res?.data?.payload?.appointments?.map((appointment) => ({
         date: {
-          day: new Date(appointment.visit_date).getDate(),
-          month: new Date(appointment.visit_date).toLocaleString('default', { month: 'short' })
+          day: new Date(appointment?.visit_date).getDate(),
+          month: new Date(appointment?.visit_date).toLocaleString('default', { month: 'short' })
         },
         doctor: appointment?.doctor_name,
-        diagnosis: appointment?.prescription?.diagnosis || "",
-        remarks: appointment?.prescription?.remarks || "",
+        diagnosis: appointment?.prescription?.diagnosis || "No Diagnosis",
+        remarks: appointment?.prescription?.remarks || "No Remarks",
         prescriptionId: appointment?.prescription?.id,
-        medicines: appointment?.prescription?.medicines.map((medicine) => ({
+        medicines: appointment?.prescription?.medicines?.map((medicine) => ({
           name: medicine?.name,
           frequency: medicine?.description,
           instructions: medicine?.remark,
@@ -113,9 +114,9 @@ const AppointmentList = () => {
             className="absolute top-0 bottom-10 w-[3px] bg-orange-500"
             style={{ transform: "translateX(25px)" }}
           />
-          {appointments.map((appointment, index) => (
+            {appointments.map((appointment, index) => (
             <AppointmentItem key={index} appointment={appointment} />
-          ))}
+          ))}  
         </div>
       )}
 

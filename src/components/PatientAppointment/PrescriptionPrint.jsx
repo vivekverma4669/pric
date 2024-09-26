@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from '../../images/logo.png';
 import Image from 'next/image';
 
 const PrescriptionPrint = React.forwardRef((props, ref) => {
@@ -14,6 +13,17 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
   const dobYear = new Date(prescription?.payload?.patient_dob).getFullYear();
  
 
+  const doctor1=  prescription?.payload?.appointment?.doctor?.details;
+  const doctor1Details = doctor1.replace(/\r\n/g, '').split('<br/>');
+  // console.log(doctor1Details);
+
+  const doctor2=  prescription?.payload?.appointment?.consultant_doctor?.details;
+  const doctor2Details = doctor2.replace(/\r\n/g, '').split('<br/>');
+  // console.log(doctor2Details);
+
+
+  
+
   return ( 
      <div  ref={ref} className="px-28 pt-1  w-[1170px]  min-h-[1560px] text-black flex flex-col justify-between">
       <div>
@@ -25,50 +35,45 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
       <br />
 
       <div style={{ maxWidth: '1300px', margin: 'auto',}}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <h1 className="text-[24px] mb-2">{prescription?.payload?.appointment?.doctor?.full_name}</h1>
-            
-            <p>MD DM (Immunology) </p>
-            <p>Rheumatologist  & Immunology</p>
-            <p>EX Consultant Apollo Hospital. LDH</p>
-            <p>EX Asstt. prof DMC & H, LDH</p>
-            <p>Regn No. PMC 29517</p>
+
+
+            { doctor1Details?.map((item,index)=>
+                <p key={index} >{item}</p>
+            )}
+
           </div>
 
           <div className='mr-[10px]'>
             <h4 className="text-[24px] mb-2">{prescription?.payload?.appointment?.consultant_doctor?.full_name}</h4>
-                      
-            {prescription?.payload?.appointment?.consultant_doctor ? (
-              <div>
-                <p>MD Medicine PDCC</p>
-                <p>EULAR Fellow</p>
-                <p>Physician & Rheumatologist</p>
-                <p>EX Asstt. Prof DMC & H, LDH</p>
-                <p>Regn No. PMC 31277</p>
-              </div>
-            ) : ""}
+            { doctor2Details?.map((item,index)=>
+                <p key={index} >{item}</p>
+            )}
+
+
           </div>
-        </div>
+        </div> 
         <br/>
         <hr/>
         <br/>
 
-        <div className="patient-details">
+      <div className="patient-details">
           <div className="mb-2 flex justify-between ">
             <p className='text-[22px]'><span className='font-semibold' >{prescription?.payload?.patient_full_name}</span> ({prescription?.payload?.patient_uid})</p>
             <p className='text-[18px] '>Date: {visit_date}</p>
           </div>
 
           <div style={{ width: '100%'  }} className="flex justify-between mb-3">
-                <span className="">&nbsp;{prescription?.payload?.weight}</span>
-                <span  className="">YOB: {dobYear} &nbsp;&nbsp;&nbsp; {prescription?.payload?.patient_gender} </span>
-                {prescription?.payload?.visit_type === 'New' || prescription?.payload?.visit_type === 'Old' ? '(Valid for 1 Revisit within 7 days)' : prescription?.payload?.visit_type}
+                <span className=""> Weight: &nbsp; {prescription?.payload?.appointment?.weight} </span>
+                <span  className="">YOB: {dobYear} &nbsp;&nbsp;&nbsp; {prescription?.payload?.patient_gender}  </span>
+                {prescription?.payload?.appointment?.visit_type === 'New' || prescription?.payload?.appointment?.visit_type === 'Old' ? '(Valid for 1 Revisit within 7 days)' : prescription?.payload?.visit_type}
           </div>
               
        
 
-          <table style={{ width: '100%' }} className=" mt-2 mb-1">
+           <table style={{ width: '100%' }} className=" mt-2 mb-1">
             <tr>
               <td style={{ width: '150px', verticalAlign: 'top' }}>
                 <div><p>Diagnosis:</p></div>
@@ -76,25 +81,37 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
               <td>
               {prescription?.payload?.diagnosis?.map((daig,index)=>(
                 <div key={index}>
-                  <p style={{ wordWrap: 'break-word' }}>{daig} </p>
+                  <p style={{ wordWrap: 'break-word' }}>{daig?.value} </p>
                   </div>
               ))}
               </td>
             </tr>
-          </table>
+          </table> 
 
-          {/* <table className="medicines mb-1 w-100">
-            <tr>
-              <td style={{ width: '150px', verticalAlign: 'top' }}></td>
-              <td>Regular Exercise</td>
-            </tr>
-          </table> */}
+          
+          <table className="medicines mb-1 w-100">
+              <tr>
+                <td style={{ width: "150px", verticalAlign: "top" }}></td>
+                <td>
+                  {" "}
+                  {prescription.prescription?.daily_exercise
+                    ? "Regular Exercise ,"
+                    : " "}{" "}
+                  {prescription.prescription?.physiotherapist
+                    ? "Meet Physiotherapist ,"
+                    : " "}{" "}
+                  {prescription.prescription?.psychologist
+                    ? "Meet psychologist ,"
+                    : " "}{" "}
+                  {prescription.prescription?.dietitian ? "dietitian, " : " "}{" "}
+                </td>
+              </tr>
+            </table>
 
           <div className="mt-2"><span className="mr-24">Notes: </span>  {prescription?.payload?.notes}  </div>
             
                
              
-
           <div className="medicines medicine-print mb-20 mt-5">
 
             <h5 className='mb-5'><b>Medicines</b></h5>
@@ -125,12 +142,12 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                </div>
                 ))}
 
-              </div>
+              </div> 
 
       
 
 
-          <table className="mb-5">
+           <table className="mb-5">
             <tr>
               <td style={{ width: '150px' }}>
                 <div><p>Spl instructions:</p> </div>
@@ -168,8 +185,9 @@ const PrescriptionPrint = React.forwardRef((props, ref) => {
                  </p></div>
               </td>
             </tr>
-          </table>
-        </div>
+          </table>  
+        
+        </div> 
       </div>
           
       </div>

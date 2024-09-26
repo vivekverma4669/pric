@@ -15,6 +15,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import hamburger from '../images/hamburger.svg'
 
+
+
 const MenuItem = ({ icon, text, href, isActive, onClick }) => (
   href ? (
     <Link href={href}>
@@ -51,6 +53,7 @@ const Header = () => {
   };
 
   
+
   return (
     <header className={`flex relative flex-col justify-center items-center px-48 py-4 w-full font-bold text-orange-400 bg-white  max-md:px-5 max-md:max-w-full  ${pathname === "/login"? 'hidden' :'' }`}>
        <ToastContainer/>

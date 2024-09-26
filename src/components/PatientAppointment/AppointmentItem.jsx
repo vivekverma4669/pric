@@ -27,7 +27,7 @@ const AppointmentItem = ({ appointment }) => {
   const toggleOpen = () => setIsOpen(!isOpen);
   const token = Cookies.get('token');
  
-  const prescriptionId = appointment.prescriptionId;
+  const prescriptionId = appointment?.prescriptionId;
   const fetchAppointments = async () => {
     try {
       const res = await axios.get(`${API_URL}/api/v1/prescriptions/${prescriptionId}`, {
@@ -35,8 +35,8 @@ const AppointmentItem = ({ appointment }) => {
           'Authorization': `Token ${token}`
         }
       });
-      console.log(res.data);
-      setPrescriptionData(res.data);
+      console.log(res.data , '<- prescription');
+      setPrescriptionData(res?.data);
     }
     catch (error) {
       console.error("Error fetching appointments: ", error);
@@ -51,7 +51,7 @@ const AppointmentItem = ({ appointment }) => {
  
   return (
     <div className="flex flex-wrap gap-2 mb-4 max-w-full w-[658px]">
-      <DateBadge day={appointment?.date.day} month={appointment?.date.month} />
+      <DateBadge day={appointment?.date?.day} month={appointment?.date?.month} />
 
       <div className="flex flex-col grow shrink-0 rounded-2xl basis-0 bg-neutral-100 w-fit max-md:max-w-full">
         <div
@@ -78,34 +78,26 @@ const AppointmentItem = ({ appointment }) => {
                   </span>
                   {appointment?.diagnosis}
                 </div>
-                <div className="mt-2 max-md:mr-2.5">
+                {/* <div className="mt-2 max-md:mr-2.5">
                   <span className="font-semibold text-neutral-800">
                     Remarks:{" "}
                   </span>
                   {appointment?.remarks}
-                </div>
+                </div> */}
                 <div className="self-start mt-4 font-semibold text-neutral-800">
                   Medicines
                 </div>
               </div>
 
               { <Image
-                onClick={handlePrint}
+                 onClick={handlePrint}
                 loading="lazy"
                 src={download}
                 className="object-contain cursor-pointer shrink-0 self-start w-9 p-2 bg-orange-200 rounded-xl aspect-square"
                 alt="Download icon"
               />
               }
-                {/* <a href="/PRIC-prescription.pdf" download>
-               <Image
-                  loading="lazy"
-                  src={download}
-                  className="object-contain cursor-pointer shrink-0 self-start w-9 p-2 bg-orange-200 rounded-xl aspect-square"
-                  alt="Download icon"
-                />
-              </a> */}
-
+             
             </div>
              
             {appointment?.medicines?.map((medicine, index) => (
@@ -148,9 +140,6 @@ const AppointmentItem = ({ appointment }) => {
 };
 
 export default AppointmentItem;
-
-
-
 
 
 
